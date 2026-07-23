@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가루류 - 엠.제이인터내셔날</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .category-header {
+            background: linear-gradient(135deg, #d4a373 0%, #e8bc89 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .category-header h1 {
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 50px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .category-header p {
+            font-size: 16px;
+            margin: 15px 0 0 0;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(212, 163, 115, 0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f4ead8 0%, #ede3ce 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .back-button:hover {
+            background-color: #d4a373;
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .category-header h1 {
+                font-size: 35px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <header>
+        <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+            <img src="mylogo.jpg" alt="로고">
+        </a>
+
+        <nav>
+            <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
+                <li onmouseover="this.style.transform='scale(1.1)';" 
+                    onmouseout="this.style.transform='scale(1)';" 
+                    style="transition: all 0.3s ease;">
+                    <a href="about.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">회사 소개</a>
+                </li>
+                <li onmouseover="this.style.transform='scale(1.1)';" 
+                    onmouseout="this.style.transform='scale(1)';" 
+                    style="transition: all 0.3s ease;">
+                    <a href="menu.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">메뉴 소개</a>
+                </li>
+                <li onmouseover="this.style.transform='scale(1.1)';" 
+                    onmouseout="this.style.transform='scale(1)';" 
+                    style="transition: all 0.3s ease;">
+                    <a href="mapinfo.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">매장 안내</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 카테고리 헤더 -->
+    <div class="category-header">
+        <h1>🌾 가루류</h1>
+        <p>엠.제이인터내셔날의 다양한 가루 제품들</p>
+    </div>
+
+    <!-- 상품 목록 -->
+    <section class="products-container">
+        <a href="menu.html" class="back-button">← 메뉴로 돌아가기</a>
+
+        <div class="products-grid">
+            <!-- 상품 1 -->
+            <div class="product-card">
+                <div class="product-image">🌾</div>
+                <div class="product-info">
+                    <div class="product-name">고급 밀가루</div>
+                    <div class="product-desc">정선된 품질의 밀가루로 모든 베이킹을 완벽하게 완성합니다.</div>
+                </div>
+            </div>
+
+            <!-- 상품 2 -->
+            <div class="product-card">
+                <div class="product-image">🌾</div>
+                <div class="product-info">
+                    <div class="product-name">통밀가루</div>
+                    <div class="product-desc">건강한 통밀가루로 영양과 맛을 동시에 더합니다.</div>
+                </div>
+            </div>
+
+            <!-- 상품 3 -->
+            <div class="product-card">
+                <div class="product-image">🌾</div>
+                <div class="product-info">
+                    <div class="product-name">옥수수 전분</div>
+                    <div class="product-desc">맑고 투명한 국물을 만드는 고급 옥수수 전분입니다.</div>
+                </div>
+            </div>
+
+            <!-- 상품 4 -->
+            <div class="product-card">
+                <div class="product-image">🌾</div>
+                <div class="product-info">
+                    <div class="product-name">감자 전분</div>
+                    <div class="product-desc">촉촉한 식감을 살리는 프리미엄 감자 전분입니다.</div>
+                </div>
+            </div>
+
+            <!-- 상품 5 -->
+            <div class="product-card">
+                <div class="product-image">🌾</div>
+                <div class="product-info">
+                    <div class="product-name">고추가루</div>
+                    <div class="product-desc">신선한 고추로 만든 색감 좋은 고추가루입니다.</div>
+                </div>
+            </div>
+
+            <!-- 상품 6 -->
+            <div class="product-card">
+                <div class="product-image">🌾</div>
+                <div class="product-info">
+                    <div class="product-name">카레 분말</div>
+                    <div class="product-desc">이국적인 향과 맛을 담은 고급 카레 분말입니다.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <p>엠.제이인터내셔날 | 브랜드: 온다정</p>
+        <p>주소: 경기도 용인시 처인구 모현읍 이일로 7-9 | 대표번호: 031-333-2303</p>
+        <p>© 2026 M.J International. All rights reserved.</p>
+    </footer>
+</body>
+</html>
