@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 모바일 반응형 지원을 위한 Viewport 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>엠.제이인터내셔날 - 온다정</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif; background-color: #f9f9f9;">
+
+    <!-- 헤더 영역 -->
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
+        <a href="#" style="text-decoration: none; display: flex; align-items: center;">
+            <img src="mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
+        </a>
+
+        <nav>
+            <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
+                <li onmouseover="this.style.transform='scale(1.1)';" 
+                    onmouseout="this.style.transform='scale(1)';" 
+                    style="transition: all 0.3s ease;">
+                    <a href="about.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">회사 소개</a>
+                </li>
+
+                <li onmouseover="this.style.transform='scale(1.1)';" 
+                    onmouseout="this.style.transform='scale(1)';" 
+                    style="transition: all 0.3s ease;">
+                    <a href="menu.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">메뉴 소개</a>
+                </li>
+
+                <li onmouseover="this.style.transform='scale(1.1)';" 
+                    onmouseout="this.style.transform='scale(1)';" 
+                    style="transition: all 0.3s ease;">
+                    <a href="mapinfo.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">매장 안내</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 메인 히어로 섹션 -->
+    <section style="
+        width: 100%; 
+        height: 100vh; 
+        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('main_pic.png'); 
+        background-size: cover; 
+        background-position: center; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        color: white; 
+        text-align: center;
+        position: relative;
+    ">
+        <!-- 상단 작은 슬로건 -->
+        <p style="font-size: 14px; letter-spacing: 6px; color: #C5A059; margin-bottom: 20px; font-weight: bold; text-transform: uppercase;">
+            Premium Food Culture Company
+        </p>
+
+        <!-- 메인 타이틀 -->
+        <h1 style="font-family: 'Nanum Myeongjo', serif; font-size: 70px; margin: 0; font-weight: 700; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+            엠.제이인터내셔날
+        </h1>
+        
+        <!-- 서브 타이틀 -->
+        <p style="font-family: 'Nanum Myeongjo', serif; font-size: 22px; margin: 25px 0 40px 0; letter-spacing: 4px; color: #eee; font-weight: 300;">
+            따뜻한 진심과 넉넉한 정이 머무는 곳, 온다정
+        </p>
+
+        <!-- 아웃라인 고스트 버튼 -->
+        <a href="menu.html" style="
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.6);
+            padding: 14px 35px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            border-radius: 30px;
+            background: transparent;
+            transition: all 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#C5A059'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-3px)';" 
+          onmouseout="this.style.backgroundColor='transparent'; this.style.borderColor='rgba(255,255,255,0.6)'; this.style.transform='translateY(0)';">
+            OUR MENU VIEW
+        </a>
+
+        <!-- 스크롤 유도 문구 -->
+        <div style="position: absolute; bottom: 40px; color: rgba(255,255,255,0.5); font-size: 12px; letter-spacing: 2px;">
+            SCROLL DOWN
+        </div>
+    </section>
+
+    <!-- 지도 섹션 -->
+    <section style="max-width: 1200px; height: 500px; margin: 50px auto; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <iframe 
+            title="엠.제이인터내셔날 위치 지도"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.79375016344!2d127.2172989763147!3d37.32371293801399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b55d2533c45a7%3A0x6e60720096fd16fb!2z6rK96riw64-EIOyaqeyduOyLnCDsspjsnbjqtawg66qo7ZiE7J2NIOydtOydvOuhnCA3LTk!5e0!3m2!1sko!2skr!4v1770361667051!5m2!1sko!2skr" 
+            style="width: 100%; height: 100%; border: 0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+
+    <!-- 푸터 영역 -->
+    <footer style="background: #333; color: #fff; padding: 40px 60px; text-align: left;">
+        <p style="margin: 0; opacity: 0.7;">엠.제이인터내셔날 | 브랜드: 온다정</p>
+        <p style="margin: 10px 0 0 0; opacity: 0.7;">주소: 경기도 용인시 처인구 모현읍 이일로 7-9 | 대표번호: 031-333-2303</p>
+        <p style="margin: 20px 0 0 0; font-size: 12px; opacity: 0.5;">© 2026 M.J International. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
