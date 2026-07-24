@@ -30,11 +30,11 @@ html,body{height:100%;margin:0;font-family: 'Nanum Gothic', sans-serif;backgroun
 .nav-has-dropdown:hover .menu-dropdown{display:block}
 
 /* Hero */
-.hero{width:100%;height:90vh;background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('main_pic.png');background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;text-align:center;position:relative;overflow:hidden}
+.hero{width:100%;height:90vh;background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('main_pic.png');background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;text-align:center}
 .hero-slogan{font-size:14px;letter-spacing:6px;color:var(--gold);margin-bottom:20px;font-weight:700;text-transform:uppercase}
 .hero-title{font-family:'Nanum Myeongjo',serif;font-size:70px;margin:0;font-weight:700;letter-spacing:2px;text-shadow:0 4px 15px rgba(0,0,0,0.3)}
 .hero-sub{font-family:'Nanum Myeongjo',serif;font-size:22px;margin:25px 0 40px 0;letter-spacing:4px;color:#eee;font-weight:300}
-.hero-btn{text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,0.6);padding:14px 35px;font-size:14px;letter-spacing:2px;border-radius:30px;background:transparent;transition:all .3s ease}
+.hero-btn{text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,0.6);padding:14px 35px;font-size:14px;letter-spacing:2px;border-radius:30px;background:transparent;transition:all .3s ease;display:inline-block}
 .hero-btn:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-3px)}
 .scroll-hint{position:absolute;bottom:40px;color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:2px}
 
@@ -43,10 +43,44 @@ html,body{height:100%;margin:0;font-family: 'Nanum Gothic', sans-serif;backgroun
 .categories h2{font-size:28px;color:#333;margin-bottom:10px;font-weight:700;letter-spacing:1px}
 .categories-desc{font-family:sans-serif;font-size:14px;color:var(--muted);margin-bottom:40px}
 .category-grid{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
-.category-card{flex:1;min-width:250px;max-width:300px;padding:25px 20px;background:var(--card);border:1px solid #eae5da;border-radius:12px;text-decoration:none;color:#333;transition:all .3s ease;box-shadow:0 4px 10px rgba(0,0,0,0.02);display:block}
+.category-card{flex:1;min-width:250px;max-width:300px;padding:25px 20px;background:var(--card);border:1px solid #eae5da;border-radius:12px;text-decoration:none;color:#333;transition:all .3s ease;box-shadow:0 4px 10px rgba(0,0,0,.02)}
 .category-card:hover{background:var(--gold);color:#fff;transform:translateY(-5px);border-color:var(--gold)}
 .cat-meta{display:block;font-size:12px;color:#888;font-family:sans-serif;margin-bottom:5px}
 .cat-title{font-size:20px;display:block;font-weight:700}
+
+/* Company Map Section */
+.company-map-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.company-map-section h2 {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.company-map-section p {
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+#company-map {
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+}
 
 /* Map */
 .map{max-width:1200px;height:500px;margin:50px auto;border-radius:20px;overflow:hidden;border:1px solid #eee;box-shadow:0 10px 30px rgba(0,0,0,0.05)}
@@ -60,7 +94,7 @@ html,body{height:100%;margin:0;font-family: 'Nanum Gothic', sans-serif;backgroun
 .copyright{color:#999;margin-left:auto}
 
 /* Scroll top button */
-.scroll-top{display:none;position:fixed;bottom:40px;right:40px;z-index:99;border:none;outline:none;background:var(--gold);color:#fff;cursor:pointer;padding:15px 20px;border-radius:50%;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-size:18px;font-weight:700;transition:all .3s ease}
+.scroll-top{display:none;position:fixed;bottom:40px;right:40px;z-index:99;border:none;outline:none;background:var(--gold);color:#fff;cursor:pointer;padding:15px 20px;border-radius:50%;box-shadow:0 4px 10px rgba(0,0,0,.2);font-size:18px;font-weight:700;transition:all .3s ease}
 .scroll-top:hover{background:#a38243;transform:scale(1.08)}
 
 /* Responsive */
@@ -75,80 +109,54 @@ html,body{height:100%;margin:0;font-family: 'Nanum Gothic', sans-serif;backgroun
   .hero{height:70vh}
   .hero-title{font-size:32px}
   .footer-inner{font-size:13px}
+  .company-map-section h2{font-size:28px}
+  .company-map-section{padding:30px 15px}
+  #company-map{height:350px}
 }
+
 /* ============================================
    Hero Section 이미지 겹침 스타일
    ============================================ */
 
 .hero-image-container {
-    /* 부모 컨테이너: 자식 요소들의 절대 위치 기준점 설정 */
     position: relative;
-    
-    /* 컨테이너 크기 설정 (필요에 따라 조정) */
     width: 100%;
     max-width: 600px;
     height: 400px;
     margin: 40px auto;
-    
-    /* 컨테이너 테두리 및 배경 */
     border-radius: 12px;
     overflow: hidden;
-    
-    /* 깔끔한 그림자 효과 */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* 메인 이미지 (배경) */
 .hero-image-main {
-    /* 메인 이미지는 컨테이너를 가득 채움 */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
-    /* 메인 이미지는 맨 아래 레이어 */
     z-index: 1;
-    
-    /* 자연스러운 트랜지션 */
     transition: transform 0.3s ease;
 }
 
 /* 서브 이미지 (겹쳐지는 이미지) */
 .hero-image-sub {
-    /* 절대 위치로 메인 이미지 위에 배치 */
     position: absolute;
-    
-    /* ⬇️ 다음 값들을 조정하여 이미지 위치를 변경하세요 ⬇️ */
-    /* 
-       위치 조정 가이드:
-       - right: 0;     → 오른쪽 끝에 배치 (값을 늘리면 더 안쪽으로 이동)
-       - bottom: -30px; → 아래쪽에서 -30px (음수는 컨테이너 밖으로 나감)
-       - 예시: 왼쪽 아래 겹침 → left: -20px; bottom: -40px;
-       - 예시: 위쪽 중앙 겹침 → left: 50%; transform: translateX(-50%); top: -30px;
-    */
     right: -30px;
     bottom: -40px;
-    
-    /* 서브 이미지 크기 (메인보다 약간 작게) */
     width: 55%;
     height: 55%;
     object-fit: cover;
-    
-    /* 서브 이미지는 메인 위에 표시 */
     z-index: 2;
-    
-    /* 서브 이미지에 테두리 및 그림자 추가 (구분되게) */
     border-radius: 8px;
     border: 3px solid white;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    
-    /* 자연스러운 트랜지션 */
     transition: transform 0.3s ease;
 }
 
-/* 호버 효과 (마우스 올렸을 때) */
+/* 호버 효과 */
 .hero-image-container:hover .hero-image-main {
     transform: scale(1.05);
 }
@@ -157,9 +165,7 @@ html,body{height:100%;margin:0;font-family: 'Nanum Gothic', sans-serif;backgroun
     transform: scale(1.08);
 }
 
-/* ============================================
-   반응형 디자인 (태블릿)
-   ============================================ */
+/* 반응형 (태블릿) */
 @media (max-width: 768px) {
     .hero-image-container {
         max-width: 500px;
@@ -176,9 +182,7 @@ html,body{height:100%;margin:0;font-family: 'Nanum Gothic', sans-serif;backgroun
     }
 }
 
-/* ============================================
-   반응형 디자인 (모바일)
-   ============================================ */
+/* 반응형 (모바일) */
 @media (max-width: 480px) {
     .hero-image-container {
         max-width: 100%;
