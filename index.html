@@ -1,113 +1,276 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
     <meta charset="UTF-8">
-    <!-- 모바일 반응형 지원을 위한 Viewport 설정 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>엠.제이인터내셔날 - 온다정</title>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif; background-color: #f9f9f9;">
 
-    <!-- 헤더 영역 -->
     <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
-        <a href="#" style="text-decoration: none; display: flex; align-items: center;">
-            <img src="mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
-        </a>
+    
+    <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+        <img src="mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
+    </a>
 
-        <nav>
-            <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
-                <li onmouseover="this.style.transform='scale(1.1)';" 
-                    onmouseout="this.style.transform='scale(1)';" 
-                    style="transition: all 0.3s ease;">
-                    <a href="about.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">회사 소개</a>
-                </li>
-
-                <li onmouseover="this.style.transform='scale(1.1)';" 
-                    onmouseout="this.style.transform='scale(1)';" 
-                    style="transition: all 0.3s ease;">
-                    <a href="menu.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">메뉴 소개</a>
-                </li>
-
-                <li onmouseover="this.style.transform='scale(1.1)';" 
-                    onmouseout="this.style.transform='scale(1)';" 
-                    style="transition: all 0.3s ease;">
-                    <a href="mapinfo.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">매장 안내</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- 메인 히어로 섹션 -->
-    <section style="
-        width: 100%; 
-        height: 100vh; 
-        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('main_pic.png'); 
-        background-size: cover; 
-        background-position: center; 
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center; 
-        color: white; 
-        text-align: center;
-        position: relative;
-    ">
-        <!-- 상단 작은 슬로건 -->
-        <p style="font-size: 14px; letter-spacing: 6px; color: #C5A059; margin-bottom: 20px; font-weight: bold; text-transform: uppercase;">
-            Premium Food Culture Company
-        </p>
-
-        <!-- 메인 타이틀 -->
-        <h1 style="font-family: 'Nanum Myeongjo', serif; font-size: 70px; margin: 0; font-weight: 700; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-            엠.제이인터내셔날
-        </h1>
+<nav>
+    <ul style="list-style: none; display: flex; gap: 30px; margin: 0; padding: 0;">
         
-        <!-- 서브 타이틀 -->
-        <p style="font-family: 'Nanum Myeongjo', serif; font-size: 22px; margin: 25px 0 40px 0; letter-spacing: 4px; color: #eee; font-weight: 300;">
-            따뜻한 진심과 넉넉한 정이 머무는 곳, 온다정
-        </p>
+        <li onmouseover="this.style.transform='scale(1.1)';" 
+    	onmouseout="this.style.transform='scale(1)';" 
+    	style="transition: all 0.3s ease;">
+    	<a href="about.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">회사 소개</a>
+        </li>
 
-        <!-- 아웃라인 고스트 버튼 -->
-        <a href="menu.html" style="
-            text-decoration: none;
-            color: white;
-            border: 1px solid rgba(255,255,255,0.6);
-            padding: 14px 35px;
-            font-size: 14px;
-            letter-spacing: 2px;
-            border-radius: 30px;
-            background: transparent;
+<li onmouseover="this.style.transform='scale(1.0.3)'; document.getElementById('menu-dropdown').style.display='block';" 
+    onmouseout="this.style.transform='scale(1)'; document.getElementById('menu-dropdown').style.display='none';" 
+    style="transition: all 0.2s ease; position: relative; list-style: none; display: inline-block; vertical-align: top; margin: 0 15px;">
+    
+    <a href="menu.html" style="
+        text-decoration: none; 
+        color: #333; 
+        font-family: 'Nanum gothic', serif; 
+        font-weight: 700; 
+        font-size: 16px; 
+        letter-spacing: 1px; 
+        padding: 0px 0 10px 0; /* 불필요한 패딩 제거 */
+        height: 22px; /* 높이를 고정하여 다른 메뉴와 완전 일치 */
+        display: flex; 
+        align-items: center; 
+        gap: 6px; 
+    ">
+        메뉴 소개 
+        <span style="font-size: 9px; color: #b5b5b5; transform: scaleY(0.8); display: inline-block;">▼</span>
+    </a>
+
+    <div id="menu-dropdown" style="
+        display: none; 
+        position: absolute; 
+        top: 30px; /* 메인 메뉴 바로 아래에 딱 붙도록 위치 고정 */
+        left: 50%; 
+        transform: translateX(-50%); 
+        background-color: #ffffff; 
+        min-width: 140px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
+        border-radius: 12px; 
+        padding: 10px 0; 
+        border: 1px solid #f0f0f0;
+        z-index: 1000;
+    ">
+        <a href="menu.html?tab=source1" style="display: block; padding: 12px 20px; text-decoration: none; color: #555; font-size: 14px; text-align: center; transition: 0.2s; letter-spacing: 0.5px;"
+           onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
+           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#555';">
+            소스
+        </a>
+        <a href="menu.html?tab=source2" style="display: block; padding: 12px 20px; text-decoration: none; color: #555; font-size: 14px; text-align: center; transition: 0.2s; letter-spacing: 0.5px;"
+           onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
+           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#555';">
+            소스2
+        </a>
+        <a href="menu.html?tab=source3" style="display: block; padding: 12px 20px; text-decoration: none; color: #555; font-size: 14px; text-align: center; transition: 0.2s; letter-spacing: 0.5px;"
+           onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
+           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#555';">
+            소스3
+        </a>
+    </div>
+</li>
+
+        <li onmouseover="this.style.transform='scale(1.1)';" 
+            onmouseout="this.style.transform='scale(1)';" 
+            style="transition: all 0.3s ease;">
+            <a href="#location" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">매장 안내</a>
+        </li>
+
+    </ul>
+</nav>
+</header>
+<section style="
+    width: 100%; 
+    height: 90vh; /* 화면 전체를 꽉 채우는 고급스러운 높이 */
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('main_pic.png'); 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    color: white; 
+    text-align: center;
+    position: relative;
+	overflow: hidden; /* 배너 내부 요소가 밖으로 탈출하는 것을 방지 */
+">
+    
+    <!-- 상단 작은 슬로건 (심플함을 더해주는 요소) -->
+    <p style="font-size: 14px; letter-spacing: 6px; color: #C5A059; margin-bottom: 20px; font-weight: bold; text-transform: uppercase;">
+        Premium Food Culture Company
+    </p>
+
+    <!-- 메인 타이틀: 기존 100px에서 70px로 줄여 서체 자체의 우아함을 강조 -->
+    <h1 style="font-family: 'Nanum Myeongjo', serif; font-size: 70px; margin: 0; font-weight: 700; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+        엠.제이인터내셔날
+    </h1>
+    
+    <!-- 서브 타이틀: 자간을 넓혀 깔끔하고 정갈한 느낌 유도 -->
+    <p style="font-family: 'Nanum Myeongjo', serif; font-size: 22px; margin: 25px 0 40px 0; letter-spacing: 4px; color: #eee; font-weight: 300;">
+        따뜻한 진심과 넉넉한 정이 머무는 곳, 온다정
+    </p>
+
+    <!-- 세련된 아웃라인 고스트 버튼 -->
+    <a href="mapinfo.html" style="
+        text-decoration: none;
+        color: white;
+        border: 1px solid rgba(255,255,255,0.6);
+        padding: 14px 35px;
+        font-size: 14px;
+        letter-spacing: 2px;
+        border-radius: 30px;
+        background: transparent;
+        transition: all 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#C5A059'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-3px)';" 
+      onmouseout="this.style.backgroundColor='transparent'; this.style.borderColor='rgba(255,255,255,0.6)'; this.style.transform='translateY(0)';">
+        OUR COMPANY MAP
+    </a>
+
+<!-- 홈화면 아래 메뉴선택 아이콘 추가 -->
+<section style="max-width: 1000px; margin: 60px auto; padding: 0 20px; font-family: 'Nanum Myeongjo', serif; text-align: center;">
+    
+    <h2 style="font-size: 28px; color: #333; margin-bottom: 10px; font-weight: bold; letter-spacing: 1px;">PRODUCT CATEGORY</h2>
+    <p style="font-family: sans-serif; font-size: 14px; color: #888; margin-bottom: 40px; letter-spacing: 0.5px;">온다정의 정성을 담은 메뉴를 카테고리별로 만나보세요.</p>
+
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        
+        <a href="menu.html?tab=source1" style="
+            flex: 1; 
+            min-width: 250px; 
+            max-width: 300px;
+            padding: 25px 20px; 
+            background-color: #fdfbf7; 
+            border: 1px solid #eae5da; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            color: #333; 
             transition: all 0.3s ease;
-        " onmouseover="this.style.backgroundColor='#C5A059'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-3px)';" 
-          onmouseout="this.style.backgroundColor='transparent'; this.style.borderColor='rgba(255,255,255,0.6)'; this.style.transform='translateY(0)';">
-            OUR MENU VIEW
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        " onmouseover="this.style.backgroundColor='#C5A059'; this.style.color='white'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-5px)';" 
+          onmouseout="this.style.backgroundColor='#fdfbf7'; this.style.color='#333'; this.style.borderColor='#eae5da'; this.style.transform='translateY(0)';">
+            <span style="display: block; font-size: 12px; color: #888; font-family: sans-serif; margin-bottom: 5px; letter-spacing: 1px;">CATEGORY 01</span>
+            <strong style="font-size: 20px; display: block; font-weight: 700;">소스</strong>
         </a>
 
-        <!-- 스크롤 유도 문구 -->
-        <div style="position: absolute; bottom: 40px; color: rgba(255,255,255,0.5); font-size: 12px; letter-spacing: 2px;">
-            SCROLL DOWN
+        <a href="menu.html?tab=source2" style="
+            flex: 1; 
+            min-width: 250px; 
+            max-width: 300px;
+            padding: 25px 20px; 
+            background-color: #fdfbf7; 
+            border: 1px solid #eae5da; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            color: #333; 
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        " onmouseover="this.style.backgroundColor='#C5A059'; this.style.color='white'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-5px)';" 
+          onmouseout="this.style.backgroundColor='#fdfbf7'; this.style.color='#333'; this.style.borderColor='#eae5da'; this.style.transform='translateY(0)';">
+            <span style="display: block; font-size: 12px; color: #888; font-family: sans-serif; margin-bottom: 5px; letter-spacing: 1px;">CATEGORY 02</span>
+            <strong style="font-size: 20px; display: block; font-weight: 700;">소스2</strong>
+        </a>
+
+        <a href="menu.html?tab=source3" style="
+            flex: 1; 
+            min-width: 250px; 
+            max-width: 300px;
+            padding: 25px 20px; 
+            background-color: #fdfbf7; 
+            border: 1px solid #eae5da; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            color: #333; 
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        " onmouseover="this.style.backgroundColor='#C5A059'; this.style.color='white'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-5px)';" 
+          onmouseout="this.style.backgroundColor='#fdfbf7'; this.style.color='#333'; this.style.borderColor='#eae5da'; this.style.transform='translateY(0)';">
+            <span style="display: block; font-size: 12px; color: #888; font-family: sans-serif; margin-bottom: 5px; letter-spacing: 1px;">CATEGORY 03</span>
+            <strong style="font-size: 20px; display: block; font-weight: 700;">소스3</strong>
+        </a>
+
+    </div>
+</section>
+
+
+    <!-- 화면 아래로 내려가라는 유도 아이콘 (애니메이션 생략, 미니멀한 느낌 유지) 
+    <div style="position: absolute; bottom: 40px; color: rgba(255,255,255,0.5); font-size: 12px; letter-spacing: 2px;">
+        SCROLL DOWN
+    </div>
+	-->
+</section>
         </div>
     </section>
 
-    <!-- 지도 섹션 -->
-    <section style="max-width: 1200px; height: 500px; margin: 50px auto; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-        <iframe 
-            title="엠.제이인터내셔날 위치 지도"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.79375016344!2d127.2172989763147!3d37.32371293801399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b55d2533c45a7%3A0x6e60720096fd16fb!2z6rK96riw64-EIOyaqeyduOyLnCDsspjsnbjqtawg66qo7ZiE7J2NIOydtOydvOuhnCA3LTk!5e0!3m2!1sko!2skr!4v1770361667051!5m2!1sko!2skr" 
-            style="width: 100%; height: 100%; border: 0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </section>
+<footer style="background-color: #f8f8f8; color: #666; padding: 30px 50px; border-top: 1px solid #eee; font-family: sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: center; gap: 30px; font-size: 15px; flex-wrap: wrap;">
+        
+        <span style="font-weight: bold; color: #333; font-family: 'Nanum Myeongjo', serif;">엠.제이인터내셔날</span>
+        
+        <span style="color: #ddd;">|</span>
+        
+        <span>대표자: 노경미</span>
+        <span>사업자등록번호: 123-23-79551</span>
+        <span>주소: 경기도 용인시 처인구 모현읍 이일로 7-9</span>
+        <span>대표전화: 031-333-2303</span>
+        
+        <span style="color: #ddd;">|</span>
+        
+        <span style="color: #999; margin-left: auto;">Copyright ⓒ 2026. All Rights Reserved.</span>
+        
+    </div>
+</footer>
 
-    <!-- 푸터 영역 -->
-    <footer style="background: #333; color: #fff; padding: 40px 60px; text-align: left;">
-        <p style="margin: 0; opacity: 0.7;">엠.제이인터내셔날 | 브랜드: 온다정</p>
-        <p style="margin: 10px 0 0 0; opacity: 0.7;">주소: 경기도 용인시 처인구 모현읍 이일로 7-9 | 대표번호: 031-333-2303</p>
-        <p style="margin: 20px 0 0 0; font-size: 12px; opacity: 0.5;">© 2026 M.J International. All rights reserved.</p>
-    </footer>
+<!-- 1. TOP 버튼 HTML -->
+<button id="scrollTopBtn" onclick="scrollToTop()" style="
+    display: none; /* 처음에는 숨겨둠 */
+    position: fixed; 
+    bottom: 40px; 
+    right: 40px; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: #C5A059; /* 온다정 브랜드 금색 */
+    color: white; 
+    cursor: pointer; 
+    padding: 15px 20px; 
+    border-radius: 50%; /* 동그란 모양 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+" onmouseover="this.style.backgroundColor='#a38243'; this.style.transform='scale(1.1)';" 
+  onmouseout="this.style.backgroundColor='#C5A059'; this.style.transform='scale(1)';">
+    ↑
+</button>
+
+<!-- 2. 버튼 작동을 위한 스크립트 (JavaScript) -->
+<script>
+    // 화면을 스크롤할 때마다 주시함
+    window.onscroll = function() { scrollFunction() };
+
+    function scrollFunction() {
+        var btn = document.getElementById("scrollTopBtn");
+        // 스크롤이 위에서부터 300px 이상 내려오면 버튼을 보여주고, 아니면 숨김
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    }
+
+    // 버튼을 클릭했을 때 맨 위로 부드럽게 올라가는 함수
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' /* 부드럽게 스크롤링되는 효과 */
+        });
+    }
+</script>
 
 </body>
 </html>
