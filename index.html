@@ -18,8 +18,8 @@
         
         <li onmouseover="this.style.transform='scale(1.1)';" 
     	onmouseout="this.style.transform='scale(1)';" 
-    	style="transition: all 0.3s ease;">
-    	<a href="about.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">회사 소개</a>
+     style="transition: all 0.3s ease;">
+     	<a href="about.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">회사 소개</a>
         </li>
 
 <li onmouseover="this.style.transform='scale(1.0.3)'; document.getElementById('menu-dropdown').style.display='block';" 
@@ -84,52 +84,38 @@
     </ul>
 </nav>
 </header>
-<section style="
-    width: 100%; 
-    height: 90vh; /* 화면 전체를 꽉 채우는 고급스러운 높이 */
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('main_pic.png'); 
-    background-size: cover; 
-    background-position: center; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    color: white; 
-    text-align: center;
-    position: relative;
-	overflow: hidden; /* 배너 내부 요소가 밖으로 탈출하는 것을 방지 */
-">
-    
-    <!-- 상단 작은 슬로건 (심플함을 더해주는 요소) -->
-    <p style="font-size: 14px; letter-spacing: 6px; color: #C5A059; margin-bottom: 20px; font-weight: bold; text-transform: uppercase;">
-        Premium Food Culture Company
+
+<!-- 히어로 섹션: images 폴더의 두 이미지를 자동으로 전환하는 슬라이드 -->
+<section style="width: 100%; height: 90vh; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
+
+  <!-- 슬라이드 이미지들 (절대 위치, object-fit:cover 로 화면 채움) -->
+  <div id="hero-slideshow" style="position:absolute; inset:0; z-index:0;">
+    <img src="images/main_pic.png" alt="메인1" class="hero-slide" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:1; transition:opacity 1s ease;">
+    <img src="images/index_pic.png" alt="메인2" class="hero-slide" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 1s ease;">
+  </div>
+
+  <!-- 콘텐츠 오버레이 (텍스트/버튼) : 슬라이드 위에 표시되도록 z-index 높게 설정 -->
+  <div style="position:relative; z-index:2; max-width:1200px; padding: 0 20px;">
+    <p style="font-size:14px; letter-spacing:6px; color:#C5A059; margin-bottom:20px; font-weight:bold; text-transform:uppercase;">
+      Premium Food Culture Company
     </p>
 
-    <!-- 메인 타이틀: 기존 100px에서 70px로 줄여 서체 자체의 우아함을 강조 -->
-    <h1 style="font-family: 'Nanum Myeongjo', serif; font-size: 70px; margin: 0; font-weight: 700; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-        엠.제이인터내셔날
+    <h1 style="font-family: 'Nanum Myeongjo', serif; font-size:70px; margin:0; font-weight:700; letter-spacing:2px; text-shadow:0 4px 15px rgba(0,0,0,0.3);">
+      엠.제이인터내셔날
     </h1>
-    
-    <!-- 서브 타이틀: 자간을 넓혀 깔끔하고 정갈한 느낌 유도 -->
-    <p style="font-family: 'Nanum Myeongjo', serif; font-size: 22px; margin: 25px 0 40px 0; letter-spacing: 4px; color: #eee; font-weight: 300;">
-        따뜻한 진심과 넉넉한 정이 머무는 곳, 온다정
+
+    <p style="font-family: 'Nanum Myeongjo', serif; font-size:22px; margin:25px 0 40px 0; letter-spacing:4px; color:#eee; font-weight:300;">
+      따뜻한 진심과 넉넉한 정이 머무는 곳, 온다정
     </p>
 
-    <!-- 세련된 아웃라인 고스트 버튼 -->
-    <a href="mapinfo.html" style="
-        text-decoration: none;
-        color: white;
-        border: 1px solid rgba(255,255,255,0.6);
-        padding: 14px 35px;
-        font-size: 14px;
-        letter-spacing: 2px;
-        border-radius: 30px;
-        background: transparent;
-        transition: all 0.3s ease;
-    " onmouseover="this.style.backgroundColor='#C5A059'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-3px)';" 
-      onmouseout="this.style.backgroundColor='transparent'; this.style.borderColor='rgba(255,255,255,0.6)'; this.style.transform='translateY(0)';">
-        OUR COMPANY MAP
+    <a href="mapinfo.html" style="text-decoration:none; color:white; border:1px solid rgba(255,255,255,0.6); padding:14px 35px; font-size:14px; letter-spacing:2px; border-radius:30px; background:transparent; transition:all 0.3s ease;"
+       onmouseover="this.style.backgroundColor='#C5A059'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-3px)';"
+       onmouseout="this.style.backgroundColor='transparent'; this.style.borderColor='rgba(255,255,255,0.6)'; this.style.transform='translateY(0)';">
+      OUR COMPANY MAP
     </a>
+  </div>
+
+</section>
 
 <!-- 홈화면 아래 메뉴선택 아이콘 추가 -->
 <section style="max-width: 1000px; margin: 60px auto; padding: 0 20px; font-family: 'Nanum Myeongjo', serif; text-align: center;">
@@ -197,15 +183,6 @@
 </section>
 
 
-    <!-- 화면 아래로 내려가라는 유도 아이콘 (애니메이션 생략, 미니멀한 느낌 유지) 
-    <div style="position: absolute; bottom: 40px; color: rgba(255,255,255,0.5); font-size: 12px; letter-spacing: 2px;">
-        SCROLL DOWN
-    </div>
-	-->
-</section>
-        </div>
-    </section>
-
 <footer style="background-color: #f8f8f8; color: #666; padding: 30px 50px; border-top: 1px solid #eee; font-family: sans-serif;">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: center; gap: 30px; font-size: 15px; flex-wrap: wrap;">
         
@@ -248,7 +225,7 @@
     ↑
 </button>
 
-<!-- 2. 버튼 작동을 위한 스크립트 (JavaScript) -->
+<!-- 스크립트들 -->
 <script>
     // 화면을 스크롤할 때마다 주시함
     window.onscroll = function() { scrollFunction() };
@@ -270,6 +247,28 @@
             behavior: 'smooth' /* 부드럽게 스크롤링되는 효과 */
         });
     }
+</script>
+
+<!-- 히어로 슬라이드 동작 스크립트 (자동전환) -->
+<script>
+  (function() {
+    const slides = document.querySelectorAll('#hero-slideshow .hero-slide');
+    if (!slides || slides.length < 2) return; // 이미지가 2장 이상일 때만 동작
+    let idx = 0;
+    const interval = 5000; // 5초 간격
+
+    // 초기 세팅: 첫 이미지는 보이게, 나머지는 숨김
+    slides.forEach((s, i) => {
+      s.style.opacity = (i === 0) ? '1' : '0';
+    });
+
+    setInterval(() => {
+      const prev = idx;
+      idx = (idx + 1) % slides.length;
+      slides[prev].style.opacity = 0;
+      slides[idx].style.opacity = 1;
+    }, interval);
+  })();
 </script>
 
 </body>
