@@ -1,97 +1,92 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>엠.제이인터내셔날 - 온다정</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
-</head>
-<body style="margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif; background-color: #f9f9f9;">
+// Company Map - High Resolution Satellite Implementation
 
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
-        <a href="#" style="text-decoration: none; display: flex; align-items: center;">
-            <img src="mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
-        </a>
+// Load Leaflet CSS
+const leafletCSS = document.createElement('link');
+leafletCSS.rel = 'stylesheet';
+leafletCSS.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
+document.head.appendChild(leafletCSS);
 
-        <nav>
-            <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
-                <li onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';" style="transition: all 0.3s ease;">
-                    <a href="about.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">회사 소개</a>
-                </li>
-                <li onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';" style="transition: all 0.3s ease;">
-                    <a href="manu.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">메뉴 소개</a>
-                </li>
-                <li onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';" style="transition: all 0.3s ease;">
-                    <a href="mapinfo.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">매장 안내</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+// Load Leaflet JS
+const leafletJS = document.createElement('script');
+leafletJS.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+leafletJS.onload = function() {
+    initializeCompanyMap();
+};
+document.head.appendChild(leafletJS);
 
-    <section style="width: 100%; height: 800px; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('main_pic.png'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
-        <h1 style="font-family: 'Nanum Myeongjo',serif; font-size: 100px; margin: 0; font-weight: 900; text-shadow: 3px 3px 20px rgba(0,0,0,0.6);">엠.제이인터내셔날</h1>
-        <p style="font-family: 'Nanum Myeongjo',serif; font-size: 26px; margin: 20px 0 40px 0; letter-spacing: 2px;">온다정이 맛있는 음식을 선사합니다</p>
-    </section>
+function initializeCompanyMap() {
+    const companyLat = 37.323750;
+    const companyLng = 127.219833;
+    
+    // 건물이 가장 선명하게 보이는 줌 레벨 18 설정
+    const map = L.map('company-map').setView([companyLat, companyLng], 18);
+    
+    // 1. 고해상도 위성 사진 지도 (건물 지붕 및 주변 실물 사진 표시)
+    const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 19,
+        attribution: 'Tiles &copy; Esri'
+    }).addTo(map);
 
-    <section style="padding: 100px 20px; text-align: center;"> 
-        <h2 style="font-family: 'Nanum Myeongjo', serif; font-size: 32px; margin-bottom: 50px;">VISIT US</h2>
-        <div style="display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; color: #555;">
-            <div>
-                <p style="font-weight: bold; color: #C5A059; margin-bottom: 10px;">LOCATION</p>
-                <p>경기도 용인시 처인구 모현읍 이일로 7-9</p>
+    // 2. 일반 지도 레이어 (선택 가능용)
+    const streetLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap'
+    });
+
+    // 오른쪽 상단에 [위성 지도 / 일반 지도] 전환 버튼 추가
+    const baseMaps = {
+        "위성 사진 지도": satelliteLayer,
+        "일반 지도": streetLayer
+    };
+    L.control.layers(baseMaps, null, { position: 'topleft' }).addTo(map);
+
+    // 커스텀 스마일(😊) 마커 아이콘
+    const smileIcon = L.divIcon({
+        className: 'custom-smile-pin',
+        html: `
+            <div style="
+                background-color: #C5A059;
+                width: 44px;
+                height: 44px;
+                border-radius: 50% 50% 50% 0;
+                transform: rotate(-45deg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+                border: 2px solid #ffffff;
+            ">
+                <span style="
+                    transform: rotate(45deg);
+                    font-size: 26px;
+                    line-height: 1;
+                ">😊</span>
             </div>
-            <div>
-                <p style="font-weight: bold; color: #C5A059; margin-bottom: 10px;">OPENING HOURS</p>
-                <p>AM 9:00 - PM 18:00</p>
-            </div>
-            <div>
-                <p style="font-weight: bold; color: #C5A059; margin-bottom: 10px;">RESERVATION</p>
-                <p>031-333-2303</p>
-            </div>
+        `,
+        iconSize: [44, 44],
+        iconAnchor: [22, 44],
+        popupAnchor: [0, -44]
+    });
+
+    // 스마일 마커 찍기
+    const marker = L.marker([companyLat, companyLng], { icon: smileIcon }).addTo(map);
+
+    // 안내 팝업창
+    const popupContent = `
+        <div style="font-family: 'Nanum Gothic', sans-serif; width: 200px; text-align: center; padding: 5px;">
+            <h3 style="margin: 0 0 8px 0; color: #333; font-size: 16px; font-weight: 700;">
+                엠.제이인터내셔날
+            </h3>
+            <p style="margin: 5px 0; font-size: 13px; color: #555; line-height: 1.4;">
+                경기도 용인시 처인구 모현읍 이일로 7-9
+            </p>
+            <hr style="border: none; border-top: 1px solid #eee; margin: 10px 0;">
+            <p style="margin: 5px 0 0 0; font-size: 13px; color: #C5A059; font-weight: 700;">
+                ☎ 031-333-2303
+            </p>
         </div>
-    </section>
+    `;
 
-    <!-- 구글 위성 지도로 변경된 영역 -->
-    <section style="max-width: 1200px; height: 500px; margin: 50px auto; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative;">
-        <!-- t=k 옵션을 추가하여 구글 위성 사진 모드로 고정합니다 -->
-        <iframe 
-            src="https://maps.google.com/maps?q=37.323750,127.219833&z=19&t=k&output=embed" 
-            style="width: 100%; height: 100%; border: 0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </section>
-
-    <footer style="background: #333; color: #fff; padding: 40px 60px; text-align: left;">
-        <p style="margin: 0; opacity: 0.7;">엠.제이인터내셔날 | 브랜드: 온다정</p>
-        <p style="margin: 10px 0 0 0; opacity: 0.7;">주소: 경기도 용인시 처인구 모현읍 이일로 7-9 | 대표번호: 031-333-2303</p>
-        <p style="margin: 20px 0 0 0; font-size: 12px; opacity: 0.5;">© 2026 M.J International. All rights reserved.</p>
-    </footer>
-
-    <!-- TOP 버튼 -->
-    <button id="scrollTopBtn" onclick="scrollToTop()" style="display: none; position: fixed; bottom: 40px; right: 40px; z-index: 99; border: none; outline: none; background-color: #C5A059; color: white; cursor: pointer; padding: 15px 20px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-size: 18px; font-weight: bold; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#a38243'; this.style.transform='scale(1.1)';" onmouseout="this.style.backgroundColor='#C5A059'; this.style.transform='scale(1)';">
-        ↑
-    </button>
-
-    <script>
-        window.onscroll = function() { scrollFunction() };
-
-        function scrollFunction() {
-            var btn = document.getElementById("scrollTopBtn");
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                btn.style.display = "block";
-            } else {
-                btn.style.display = "none";
-            }
-        }
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    </script>
-
-</body>
-</html>
+    marker.bindPopup(popupContent, { maxWidth: 250 }).openPopup();
+    map.zoomControl.setPosition('topright');
+}
