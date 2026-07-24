@@ -11,7 +11,7 @@
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif; background-color: #f9f9f9;">
 
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0[...]
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
     
     <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
         <img src="images/mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
@@ -37,8 +37,8 @@
         font-weight: 700; 
         font-size: 16px; 
         letter-spacing: 1px; 
-        padding: 0px 0 10px 0; /* 불필요한 패딩 제거 */
-        height: 22px; /* 높이를 고정하여 다른 메뉴와 완전 일치 */
+        padding: 0px 0 10px 0;
+        height: 22px;
         display: flex; 
         align-items: center; 
         gap: 6px; 
@@ -50,7 +50,7 @@
     <div id="menu-dropdown" style="
         display: none; 
         position: absolute; 
-        top: 30px; /* 메인 메뉴 바로 아래에 딱 붙도록 위치 고정 */
+        top: 30px;
         left: 50%; 
         transform: translateX(-50%); 
         background-color: #ffffff; 
@@ -61,17 +61,17 @@
         border: 1px solid #f0f0f0;
         z-index: 1000;
     ">
-        <a href="menu.html?tab=source1" style="display: block; padding: 12px 20px; text-decoration: none; color: #555; font-size: 14px; text-align: center; transition: 0.2s; letter-spacing: 0.5px;[...]
+        <a href="menu.html?tab=source1" style="display: block; padding: 12px 20px; text-decoration: none; color: #555; font-size: 14px; text-align: center; transition: 0.2s; letter-spacing: 0.5px;"
            onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
            onmouseout="this.style.backgroundColor='transparent'; this.style.color='#555';">
             소스
         </a>
-        <a href="menu.html?tab=source2" style="display: block; padding: 12px 20px; text-decoration: none; color: #555; font-size: 14px; text-align: center; transition: 0.2s; letter-spacing: 0.5px;[...]
+        <a href="menu.html?tab=source2" style="display: block; padding: 12px 20px; text-decoration: none; color: #555; font-size: 14px; text-align: center; transition: 0.2s; letter-spacing: 0.5px;"
            onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
            onmouseout="this.style.backgroundColor='transparent'; this.style.color='#555';">
             소스2
         </a>
-        <a href="menu.html?tab=source3" style="display: block; padding: 12px 20px; text-decoration: none; color: #555; font-size: 14px; text-align: center; transition: 0.2s; letter-spacing: 0.5px;[...]
+        <a href="menu.html?tab=source3" style="display: block; padding: 12px 20px; text-decoration: none; color: #555; font-size: 14px; text-align: center; transition: 0.2s; letter-spacing: 0.5px;"
            onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
            onmouseout="this.style.backgroundColor='transparent'; this.style.color='#555';">
             소스3
@@ -90,7 +90,7 @@
 </header>
 
 <!-- 히어로 섹션: images 폴더의 두 이미지를 자동으로 전환하는 슬라이드 -->
-<section style="width: 100%; height: 90vh; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: cent[...]
+<section style="width: 100%; height: 90vh; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
 
   <!-- 슬라이드 이미지들 (절대 위치, object-fit:cover 로 화면 채움) -->
   <div id="hero-slideshow" style="position:absolute; inset:0; z-index:0;">
@@ -112,7 +112,11 @@
       따뜻한 진심과 넉넉한 정이 머무는 곳, 온다정
     </p>
 
-    <!-- 'OUR COMPANY MAP' 버튼 삭제 as requested -->
+    <a href="#location" style="text-decoration:none; color:white; border:1px solid rgba(255,255,255,0.6); padding:14px 35px; font-size:14px; letter-spacing:2px; border-radius:30px; background:transparent; transition:all 0.3s ease; display:inline-block; cursor:pointer;"
+       onmouseover="this.style.backgroundColor='#C5A059'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-3px)';"
+       onmouseout="this.style.backgroundColor='transparent'; this.style.borderColor='rgba(255,255,255,0.6)'; this.style.transform='translateY(0)';">
+      OUR COMPANY MAP
+    </a>
 
   </div>
 
@@ -183,11 +187,11 @@
     </div>
 </section>
 
-<!-- 회사 위치 지도 섹션 (추가) -->
+<!-- 회사 위치 지도 섹션 -->
 <section class="company-map-section" id="location">
   <div style="max-width:1200px;margin:0 auto;">
-    <h2 style="font-size:20px;margin:0 0 8px;font-weight:700;">우리 회사 위치</h2>
-    <p style="margin:6px 0 16px;color:#666;">Plus Code: 86F9+FW — 경기도 용인시</p>
+    <h2 style="font-size:28px;margin:0 0 8px;font-weight:700;letter-spacing:1px;">우리 회사 위치</h2>
+    <p style="margin:6px 0 30px;color:#888;font-size:14px;">따뜻한 정이 있는 온다정을 찾아주세요</p>
     <div id="company-map"></div>
   </div>
 </section>
@@ -213,18 +217,18 @@
 
 <!-- 1. TOP 버튼 HTML -->
 <button id="scrollTopBtn" onclick="scrollToTop()" style="
-    display: none; /* 처음에는 숨겨둠 */
+    display: none;
     position: fixed; 
     bottom: 40px; 
     right: 40px; 
     z-index: 99; 
     border: none; 
     outline: none; 
-    background-color: #C5A059; /* 온다정 브랜드 금색 */
+    background-color: #C5A059;
     color: white; 
     cursor: pointer; 
     padding: 15px 20px; 
-    border-radius: 50%; /* 동그란 모양 */
+    border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     font-size: 18px;
     font-weight: bold;
@@ -253,7 +257,7 @@
     function scrollToTop() {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth' /* 부드럽게 스크롤링되는 효과 */
+            behavior: 'smooth'
         });
     }
 </script>
@@ -262,9 +266,9 @@
 <script>
   (function() {
     const slides = document.querySelectorAll('#hero-slideshow .hero-slide');
-    if (!slides || slides.length < 2) return; // 이미지가 2장 이상일 때만 동작
+    if (!slides || slides.length < 2) return;
     let idx = 0;
-    const interval = 5000; // 5초 간격
+    const interval = 5000;
 
     // 초기 세팅: 첫 이미지는 보이게, 나머지는 숨김
     slides.forEach((s, i) => {
