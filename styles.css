@@ -76,3 +76,122 @@ html,body{height:100%;margin:0;font-family: 'Nanum Gothic', sans-serif;backgroun
   .hero-title{font-size:32px}
   .footer-inner{font-size:13px}
 }
+/* ============================================
+   Hero Section 이미지 겹침 스타일
+   ============================================ */
+
+.hero-image-container {
+    /* 부모 컨테이너: 자식 요소들의 절대 위치 기준점 설정 */
+    position: relative;
+    
+    /* 컨테이너 크기 설정 (필요에 따라 조정) */
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 40px auto;
+    
+    /* 컨테이너 테두리 및 배경 */
+    border-radius: 12px;
+    overflow: hidden;
+    
+    /* 깔끔한 그림자 효과 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 메인 이미지 (배경) */
+.hero-image-main {
+    /* 메인 이미지는 컨테이너를 가득 채움 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    /* 메인 이미지는 맨 아래 레이어 */
+    z-index: 1;
+    
+    /* 자연스러운 트랜지션 */
+    transition: transform 0.3s ease;
+}
+
+/* 서브 이미지 (겹쳐지는 이미지) */
+.hero-image-sub {
+    /* 절대 위치로 메인 이미지 위에 배치 */
+    position: absolute;
+    
+    /* ⬇️ 다음 값들을 조정하여 이미지 위치를 변경하세요 ⬇️ */
+    /* 
+       위치 조정 가이드:
+       - right: 0;     → 오른쪽 끝에 배치 (값을 늘리면 더 안쪽으로 이동)
+       - bottom: -30px; → 아래쪽에서 -30px (음수는 컨테이너 밖으로 나감)
+       - 예시: 왼쪽 아래 겹침 → left: -20px; bottom: -40px;
+       - 예시: 위쪽 중앙 겹침 → left: 50%; transform: translateX(-50%); top: -30px;
+    */
+    right: -30px;
+    bottom: -40px;
+    
+    /* 서브 이미지 크기 (메인보다 약간 작게) */
+    width: 55%;
+    height: 55%;
+    object-fit: cover;
+    
+    /* 서브 이미지는 메인 위에 표시 */
+    z-index: 2;
+    
+    /* 서브 이미지에 테두리 및 그림자 추가 (구분되게) */
+    border-radius: 8px;
+    border: 3px solid white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    
+    /* 자연스러운 트랜지션 */
+    transition: transform 0.3s ease;
+}
+
+/* 호버 효과 (마우스 올렸을 때) */
+.hero-image-container:hover .hero-image-main {
+    transform: scale(1.05);
+}
+
+.hero-image-container:hover .hero-image-sub {
+    transform: scale(1.08);
+}
+
+/* ============================================
+   반응형 디자인 (태블릿)
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-image-container {
+        max-width: 500px;
+        height: 350px;
+        margin: 30px auto;
+    }
+    
+    .hero-image-sub {
+        width: 50%;
+        height: 50%;
+        right: -25px;
+        bottom: -35px;
+        border: 2px solid white;
+    }
+}
+
+/* ============================================
+   반응형 디자인 (모바일)
+   ============================================ */
+@media (max-width: 480px) {
+    .hero-image-container {
+        max-width: 100%;
+        height: 280px;
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    
+    .hero-image-sub {
+        width: 48%;
+        height: 48%;
+        right: -20px;
+        bottom: -30px;
+        border: 2px solid white;
+    }
+}
