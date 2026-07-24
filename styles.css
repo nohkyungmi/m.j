@@ -22,7 +22,7 @@ html,body{height:100%;margin:0;font-family: 'Nanum Gothic', sans-serif;backgroun
 .nav-has-dropdown .nav-link{display:flex;align-items:center;gap:6px}
 
 /* Dropdown */
-.menu-dropdown{display:none;position:absolute;top:30px;left:50%;transform:translateX(-50%);background:#fff;min-width:140px;box-shadow:0 10px 30px rgba(0,0,0,0.06);border-radius:12px;padding:10px 0;border:1px solid #f0f0f0;z-index:1000}
+.menu-dropdown{display:none;position:absolute;top:30px;left:50%;transform:translateX(-50%);background:#fff;min-width:140px;box-shadow:0 10px 30px rgba(0,0,0,0.06);border-radius:12px;padding:10px 0[...]
 .menu-dropdown a{display:block;padding:12px 20px;text-decoration:none;color:#555;font-size:14px;text-align:center;transition:background .15s,color .15s}
 .menu-dropdown a:hover{background:#fdfbf7;color:var(--gold)}
 
@@ -30,11 +30,11 @@ html,body{height:100%;margin:0;font-family: 'Nanum Gothic', sans-serif;backgroun
 .nav-has-dropdown:hover .menu-dropdown{display:block}
 
 /* Hero */
-.hero{width:100%;height:90vh;background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('main_pic.png');background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;text-align:center;position:relative;overflow:hidden}
+.hero{width:100%;height:90vh;background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('main_pic.png');background-size:cover;background-position:center;display:flex;flex-direction:colu[...]
 .hero-slogan{font-size:14px;letter-spacing:6px;color:var(--gold);margin-bottom:20px;font-weight:700;text-transform:uppercase}
 .hero-title{font-family:'Nanum Myeongjo',serif;font-size:70px;margin:0;font-weight:700;letter-spacing:2px;text-shadow:0 4px 15px rgba(0,0,0,0.3)}
 .hero-sub{font-family:'Nanum Myeongjo',serif;font-size:22px;margin:25px 0 40px 0;letter-spacing:4px;color:#eee;font-weight:300}
-.hero-btn{text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,0.6);padding:14px 35px;font-size:14px;letter-spacing:2px;border-radius:30px;background:transparent;transition:all .3s ease}
+.hero-btn{text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,0.6);padding:14px 35px;font-size:14px;letter-spacing:2px;border-radius:30px;background:transparent;transition:all .3s ea[...]
 .hero-btn:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-3px)}
 .scroll-hint{position:absolute;bottom:40px;color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:2px}
 
@@ -43,7 +43,7 @@ html,body{height:100%;margin:0;font-family: 'Nanum Gothic', sans-serif;backgroun
 .categories h2{font-size:28px;color:#333;margin-bottom:10px;font-weight:700;letter-spacing:1px}
 .categories-desc{font-family:sans-serif;font-size:14px;color:var(--muted);margin-bottom:40px}
 .category-grid{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
-.category-card{flex:1;min-width:250px;max-width:300px;padding:25px 20px;background:var(--card);border:1px solid #eae5da;border-radius:12px;text-decoration:none;color:#333;transition:all .3s ease;box-shadow:0 4px 10px rgba(0,0,0,0.02);display:block}
+.category-card{flex:1;min-width:250px;max-width:300px;padding:25px 20px;background:var(--card);border:1px solid #eae5da;border-radius:12px;text-decoration:none;color:#333;transition:all .3s ease;b[...]
 .category-card:hover{background:var(--gold);color:#fff;transform:translateY(-5px);border-color:var(--gold)}
 .cat-meta{display:block;font-size:12px;color:#888;font-family:sans-serif;margin-bottom:5px}
 .cat-title{font-size:20px;display:block;font-weight:700}
@@ -60,7 +60,7 @@ html,body{height:100%;margin:0;font-family: 'Nanum Gothic', sans-serif;backgroun
 .copyright{color:#999;margin-left:auto}
 
 /* Scroll top button */
-.scroll-top{display:none;position:fixed;bottom:40px;right:40px;z-index:99;border:none;outline:none;background:var(--gold);color:#fff;cursor:pointer;padding:15px 20px;border-radius:50%;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-size:18px;font-weight:700;transition:all .3s ease}
+.scroll-top{display:none;position:fixed;bottom:40px;right:40px;z-index:99;border:none;outline:none;background:var(--gold);color:#fff;cursor:pointer;padding:15px 20px;border-radius:50%;box-shadow:0[...]
 .scroll-top:hover{background:#a38243;transform:scale(1.08)}
 
 /* Responsive */
@@ -194,4 +194,13 @@ html,body{height:100%;margin:0;font-family: 'Nanum Gothic', sans-serif;backgroun
         bottom: -30px;
         border: 2px solid white;
     }
+}
+
+/* Company map section styles */
+.company-map-section{max-width:1200px;margin:40px auto;padding:24px;background:#fff;border-top:1px solid #eee;border-radius:12px}
+.company-map-section h2{font-size:20px;margin:0 0 12px;font-weight:700}
+#company-map{width:100%;height:360px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.06);}
+
+@media (max-width:600px){
+  #company-map{height:280px}
 }
