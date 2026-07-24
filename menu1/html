@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>메뉴 소개 - 온다정</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; font-family: sans-serif; background-color: #fcfaf7;">
+
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
+            <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+      	  <img src="mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
+    	</a>
+
+        <nav>
+            <ul style="list-style: none; display: flex; gap: 40px;">
+                <li><a href="about.html" style="text-decoration: none; color: #333; font-weight: bold;">회사 소개</a></li>
+                <li><a href="menu.html" style="text-decoration: none; color: #C5A059; font-weight: bold;">메뉴 소개</a></li>
+                <li><a href="index.html#location" style="text-decoration: none; color: #333; font-weight: bold;">매장 안내</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 1100px; margin: 80px auto; padding: 0 20px; display: flex; gap: 60px; align-items: flex-start;">
+        
+        <div style="flex: 1;">
+            <img src="골든벨 냉면비빔장.jpg" 
+                 style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+        </div>
+
+        <div style="flex: 1;">
+            <span style="color: #C5A059; font-weight: bold; letter-spacing: 1px;">온다정 MENU</span>
+            <h1 style="font-family: 'Nanum Myeongjo', serif; font-size: 42px; margin: 15px 0; color: #222;">골든벨 냉면비빔장</h1>
+            <div style="margin: 30px 0; line-height: 1.8; color: #666;">
+                <p>신선한 야채를 베이스로 환상의 배합으로 매콤하고 상큼하며 맛있는 최고의 맛을 선사합니다.</p>
+                <ul style="padding-left: 20px; margin-top: 20px;">
+                    <li>중량 : 2kg</li>
+                    <li>보관방법 : 냉장보관</li>
+                    <li>소비기한 : 제조일로부터 12개월</li>
+                </ul>
+            </div>
+
+<div style="margin-top: 50px; display: flex; gap: 15px;">
+    <a href="menu.html" style="
+        flex: 1; 
+        padding: 18px; 
+        background: #fff; 
+        color: #333; 
+        border: 1px solid #ddd; 
+        border-radius: 10px; 
+        font-weight: bold; 
+        text-decoration: none; 
+        text-align: center; 
+        display: block; 
+        cursor: pointer;
+        transition: 0.3s;
+    " onmouseover="this.style.backgroundColor='#f9f9f9';" 
+       onmouseout="this.style.backgroundColor='#fff';">
+        목록으로
+    </a>
+</div>
+        </div>
+    </main>
+
+</body>
+</html>
