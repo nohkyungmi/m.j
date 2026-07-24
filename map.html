@@ -58,15 +58,9 @@
         </div>
     </section>
 
-    <!-- 지도 섹션 -->
+    <!-- JS 지도가 그려질 전용 영역 -->
     <section style="max-width: 1200px; height: 500px; margin: 50px auto; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-        <iframe 
-            src="https://maps.google.com/maps?q=37.323750,127.219833&z=17&output=embed" 
-            style="width: 100%; height: 100%; border: 0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <div id="company-map" style="width: 100%; height: 100%;"></div>
     </section>
 
     <footer style="background: #333; color: #fff; padding: 40px 60px; text-align: left;">
@@ -98,6 +92,10 @@
         ↑
     </button>
 
+    <!-- 지도 자바스크립트 파일 연결 (JS 파일 이름에 맞게 수정하세요) -->
+    <script src="map.js"></script>
+
+    <!-- 스크롤 스크립트 -->
     <script>
         window.onscroll = function() { scrollFunction() };
 
