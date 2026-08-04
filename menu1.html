@@ -2,32 +2,55 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메뉴 소개 - 온다정</title>
+    <meta name="description" content="온다정 골든벨 냉면비빔장 - 신선한 야채 베이스의 매콤하고 상큼한 냉면 비빔장">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            header {
+                padding: 0 20px !important;
+                height: auto !important;
+                flex-direction: column !important;
+                gap: 15px;
+                padding-top: 15px !important;
+                padding-bottom: 15px !important;
+            }
+            nav ul {
+                gap: 20px !important;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            main {
+                flex-direction: column !important;
+                gap: 30px !important;
+                margin: 40px auto !important;
+            }
+        }
+    </style>
 </head>
 <body style="margin: 0; font-family: sans-serif; background-color: #fcfaf7;">
-
     <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 100;">
-            <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
-      	  <img src="mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
-    	</a>
-
+        <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+            <img src="mylogo.jpg" alt="온다정 로고" style="height: 90px; cursor: pointer;">
+        </a>
         <nav>
-            <ul style="list-style: none; display: flex; gap: 40px;">
+            <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
                 <li><a href="about.html" style="text-decoration: none; color: #333; font-weight: bold;">회사 소개</a></li>
                 <li><a href="menu.html" style="text-decoration: none; color: #C5A059; font-weight: bold;">메뉴 소개</a></li>
                 <li><a href="index.html#location" style="text-decoration: none; color: #333; font-weight: bold;">매장 안내</a></li>
             </ul>
         </nav>
     </header>
-
     <main style="max-width: 1100px; margin: 80px auto; padding: 0 20px; display: flex; gap: 60px; align-items: flex-start;">
-        
+
         <div style="flex: 1;">
-            <img src="골든벨 냉면비빔장.jpg" 
+            <img src="golden-bell-naengmyeon-sauce.jpg"
+                 alt="골든벨 냉면비빔장"
                  style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
         </div>
-
         <div style="flex: 1;">
             <span style="color: #C5A059; font-weight: bold; letter-spacing: 1px;">온다정 MENU</span>
             <h1 style="font-family: 'Nanum Myeongjo', serif; font-size: 42px; margin: 15px 0; color: #222;">골든벨 냉면비빔장</h1>
@@ -39,28 +62,26 @@
                     <li>소비기한 : 제조일로부터 12개월</li>
                 </ul>
             </div>
-
-<div style="margin-top: 50px; display: flex; gap: 15px;">
-    <a href="menu.html" style="
-        flex: 1; 
-        padding: 18px; 
-        background: #fff; 
-        color: #333; 
-        border: 1px solid #ddd; 
-        border-radius: 10px; 
-        font-weight: bold; 
-        text-decoration: none; 
-        text-align: center; 
-        display: block; 
-        cursor: pointer;
-        transition: 0.3s;
-    " onmouseover="this.style.backgroundColor='#f9f9f9';" 
-       onmouseout="this.style.backgroundColor='#fff';">
-        목록으로
-    </a>
-</div>
+            <div style="margin-top: 50px; display: flex; gap: 15px;">
+                <a href="menu.html" style="
+                    flex: 1;
+                    padding: 18px;
+                    background: #fff;
+                    color: #333;
+                    border: 1px solid #ddd;
+                    border-radius: 10px;
+                    font-weight: bold;
+                    text-decoration: none;
+                    text-align: center;
+                    display: block;
+                    cursor: pointer;
+                    transition: 0.3s;
+                " onmouseover="this.style.backgroundColor='#f9f9f9';"
+                   onmouseout="this.style.backgroundColor='#fff';">
+                    목록으로
+                </a>
+            </div>
         </div>
     </main>
-
 </body>
 </html>
