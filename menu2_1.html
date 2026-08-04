@@ -49,13 +49,22 @@
 
     <main style="max-width: 1100px; margin: 80px auto; padding: 0 20px; display: flex; gap: 60px; align-items: flex-start;">
         
-        <div style="flex: 1;">
+        <!-- 왼쪽 이미지 영역 (2개 연달아 배치) -->
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 25px;">
+            <!-- 1번째 사진: 콩가루 600g -->
             <img src="images/콩가루_600g.png" 
-                 alt="은이네_콩가루"
+                 alt="은이네_콩가루 600g"
+                 style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+
+            <!-- 2번째 사진: 콩가루 850g (추가됨) -->
+            <!-- ⚠️ 확장자가 .jpg면 .png 대신 .jpg로 수정해주세요! -->
+            <img src="images/콩가루_850g.png" 
+                 alt="은이네_콩가루 850g"
                  style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
         </div>
 
-        <div style="flex: 1;">
+        <!-- 오른쪽 상품 설명 영역 -->
+        <div style="flex: 1; position: sticky; top: 140px;">
             <span style="color: #C5A059; font-weight: bold; letter-spacing: 1px;">온다정 MENU</span>
             <h1 style="font-family: 'Nanum Myeongjo', serif; font-size: 42px; margin: 15px 0; color: #222;">은이네_콩가루</h1>
             <div style="margin: 30px 0; line-height: 1.8; color: #666;">
@@ -68,7 +77,6 @@
             </div>
 
             <div style="margin-top: 50px; display: flex; gap: 15px;">
-                <!-- 💡 tab=source3 (기타가공품/두류가공품) 탭으로 이동하도록 설정 -->
                 <a href="menu.html?tab=source3" style="
                     flex: 1; 
                     padding: 18px; 
