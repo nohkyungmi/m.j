@@ -1,4 +1,4 @@
-// Company Map - Pastel Trendy Implementation
+// Company Map - Pastel Soft Text Implementation
 
 // Load Leaflet CSS
 const leafletCSS = document.createElement('link');
@@ -18,26 +18,24 @@ function initializeCompanyMap() {
     const companyLat = 37.323750;
     const companyLng = 127.219833;
     
-    // 부드러운 느낌을 위한 줌 레벨 및 기본 컨트롤 설정
     const map = L.map('company-map', {
         zoomControl: false
     }).setView([companyLat, companyLng], 17);
     
-    // 1. 파스텔 톤 배경 지도 (CartoDB Voyager)
-    const pastelLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    // 파스텔 화이트 지도 (CartoDB Positron)
+    const pastelLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         maxZoom: 19,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        attribution: '&copy; OpenStreetMap &copy; CARTO'
     }).addTo(map);
 
-    // 2. 고해상도 위성 지도 (선택 옵션)
+    // 고해상도 위성 지도
     const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         maxZoom: 19,
         attribution: 'Tiles &copy; Esri'
     });
 
-    // 레이어 전환 버튼 (오른쪽 상단)
     const baseMaps = {
-        "파스텔 지도": pastelLayer,
+        "파스텔 화이트": pastelLayer,
         "위성 사진": satelliteLayer
     };
     L.control.layers(baseMaps, null, { 
@@ -45,7 +43,7 @@ function initializeCompanyMap() {
         collapsed: true
     }).addTo(map);
 
-    // 트렌디한 파스텔 스마일 마커
+    // 스마일 마커
     const smileIcon = L.divIcon({
         className: 'custom-smile-pin',
         html: `
@@ -83,29 +81,29 @@ function initializeCompanyMap() {
         popupAnchor: [0, -58]
     });
 
-    // 마커 생성
     const marker = L.marker([companyLat, companyLng], { icon: smileIcon }).addTo(map);
 
-    // 주소 가독성을 정리한 현대적인 팝업
+    // 소프트한 텍스트로 수정된 팝업
     const popupContent = `
         <div style="
             font-family: 'Poppins', 'Nanum Gothic', sans-serif; 
-            width: 220px; 
+            width: 210px; 
             text-align: center; 
-            padding: 10px 5px;
+            padding: 8px 4px;
             background-color: rgba(255, 255, 255, 0.98);
             border-radius: 12px;
         ">
             <h3 style="
-                margin: 0 0 8px 0; 
-                color: #333333; 
-                font-size: 17px; 
-                font-weight: 700;
+                margin: 0 0 6px 0; 
+                color: #444444; 
+                font-size: 16px; 
+                font-weight: 600;
                 letter-spacing: -0.5px;
             ">
                 엠.제이인터내셔날
             </h3>
             
+            <!-- 글씨 볼드(굵기)를 빼고 진하지 않은 Soft Grey(#555555)로 변경 -->
             <p style="
                 margin: 0 0 12px 0; 
                 font-size: 13px; 
@@ -114,18 +112,18 @@ function initializeCompanyMap() {
                 word-break: keep-all;
             ">
                 경기도 용인시 처인구<br>
-                <strong style="color: #333333; font-weight: 700;">모현읍 이일로 7-9</strong>
+                <span style="color: #555555; font-weight: 400;">모현읍 이일로 7-9</span>
             </p>
 
             <a href="tel:031-333-2303" style="
                 display: inline-block;
-                padding: 8px 18px;
+                padding: 7px 16px;
                 background-color: #E6D5B8;
                 color: #4A3E2C;
                 text-decoration: none;
                 border-radius: 20px;
                 font-size: 13px;
-                font-weight: 700;
+                font-weight: 600;
                 transition: background-color 0.2s;
             " onmouseover="this.style.backgroundColor='#D5C4A7'" onmouseout="this.style.backgroundColor='#E6D5B8'">
                 ☎ 031-333-2303
@@ -133,7 +131,6 @@ function initializeCompanyMap() {
         </div>
     `;
 
-    // 팝업 설정 및 열기
     marker.bindPopup(popupContent, { 
         maxWidth: 260, 
         className: 'custom-popup-trendy',
@@ -141,6 +138,5 @@ function initializeCompanyMap() {
         offset: [0, -10]
     }).openPopup();
 
-    // 줌 컨트롤 추가 (오른쪽 아래)
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 }
