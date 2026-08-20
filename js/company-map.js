@@ -1,4 +1,4 @@
-// Company Map - Pastel Soft Text Implementation
+// Company Map - Soft Pastel Design Implementation
 
 // Load Leaflet CSS
 const leafletCSS = document.createElement('link');
@@ -18,24 +18,25 @@ function initializeCompanyMap() {
     const companyLat = 37.323750;
     const companyLng = 127.219833;
     
+    // 부드러운 확대감 조절
     const map = L.map('company-map', {
         zoomControl: false
     }).setView([companyLat, companyLng], 17);
     
-    // 파스텔 화이트 지도 (CartoDB Positron)
-    const pastelLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    // 1. 파스텔 베이지/민트 감성 타일 (CartoDB Voyager)
+    const pastelLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         maxZoom: 19,
         attribution: '&copy; OpenStreetMap &copy; CARTO'
     }).addTo(map);
 
-    // 고해상도 위성 지도
+    // 2. 고해상도 위성 지도
     const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         maxZoom: 19,
         attribution: 'Tiles &copy; Esri'
     });
 
     const baseMaps = {
-        "파스텔 화이트": pastelLayer,
+        "파스텔 지도": pastelLayer,
         "위성 사진": satelliteLayer
     };
     L.control.layers(baseMaps, null, { 
@@ -43,26 +44,25 @@ function initializeCompanyMap() {
         collapsed: true
     }).addTo(map);
 
-    // 스마일 마커
+    // 트렌디 파스텔 스마일 핀
     const smileIcon = L.divIcon({
         className: 'custom-smile-pin',
         html: `
             <div style="
-                background: linear-gradient(135deg, #FDFBFB 0%, #EBEDEE 100%);
+                background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F3 100%);
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.08);
                 border: 3px solid #E6D5B8;
                 position: relative;
             ">
                 <span style="
-                    font-size: 30px;
+                    font-size: 28px;
                     line-height: 1;
-                    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
                 ">😊</span>
                 <div style="
                     position: absolute;
@@ -83,10 +83,10 @@ function initializeCompanyMap() {
 
     const marker = L.marker([companyLat, companyLng], { icon: smileIcon }).addTo(map);
 
-    // 소프트한 텍스트로 수정된 팝업
+    // 자연스럽게 정돈된 주소 팝업
     const popupContent = `
         <div style="
-            font-family: 'Poppins', 'Nanum Gothic', sans-serif; 
+            font-family: 'Nanum Gothic', sans-serif; 
             width: 210px; 
             text-align: center; 
             padding: 8px 4px;
@@ -95,37 +95,36 @@ function initializeCompanyMap() {
         ">
             <h3 style="
                 margin: 0 0 6px 0; 
-                color: #444444; 
+                color: #333333; 
                 font-size: 16px; 
-                font-weight: 600;
+                font-weight: 700;
                 letter-spacing: -0.5px;
             ">
                 엠.제이인터내셔날
             </h3>
             
-            <!-- 글씨 볼드(굵기)를 빼고 진하지 않은 Soft Grey(#555555)로 변경 -->
             <p style="
                 margin: 0 0 12px 0; 
                 font-size: 13px; 
-                color: #666666; 
+                color: #555555; 
                 line-height: 1.5;
                 word-break: keep-all;
             ">
                 경기도 용인시 처인구<br>
-                <span style="color: #555555; font-weight: 400;">모현읍 이일로 7-9</span>
+                <span>모현읍 이일로 7-9</span>
             </p>
 
             <a href="tel:031-333-2303" style="
                 display: inline-block;
                 padding: 7px 16px;
-                background-color: #E6D5B8;
-                color: #4A3E2C;
+                background-color: #C5A059;
+                color: #FFFFFF;
                 text-decoration: none;
                 border-radius: 20px;
                 font-size: 13px;
-                font-weight: 600;
+                font-weight: 700;
                 transition: background-color 0.2s;
-            " onmouseover="this.style.backgroundColor='#D5C4A7'" onmouseout="this.style.backgroundColor='#E6D5B8'">
+            " onmouseover="this.style.backgroundColor='#a38243'" onmouseout="this.style.backgroundColor='#C5A059'">
                 ☎ 031-333-2303
             </a>
         </div>
