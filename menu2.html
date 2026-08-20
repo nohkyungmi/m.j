@@ -25,9 +25,26 @@
             }
             main {
                 flex-direction: column !important;
-                gap: 30px !important;
-                margin: 40px auto !important;
+                gap: 40px !important;
+                margin: 30px auto !important;
             }
+        }
+
+        /* 썸네일 전용 CSS */
+        .thumb-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+        .thumb-img.active, .thumb-img:hover {
+            border-color: #C5A059;
+            opacity: 1;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -39,7 +56,7 @@
         </a>
 
         <nav>
-            <ul style="list-style: none; display: flex; gap: 40px;">
+            <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
                 <li><a href="about.html" style="text-decoration: none; color: #333; font-weight: bold;">회사 소개</a></li>
                 <li><a href="menu.html" style="text-decoration: none; color: #C5A059; font-weight: bold;">메뉴 소개</a></li>
                 <li><a href="mapinfo.html" style="text-decoration: none; color: #333; font-weight: bold;">매장 안내</a></li>
@@ -47,47 +64,94 @@
         </nav>
     </header>
 
-    <main style="max-width: 1100px; margin: 80px auto; padding: 0 20px; display: flex; gap: 60px; align-items: flex-start;">
+    <main style="max-width: 1100px; margin: 60px auto; padding: 0 20px; display: flex; gap: 60px; align-items: flex-start;">
         
-        <div style="flex: 1;">
-            <img src="images/다용도양념장.jpg" 
-                 alt="다용도양념장"
-                 style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
-        </div>
-
-        <div style="flex: 1;">
-            <span style="color: #C5A059; font-weight: bold; letter-spacing: 1px;">온다정 MENU</span>
-            <h1 style="font-family: 'Nanum Myeongjo', serif; font-size: 42px; margin: 15px 0; color: #222;">다용도양념장</h1>
-            <div style="margin: 30px 0; line-height: 1.8; color: #666;">
-                <p>다양한 비빔, 무침류에 간편하게 사용 가능합니다.</p>
-                <ul style="padding-left: 20px; margin-top: 20px;">
-                    <li>중량 : 400g, 2kg</li>
-                    <li>보관방법 : 실온보관</li>
-                    <li>소비기한 : 제조일로부터 12개월</li>
-                </ul>
+        <!-- [좌측] 이미지 갤러리 영역 -->
+        <div style="flex: 1; width: 100%;">
+            <!-- 메인 고해상도 이미지 (기본: 다용도양념장 제품 사진) -->
+            <div style="width: 100%; height: 480px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.08); background: #fff;">
+                <img id="mainImage" 
+                     src="images/다용도_양념장_pe.jpg" 
+                     alt="다용도양념장 메인"
+                     style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease;">
             </div>
 
-<a href="menu.html" style="
-    flex: 1; 
-    padding: 18px; 
-    background: #fff; 
-    color: #333; 
-    border: 1px solid #ddd; 
-    border-radius: 10px; 
-    font-weight: bold; 
-    text-decoration: none; 
-    text-align: center; 
-    display: block; 
-    cursor: pointer;
-    transition: 0.3s;
-" onmouseover="this.style.backgroundColor='#f9f9f9';" 
-   onmouseout="this.style.backgroundColor='#fff';">
-    목록으로
-</a>
+            <!-- 하단 썸네일 선택 바 (제품 사진 & 요리 연출 사진) -->
+            <div style="display: flex; gap: 15px; margin-top: 20px; justify-content: flex-start;">
+                <!-- 1. 제품 사진 썸네일 -->
+                <img src="images/다용도_양념장_pe.jpg" 
+                     alt="제품 사진" 
+                     class="thumb-img active" 
+                     onclick="changeImage(this, 'images/다용도양념장.jpg')">
+                
+                <!-- 2. 요리 완성 사진 썸네일 (파일명에 맞춰 변경해 주세요) -->
+                <img src="images/다용도양념장.jpg" 
+                     alt="요리 연출 사진" 
+                     class="thumb-img" 
+                     onclick="changeImage(this, 'images/다용도양념장_food.jpg')">
+            </div>
+        </div>
+
+        <!-- [우측] 제품 상세 설명 영역 -->
+        <div style="flex: 1; padding-top: 10px;">
+            <span style="color: #C5A059; font-weight: bold; letter-spacing: 1.5px; font-size: 14px;">ONDAJEONG MENU</span>
+            <h1 style="font-family: 'Nanum Myeongjo', serif; font-size: 40px; margin: 12px 0 20px 0; color: #222;">다용도양념장</h1>
+            
+            <div style="line-height: 1.8; color: #555; font-size: 15px;">
+                <p style="font-size: 17px; color: #333; margin-bottom: 25px; word-break: keep-all;">
+                    다양한 비빔, 무침류 요리에 간편하고 맛있게 사용 가능한 만능 양념장입니다.
+                </p>
+                
+                <div style="background: #fff; padding: 25px; border-radius: 15px; border: 1px solid #f0f0f0; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+                    <ul style="padding-left: 18px; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+                        <li><strong>중량 :</strong> 400g, 2kg</li>
+                        <li><strong>보관방법 :</strong> 실온보관</li>
+                        <li><strong>소비기한 :</strong> 제조일로부터 12개월</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <a href="menu.html" style="
+                    display: block; 
+                    width: 100%; 
+                    padding: 16px 0; 
+                    background: #fff; 
+                    color: #444; 
+                    border: 1px solid #e0e0e0; 
+                    border-radius: 12px; 
+                    font-weight: bold; 
+                    text-decoration: none; 
+                    text-align: center; 
+                    box-sizing: border-box;
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.backgroundColor='#f7f7f7'; this.style.borderColor='#ccc';" 
+                   onmouseout="this.style.backgroundColor='#fff'; this.style.borderColor='#e0e0e0';">
+                    목록으로 돌아가기
                 </a>
             </div>
         </div>
+
     </main>
+
+    <!-- 이미지 전환 자바스크립트 -->
+    <script>
+        function changeImage(element, src) {
+            const mainImg = document.getElementById('mainImage');
+            
+            // 이미지 부드러운 전환 효과
+            mainImg.style.opacity = '0.3';
+            setTimeout(() => {
+                mainImg.src = src;
+                mainImg.style.opacity = '1';
+            }, 150);
+
+            // 썸네일 활성화 표시
+            const thumbs = document.querySelectorAll('.thumb-img');
+            thumbs.forEach(thumb => thumb.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
