@@ -1,25 +1,20 @@
-// Company Map - Soft Pastel Design Implementation
+// Company Map - Soft Pastel Design (강화판)
 
-// 1. CSS와 JS를 순차적으로 완벽히 로드한 뒤 지도 실행하는 함수
 function loadLeafletAndInit() {
-    // 이미 Leaflet이 로드되어 있다면 바로 실행
     if (window.L) {
         initializeCompanyMap();
         return;
     }
 
-    // CSS 동적 추가
     const leafletCSS = document.createElement('link');
     leafletCSS.rel = 'stylesheet';
     leafletCSS.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
     document.head.appendChild(leafletCSS);
 
-    // JS 동적 추가
     const leafletJS = document.createElement('script');
     leafletJS.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
     leafletJS.onload = function() {
-        // CSS까지 완전히 반영될 수 있도록 미세 지연 후 지도 생성
-        setTimeout(initializeCompanyMap, 100);
+        setTimeout(initializeCompanyMap, 150);
     };
     document.head.appendChild(leafletJS);
 }
@@ -31,19 +26,20 @@ function initializeCompanyMap() {
     const mapContainer = document.getElementById('company-map');
     if (!mapContainer) return;
 
-    // 이미 지도 인스턴스가 생성되어 있다면 제거 (중복 방지)
+    // 이미 생성된 지도가 있다면 초기화 후 재생성
     if (mapContainer._leaflet_id) {
         mapContainer._leaflet_id = null;
     }
 
-    // 지도 초기화
     const map = L.map('company-map', {
-        zoomControl: false
+        zoomControl: false,
+        trackResize: true
     }).setView([companyLat, companyLng], 17);
     
-    // 1. 파스텔 베이지/민트 감성 타일 (CartoDB Voyager)
-    const pastelLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    // 1. 차단율이 가장 적은 안정적인 파스텔 베이지/민트 타일 (CartoDB Positron / Voyager)
+    const pastelLayer = L.tileLayer('https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         maxZoom: 19,
+        subdomains: 'abcd',
         attribution: '&copy; OpenStreetMap &copy; CARTO'
     }).addTo(map);
 
@@ -99,7 +95,6 @@ function initializeCompanyMap() {
 
     const marker = L.marker([companyLat, companyLng], { icon: smileIcon }).addTo(map);
 
-    // Pretendard 폰트가 적용된 자연스러운 주소 팝업
     const popupContent = `
         <div style="
             font-family: 'Pretendard Variable', Pretendard, -apple-system, sans-serif; 
@@ -109,41 +104,14 @@ function initializeCompanyMap() {
             background-color: #ffffff;
             border-radius: 12px;
         ">
-            <h3 style="
-                margin: 0 0 6px 0; 
-                color: #222222; 
-                font-size: 16px; 
-                font-weight: 700;
-                letter-spacing: -0.3px;
-            ">
-                엠.제이인터내셔날
-            </h3>
-            
-            <p style="
-                margin: 0 0 12px 0; 
-                font-size: 13px; 
-                color: #666666; 
-                line-height: 1.5;
-                word-break: keep-all;
-                letter-spacing: -0.3px;
-            ">
-                경기도 용인시 처인구<br>
-                <span>모현읍 이일로 7-9</span>
+            <h3 style="margin: 0 0 6px 0; color: #222222; font-size: 16px; font-weight: 700;">엠.제이인터내셔날</h3>
+            <p style="margin: 0 0 12px 0; font-size: 13px; color: #666666; line-height: 1.5; word-break: keep-all;">
+                경기도 용인시 처인구<br><span>모현읍 이일로 7-9</span>
             </p>
-
             <a href="tel:031-333-2303" style="
-                display: inline-block;
-                padding: 8px 18px;
-                background-color: #C5A059;
-                color: #FFFFFF;
-                text-decoration: none;
-                border-radius: 20px;
-                font-size: 13px;
-                font-weight: 700;
-                transition: all 0.2s ease;
-            " onmouseover="this.style.backgroundColor='#a38243'" onmouseout="this.style.backgroundColor='#C5A059'">
-                ☎ 031-333-2303
-            </a>
+                display: inline-block; padding: 8px 18px; background-color: #C5A059; color: #FFFFFF;
+                text-decoration: none; border-radius: 20px; font-size: 13px; font-weight: 700;
+            ">☎ 031-333-2303</a>
         </div>
     `;
 
@@ -156,12 +124,17 @@ function initializeCompanyMap() {
 
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-    // 핵심: 레이아웃 깨짐을 완전히 막기 위해 단계별로 invalidateSize 호출
-    setTimeout(() => { map.invalidateSize(); }, 200);
-    setTimeout(() => { map.invalidateSize(); }, 600);
+    // ★ 렌더링 깨짐 방지용 3단계 강제 재조정
+    [100, 500, 1000].forEach(delay => {
+        setTimeout(() => {
+            map.invalidateSize();
+        }, delay);
+    });
+
+    // 화면 크기가 바뀌거나 모바일 회전 시에도 다시 그리기
+    window.addEventListener('resize', () => map.invalidateSize());
 }
 
-// DOM 생성이 완료되면 실행
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadLeafletAndInit);
 } else {
