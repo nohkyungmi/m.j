@@ -18,7 +18,11 @@ function initializeCompanyMap() {
     const companyLat = 37.323750;
     const companyLng = 127.219833;
     
-    // 부드러운 확대감 조절
+    // 지도를 담을 엘리먼트 확인
+    const mapContainer = document.getElementById('company-map');
+    if (!mapContainer) return;
+
+    // 지도 초기화
     const map = L.map('company-map', {
         zoomControl: false
     }).setView([companyLat, companyLng], 17);
@@ -39,6 +43,7 @@ function initializeCompanyMap() {
         "파스텔 지도": pastelLayer,
         "위성 사진": satelliteLayer
     };
+    
     L.control.layers(baseMaps, null, { 
         position: 'topright',
         collapsed: true
@@ -56,23 +61,20 @@ function initializeCompanyMap() {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-                border: 3px solid #E6D5B8;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+                border: 3px solid #C5A059;
                 position: relative;
             ">
-                <span style="
-                    font-size: 28px;
-                    line-height: 1;
-                ">😊</span>
+                <span style="font-size: 26px; line-height: 1;">😊</span>
                 <div style="
                     position: absolute;
                     bottom: -8px;
-                    left: 21px;
+                    left: 19px;
                     width: 0;
                     height: 0;
                     border-left: 6px solid transparent;
                     border-right: 6px solid transparent;
-                    border-top: 8px solid #E6D5B8;
+                    border-top: 8px solid #C5A059;
                 "></div>
             </div>
         `,
@@ -83,22 +85,22 @@ function initializeCompanyMap() {
 
     const marker = L.marker([companyLat, companyLng], { icon: smileIcon }).addTo(map);
 
-    // 자연스럽게 정돈된 주소 팝업
+    // Pretendard 폰트가 적용된 자연스러운 주소 팝업
     const popupContent = `
         <div style="
-            font-family: 'Nanum Gothic', sans-serif; 
+            font-family: 'Pretendard Variable', Pretendard, -apple-system, sans-serif; 
             width: 210px; 
             text-align: center; 
-            padding: 8px 4px;
-            background-color: rgba(255, 255, 255, 0.98);
+            padding: 10px 4px 6px 4px;
+            background-color: #ffffff;
             border-radius: 12px;
         ">
             <h3 style="
                 margin: 0 0 6px 0; 
-                color: #333333; 
+                color: #222222; 
                 font-size: 16px; 
                 font-weight: 700;
-                letter-spacing: -0.5px;
+                letter-spacing: -0.3px;
             ">
                 엠.제이인터내셔날
             </h3>
@@ -106,9 +108,10 @@ function initializeCompanyMap() {
             <p style="
                 margin: 0 0 12px 0; 
                 font-size: 13px; 
-                color: #555555; 
+                color: #666666; 
                 line-height: 1.5;
                 word-break: keep-all;
+                letter-spacing: -0.3px;
             ">
                 경기도 용인시 처인구<br>
                 <span>모현읍 이일로 7-9</span>
@@ -116,14 +119,14 @@ function initializeCompanyMap() {
 
             <a href="tel:031-333-2303" style="
                 display: inline-block;
-                padding: 7px 16px;
+                padding: 8px 18px;
                 background-color: #C5A059;
                 color: #FFFFFF;
                 text-decoration: none;
                 border-radius: 20px;
                 font-size: 13px;
                 font-weight: 700;
-                transition: background-color 0.2s;
+                transition: all 0.2s ease;
             " onmouseover="this.style.backgroundColor='#a38243'" onmouseout="this.style.backgroundColor='#C5A059'">
                 ☎ 031-333-2303
             </a>
@@ -138,4 +141,9 @@ function initializeCompanyMap() {
     }).openPopup();
 
     L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+    // 렌더링 타이밍 이슈 해결을 위한 크기 재조정
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 200);
 }
