@@ -27,13 +27,13 @@
             font-family: 'Montserrat', sans-serif !important;
         }
 
-        /* 약도 핀 깜빡이는 애니메이션 효과 */
-        @keyframes bouncePin {
+        /* 핀 통통 튀는 애니메이션 */
+        @keyframes customBounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            50% { transform: translateY(-6px); }
         }
-        .map-pin-icon {
-            animation: bouncePin 1.8s infinite ease-in-out;
+        .illustration-pin {
+            animation: customBounce 2s infinite ease-in-out;
         }
     </style>
 </head>
@@ -215,7 +215,7 @@
         </div>
     </section>
 
-    <!-- 회사 위치 섹션 (약도 그림 일러스트 + 위치 핀 + 버튼형 카드 조합) -->
+    <!-- 회사 위치 섹션 (실제 지도 구도 커스텀 일러스트 + 버튼형 카드 조합) -->
     <section id="location" style="padding: 60px 20px 100px 20px; text-align: center;">  
         <h2 class="font-title" style="font-size: 38px; margin-bottom: 10px; font-weight: 700; color: #111; letter-spacing: -0.5px;">우리 회사 위치</h2>
         <p style="font-size: 16px; color: #666; margin-bottom: 50px;">따뜻한 정이 있는 온다정을 찾아주세요</p>
@@ -235,33 +235,50 @@
             </div>
         </div>
 
-        <!-- 1. 약도 일러스트 그림 박스 (도로망 디자인 + 움직이는 위치 핀) -->
-        <div style="max-width: 900px; height: 340px; margin: 0 auto 30px auto; border-radius: 20px; background: #eef2f5; position: relative; overflow: hidden; border: 1px solid #d8e0e8; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; justify-content: center; align-items: center;">
+        <!-- 1. 캡처 화면 구도(우측 큰 대로 + 좌측 이일로 + 분홍색 건물 테두리 + 파란 핀 정보창)를 재현한 일러스트 약도 박스 -->
+        <div style="max-width: 900px; height: 380px; margin: 0 auto 30px auto; border-radius: 20px; background: #f2f5f8; position: relative; overflow: hidden; border: 1px solid #d4de8; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
             
-            <!-- 가상의 도로망 선 (그림 약도 효과) -->
-            <div style="position: absolute; width: 120%; height: 24px; background: #ffffff; top: 35%; transform: rotate(-10deg); box-shadow: 0 2px 5px rgba(0,0,0,0.04);"></div>
-            <div style="position: absolute; width: 24px; height: 120%; background: #ffffff; left: 55%; transform: rotate(-10deg); box-shadow: 0 2px 5px rgba(0,0,0,0.04);"></div>
-            <div style="position: absolute; width: 80%; height: 16px; background: #e2e8f0; bottom: 25%; left: 10%; transform: rotate(15deg);"></div>
+            <!-- 우측 큰 대로 (주황빛 메인 도로) -->
+            <div style="position: absolute; right: 22%; top: 0; width: 65px; height: 100%; background: #ffcc80; transform: skewX(-12deg); opacity: 0.85;"></div>
+            <div style="position: absolute; right: 27%; top: 0; width: 25px; height: 100%; background: #ffb74d; transform: skewX(-12deg);"></div>
 
-            <!-- 주변 참고 지점 표시 (약도 느낌 살리기) -->
-            <div style="position: absolute; top: 18%; left: 15%; background: rgba(255,255,255,0.8); padding: 6px 12px; border-radius: 8px; font-size: 12px; color: #666; font-weight: 600;">모현읍 인근</div>
-            <div style="position: absolute; bottom: 20%; right: 18%; background: rgba(255,255,255,0.8); padding: 6px 12px; border-radius: 8px; font-size: 12px; color: #666; font-weight: 600;">이일로 방면</div>
+            <!-- 좌측 이일로 (구불거리는 골목길 느낌의 흰색 도로망) -->
+            <div style="position: absolute; left: 0; top: 55%; width: 60%; height: 35px; background: #ffffff; transform: rotate(-8deg); border-radius: 10px;"></div>
+            <div style="position: absolute; left: 35%; top: 0; width: 30px; height: 70%; background: #ffffff; transform: rotate(15deg);"></div>
 
-            <!-- 정중앙 위치 핀과 말풍선 카드 -->
-            <div style="position: relative; z-index: 2; text-align: center;">
-                <div class="map-pin-icon" style="font-size: 42px; filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15)); margin-bottom: 4px;">📍</div>
-                <div style="background: #ffffff; padding: 12px 22px; border-radius: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border: 1px solid #eee;">
-                    <strong class="font-title" style="font-size: 15px; color: #111; display: block; margin-bottom: 2px;">엠.제이인터내셔날 (온다정)</strong>
-                    <span style="font-size: 12px; color: #666;">경기도 용인시 처인구 모현읍 이일로 7-9</span>
+            <!-- 주변 참고 건물 음영 -->
+            <div style="position: absolute; left: 12%; top: 25%; width: 70px; height: 45px; background: #e2e8f0; border-radius: 6px;"></div>
+            <div style="position: absolute; left: 60%; bottom: 15%; width: 80px; height: 50px; background: #e2e8f0; border-radius: 6px;"></div>
+
+            <!-- 중심 위치: 분홍색 건물 테두리 & 파란색 핀 + 정보창 구도 -->
+            <div style="position: absolute; left: 46%; top: 40%; transform: translate(-50%, -50%); text-align: center; z-index: 3;">
+                
+                <!-- 팝업 말풍선 정보창 -->
+                <div style="background: #ffffff; padding: 14px 20px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 1px solid #e0e0e0; margin-bottom: 8px; width: 260px; text-align: left; position: relative;">
+                    <div style="font-size: 14px; font-weight: 800; color: #111; margin-bottom: 2px;">경기도 용인시 처인구 모현읍 이일로 7-9</div>
+                    <div style="font-size: 11px; color: #666; margin-bottom: 8px;">(지번) 경기 용인시 처인구 매산리 542-2</div>
+                    <div style="display: flex; gap: 6px;">
+                        <span style="background: #007aff; color: white; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px;">길찾기</span>
+                    </div>
                 </div>
+
+                <!-- 파란색 위치 핀 + 분홍색 건물 블록 -->
+                <div class="illustration-pin" style="position: relative; display: inline-block;">
+                    <!-- 파란색 핀 아이콘 -->
+                    <div style="font-size: 36px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); margin-bottom: -6px;">📍</div>
+                    <!-- 분홍색 건물 테두리 박스 -->
+                    <div style="width: 34px; height: 22px; border: 3px solid #ff4081; background: rgba(255, 64, 129, 0.15); border-radius: 4px; margin: 0 auto; transform: skewX(-15deg);"></div>
+                </div>
+
             </div>
+
         </div>
 
-        <!-- 2. 버튼형 지도 카드 박스 (네이버/카카오 바로가기) -->
+        <!-- 2. 기존 버튼형 지도 카드 박스 (네이버/카카오 바로가기) -->
         <div style="max-width: 900px; margin: 0 auto; padding: 40px 30px; background: #ffffff; border-radius: 20px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
             <div style="font-size: 38px; margin-bottom: 10px;">🗺️</div>
-            <h3 class="font-title" style="font-size: 24px; color: #111; margin: 0 0 8px 0; font-weight: 700;">상세 길찾기 서비스 이용하기</h3>
-            <p style="font-size: 15px; color: #666; margin: 0 0 25px 0;">버튼을 누르시면 네이버 지도와 카카오맵에서 실시간 길안내를 받으실 수 있습니다.</p>
+            <h3 class="font-title" style="font-size: 24px; color: #111; margin: 0 0 8px 0; font-weight: 700;">엠.제이인터내셔날 (온다정)</h3>
+            <p style="font-size: 15px; color: #666; margin: 0 0 25px 0;">경기도 용인시 처인구 모현읍 이일로 7-9</p>
             
             <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
                 <a href="https://map.kakao.com/link/search/경기도 용인시 처인구 모현읍 이일로 7-9" target="_blank" style="padding: 14px 28px; background-color: #FEE500; color: #191919; text-decoration: none; font-weight: 700; font-size: 14px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
