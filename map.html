@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>엠.제이인터내셔날 - 온다정</title>
+    <title>엠.제이인터내셔날 - 매장 안내</title>
     
     <!-- 1. 무료 & 상업적 이용 가능한 최신 웹폰트 불러오기 (Pretendard & Noto Serif KR) -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
@@ -44,22 +44,18 @@
                 <li onmouseover="this.style.transform='scale(1.05)';" 
                     onmouseout="this.style.transform='scale(1)';" 
                     style="transition: all 0.3s ease;">
-                    <a href="mapinfo.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">매장 안내</a>
+                    <a href="map.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">매장 안내</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <!-- 히어로 섹션 (타이틀 폰트 및 가독성 개선) -->
-    <section style="width: 100%; height: 800px; background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('main_pic.png'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
-        <h1 class="font-title" style="font-size: 80px; margin: 0; font-weight: 900; letter-spacing: -1px; text-shadow: 0 10px 25px rgba(0,0,0,0.5); word-break: keep-all;">엠.제이인터내셔날</h1>
-        <p class="font-title" style="font-size: 24px; margin: 25px 0 40px 0; letter-spacing: 1px; font-weight: 600; text-shadow: 0 4px 10px rgba(0,0,0,0.4);">온다정이 맛있는 음식을 선사합니다</p>
-    </section>
+    <!-- 방문 정보 및 지도 대체 카드 섹션 -->
+    <section style="padding: 100px 20px 40px 20px; text-align: center;"> 
+        <h2 class="font-title" style="font-size: 38px; margin-bottom: 10px; font-weight: 700; color: #111; letter-spacing: -0.5px;">우리 회사 위치</h2>
+        <p style="font-size: 16px; color: #666; margin-bottom: 50px;">따뜻한 정이 있는 온다정을 찾아주세요</p>
 
-    <!-- 방문 정보 섹션 -->
-    <section style="padding: 100px 20px 60px 20px; text-align: center;"> 
-        <h2 class="font-title" style="font-size: 32px; margin-bottom: 50px; font-weight: 700; color: #111; letter-spacing: 1px;">VISIT US</h2>
-        <div style="display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; color: #444; font-size: 15px;">
+        <div style="display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; color: #444; font-size: 15px; margin-bottom: 60px;">
             <div>
                 <p style="font-weight: 700; color: #C5A059; margin-bottom: 12px; letter-spacing: 1px;">LOCATION</p>
                 <p style="margin: 0;">경기도 용인시 처인구 모현읍 이일로 7-9</p>
@@ -75,8 +71,8 @@
         </div>
     </section>
 
-    <!-- 지도 전용 영역 (카카오/네이버 바로가기 카드 적용) -->
-    <section style="max-width: 1000px; margin: 0 auto 100px auto; padding: 60px 20px; background: #ffffff; border-radius: 20px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
+    <!-- 위치 바로가기 카드 영역 -->
+    <section style="max-width: 900px; margin: 0 auto 100px auto; padding: 60px 20px; background: #ffffff; border-radius: 20px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
         <div style="font-size: 42px; margin-bottom: 12px;">📍</div>
         <h3 class="font-title" style="font-size: 24px; color: #111; margin: 0 0 10px 0; font-weight: 700;">엠.제이인터내셔날 (온다정)</h3>
         <p style="font-size: 15px; color: #666; margin: 0 0 30px 0;">경기도 용인시 처인구 모현읍 이일로 7-9</p>
