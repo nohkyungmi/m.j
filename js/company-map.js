@@ -1,26 +1,40 @@
 // Company Map - Soft Pastel Design Implementation
 
-// Load Leaflet CSS
-const leafletCSS = document.createElement('link');
-leafletCSS.rel = 'stylesheet';
-leafletCSS.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
-document.head.appendChild(leafletCSS);
+// 1. CSS와 JS를 순차적으로 완벽히 로드한 뒤 지도 실행하는 함수
+function loadLeafletAndInit() {
+    // 이미 Leaflet이 로드되어 있다면 바로 실행
+    if (window.L) {
+        initializeCompanyMap();
+        return;
+    }
 
-// Load Leaflet JS
-const leafletJS = document.createElement('script');
-leafletJS.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
-leafletJS.onload = function() {
-    initializeCompanyMap();
-};
-document.head.appendChild(leafletJS);
+    // CSS 동적 추가
+    const leafletCSS = document.createElement('link');
+    leafletCSS.rel = 'stylesheet';
+    leafletCSS.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
+    document.head.appendChild(leafletCSS);
+
+    // JS 동적 추가
+    const leafletJS = document.createElement('script');
+    leafletJS.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+    leafletJS.onload = function() {
+        // CSS까지 완전히 반영될 수 있도록 미세 지연 후 지도 생성
+        setTimeout(initializeCompanyMap, 100);
+    };
+    document.head.appendChild(leafletJS);
+}
 
 function initializeCompanyMap() {
     const companyLat = 37.323750;
     const companyLng = 127.219833;
     
-    // 지도를 담을 엘리먼트 확인
     const mapContainer = document.getElementById('company-map');
     if (!mapContainer) return;
+
+    // 이미 지도 인스턴스가 생성되어 있다면 제거 (중복 방지)
+    if (mapContainer._leaflet_id) {
+        mapContainer._leaflet_id = null;
+    }
 
     // 지도 초기화
     const map = L.map('company-map', {
@@ -142,8 +156,14 @@ function initializeCompanyMap() {
 
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-    // 렌더링 타이밍 이슈 해결을 위한 크기 재조정
-    setTimeout(() => {
-        map.invalidateSize();
-    }, 200);
+    // 핵심: 레이아웃 깨짐을 완전히 막기 위해 단계별로 invalidateSize 호출
+    setTimeout(() => { map.invalidateSize(); }, 200);
+    setTimeout(() => { map.invalidateSize(); }, 600);
+}
+
+// DOM 생성이 완료되면 실행
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadLeafletAndInit);
+} else {
+    loadLeafletAndInit();
 }
