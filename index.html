@@ -206,7 +206,7 @@
         </div>
     </section>
 
-    <!-- 회사 위치 섹션 (무료 공개 지도 + 버튼형 카드 조합) -->
+    <!-- 회사 위치 섹션 (안내 비주얼 박스 + 버튼형 카드 조합) -->
     <section id="location" style="padding: 60px 20px 100px 20px; text-align: center;">  
         <h2 class="font-title" style="font-size: 38px; margin-bottom: 10px; font-weight: 700; color: #111; letter-spacing: -0.5px;">우리 회사 위치</h2>
         <p style="font-size: 16px; color: #666; margin-bottom: 50px;">따뜻한 정이 있는 온다정을 찾아주세요</p>
@@ -226,12 +226,14 @@
             </div>
         </div>
 
-        <!-- 1. 무료 공개 지도 화면 (OpenStreetMap 임베드 - 에러 없음) -->
-        <div style="max-width: 900px; height: 400px; margin: 0 auto 35px auto; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-            <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=127.218%2C37.320%2C127.248%2C37.340&amp;layer=mapnik&amp;marker=37.330%2C127.233" style="border: 0;"></iframe>
+        <!-- 1. 지도 대신 세련된 분위기를 주는 브랜드 안내 비주얼 박스 (나중에 사진 파일이 있다면 <img src="images/map_photo.jpg"> 로 교체하셔도 좋습니다!) -->
+        <div style="max-width: 900px; height: 260px; margin: 0 auto 30px auto; border-radius: 20px; background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #333; padding: 0 20px;">
+            <p class="font-eng" style="font-size: 13px; color: #EBD095; letter-spacing: 3px; margin-bottom: 10px; font-weight: 700;">ONDAJUNG LOCATION GUIDE</p>
+            <h3 class="font-title" style="font-size: 26px; margin: 0 0 10px 0; font-weight: 700;">엠.제이인터내셔날 찾아오시는 길</h3>
+            <p style="font-size: 15px; color: #bbb; margin: 0; font-weight: 300;">아래의 네이버 지도 및 카카오맵 바로가기를 통해 상세한 길찾기 서비스를 이용해 보세요.</p>
         </div>
 
-        <!-- 2. 기존 버튼형 지도 카드 박스 -->
+        <!-- 2. 버튼형 지도 카드 박스 -->
         <div style="max-width: 900px; margin: 0 auto; padding: 40px 30px; background: #ffffff; border-radius: 20px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
             <div style="font-size: 38px; margin-bottom: 10px;">📍</div>
             <h3 class="font-title" style="font-size: 24px; color: #111; margin: 0 0 8px 0; font-weight: 700;">엠.제이인터내셔날 (온다정)</h3>
