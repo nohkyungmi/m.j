@@ -1,72 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>엠.제이인터내셔날 - 온다정</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- 1. 무료 & 상업적 이용 가능한 최신 웹폰트 불러오기 (Pretendard & Noto Serif KR) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* 글로벌 폰트 적용 (기본 본문: Pretendard) */
+        body {
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif !important;
+        }
+
+        /* 고급스러운 명조/포인트 타이틀 전용 클래스 */
+        .font-title {
+            font-family: 'Noto Serif KR', serif !important;
+        }
+    </style>
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif; background-color: #f9f9f9;">
+<body style="margin: 0; padding: 0; background-color: #f9f9f9;">
 
     <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
-        <a href="#" style="text-decoration: none; display: flex; align-items: center;">
+        <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
             <img src="mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
         </a>
 
         <nav>
             <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
-                <li onmouseover="this.style.transform='scale(1.1)';" 
+                <li onmouseover="this.style.transform='scale(1.05)';" 
                     onmouseout="this.style.transform='scale(1)';" 
                     style="transition: all 0.3s ease;">
-                    <a href="about.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">회사 소개</a>
+                    <a href="about.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">회사 소개</a>
                 </li>
 
-                <li onmouseover="this.style.transform='scale(1.1)';" 
+                <li onmouseover="this.style.transform='scale(1.05)';" 
                     onmouseout="this.style.transform='scale(1)';" 
                     style="transition: all 0.3s ease;">
-                    <a href="manu.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">메뉴 소개</a>
+                    <a href="manu.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">메뉴 소개</a>
                 </li>
 
-                <li onmouseover="this.style.transform='scale(1.1)';" 
+                <li onmouseover="this.style.transform='scale(1.05)';" 
                     onmouseout="this.style.transform='scale(1)';" 
                     style="transition: all 0.3s ease;">
-                    <a href="mapinfo.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">매장 안내</a>
+                    <a href="mapinfo.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">매장 안내</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <section style="width: 100%; height: 800px; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('main_pic.png'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
-        <h1 style="font-family: 'Nanum Myeongjo',serif; font-size: 100px; margin: 0; font-weight: 900; text-shadow: 3px 3px 20px rgba(0,0,0,0.6);">엠.제이인터내셔날</h1>
-        <p style="font-family: 'Nanum Myeongjo',serif; font-size: 26px; margin: 20px 0 40px 0; letter-spacing: 2px;">온다정이 맛있는 음식을 선사합니다</p>
+    <!-- 히어로 섹션 (타이틀 폰트 및 가독성 개선) -->
+    <section style="width: 100%; height: 800px; background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('main_pic.png'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
+        <h1 class="font-title" style="font-size: 80px; margin: 0; font-weight: 900; letter-spacing: -1px; text-shadow: 0 10px 25px rgba(0,0,0,0.5); word-break: keep-all;">엠.제이인터내셔날</h1>
+        <p class="font-title" style="font-size: 24px; margin: 25px 0 40px 0; letter-spacing: 1px; font-weight: 600; text-shadow: 0 4px 10px rgba(0,0,0,0.4);">온다정이 맛있는 음식을 선사합니다</p>
     </section>
 
+    <!-- 방문 정보 섹션 -->
     <section style="padding: 100px 20px; text-align: center;"> 
-        <h2 style="font-family: 'Nanum Myeongjo', serif; font-size: 32px; margin-bottom: 50px;">VISIT US</h2>
-        <div style="display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; color: #555;">
+        <h2 class="font-title" style="font-size: 32px; margin-bottom: 50px; font-weight: 700; color: #111; letter-spacing: 1px;">VISIT US</h2>
+        <div style="display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; color: #444; font-size: 15px;">
             <div>
-                <p style="font-weight: bold; color: #C5A059; margin-bottom: 10px;">LOCATION</p>
-                <p>경기도 용인시 처인구 모현읍 이일로 7-9</p>
+                <p style="font-weight: 700; color: #C5A059; margin-bottom: 12px; letter-spacing: 1px;">LOCATION</p>
+                <p style="margin: 0;">경기도 용인시 처인구 모현읍 이일로 7-9</p>
             </div>
             <div>
-                <p style="font-weight: bold; color: #C5A059; margin-bottom: 10px;">OPENING HOURS</p>
-                <p>AM 9:00 - PM 18:00</p>
+                <p style="font-weight: 700; color: #C5A059; margin-bottom: 12px; letter-spacing: 1px;">OPENING HOURS</p>
+                <p style="margin: 0;">AM 9:00 - PM 18:00</p>
             </div>
             <div>
-                <p style="font-weight: bold; color: #C5A059; margin-bottom: 10px;">RESERVATION</p>
-                <p>031-333-2303</p>
+                <p style="font-weight: 700; color: #C5A059; margin-bottom: 12px; letter-spacing: 1px;">RESERVATION</p>
+                <p style="margin: 0;">031-333-2303</p>
             </div>
         </div>
     </section>
 
-    <!-- JS 지도가 그려질 전용 영역 -->
-    <section style="max-width: 1200px; height: 500px; margin: 50px auto; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+    <!-- 지도 전용 영역 -->
+    <section style="max-width: 1200px; height: 500px; margin: 0 auto 80px auto; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
         <div id="company-map" style="width: 100%; height: 100%;"></div>
     </section>
 
-    <footer style="background: #333; color: #fff; padding: 40px 60px; text-align: left;">
-        <p style="margin: 0; opacity: 0.7;">엠.제이인터내셔날 | 브랜드: 온다정</p>
-        <p style="margin: 10px 0 0 0; opacity: 0.7;">주소: 경기도 용인시 처인구 모현읍 이일로 7-9 | 대표번호: 031-333-2303</p>
-        <p style="margin: 20px 0 0 0; font-size: 12px; opacity: 0.5;">© 2026 M.J International. All rights reserved.</p>
+    <footer style="background: #222; color: #aaa; padding: 45px 60px; text-align: left; font-size: 14px;">
+        <p class="font-title" style="margin: 0; color: #fff; font-size: 16px; font-weight: 700;">엠.제이인터내셔날 <span style="font-weight: 400; color: #C5A059; font-size: 14px; margin-left: 8px;">| 브랜드: 온다정</span></p>
+        <p style="margin: 12px 0 0 0; color: #888; line-height: 1.6;">주소: 경기도 용인시 처인구 모현읍 이일로 7-9 | 대표번호: 031-333-2303</p>
+        <p style="margin: 20px 0 0 0; font-size: 12px; color: #666;">© 2026 M.J International. All rights reserved.</p>
     </footer>
 
     <!-- TOP 버튼 -->
@@ -83,7 +100,7 @@
         cursor: pointer; 
         padding: 15px 20px; 
         border-radius: 50%; 
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         font-size: 18px;
         font-weight: bold;
         transition: all 0.3s ease;
@@ -92,10 +109,8 @@
         ↑
     </button>
 
-    <!-- 지도 자바스크립트 파일 연결 (JS 파일 이름에 맞게 수정하세요) -->
     <script src="map.js"></script>
 
-    <!-- 스크롤 스크립트 -->
     <script>
         window.onscroll = function() { scrollFunction() };
 
