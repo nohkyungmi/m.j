@@ -4,27 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메뉴 소개 - 온다정</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- 무료 & 상업적 이용 가능한 웹폰트 (Pretendard & Noto Serif KR) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+    
     <style>
+        /* 글로벌 폰트 설정 */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Nanum Gothic', sans-serif;
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif !important;
             background-color: #fcfaf7;
+        }
+
+        /* 고급스러운 명조/포인트 타이틀 전용 클래스 */
+        .font-title {
+            font-family: 'Noto Serif KR', serif !important;
         }
 
         /* 탭 버튼 스타일 */
         .tab-btn {
             padding: 12px 28px;
-            font-size: 16px;
-            font-weight: 500;
+            font-size: 15px;
+            font-weight: 600;
             color: #666;
             background-color: #fff;
             border: 1px solid #e0e0e0;
             border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-family: 'Nanum Gothic', sans-serif;
+            font-family: inherit;
         }
 
         .tab-btn:hover {
@@ -36,8 +46,8 @@
             background-color: #C5A059;
             color: #fff;
             border-color: #C5A059;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.35);
         }
 
         /* 반응형 스타일 */
@@ -66,18 +76,18 @@
 
         <nav>
             <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
-                <li><a href="about.html" style="text-decoration: none; color: #333; font-weight: bold;">회사 소개</a></li>
-                <li><a href="menu.html" style="text-decoration: none; color: #C5A059; font-weight: bold;">메뉴 소개</a></li>
-                <li><a href="mapinfo.html" style="text-decoration: none; color: #333; font-weight: bold;">매장 안내</a></li>
+                <li><a href="about.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">회사 소개</a></li>
+                <li><a href="menu.html" style="text-decoration: none; color: #C5A059; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">메뉴 소개</a></li>
+                <li><a href="mapinfo.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">매장 안내</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- 메인 타이틀 -->
     <section style="text-align: center; padding: 60px 20px 20px 20px;">
-        <span style="color: #C5A059; font-weight: bold; letter-spacing: 2px; font-size: 14px;">ONDAJEONG MENU</span>
-        <h1 style="font-family: 'Nanum Myeongjo', serif; font-size: 36px; color: #222; margin: 10px 0;">메뉴 소개</h1>
-        <p style="color: #777; font-size: 15px;">온다정의 정성을 담은 다양한 제품을 소개합니다.</p>
+        <span style="color: #C5A059; font-weight: 700; letter-spacing: 2px; font-size: 14px;">ONDAJEONG MENU</span>
+        <h1 class="font-title" style="font-size: 38px; color: #222; margin: 10px 0; font-weight: 800;">메뉴 소개</h1>
+        <p style="color: #777; font-size: 15px; letter-spacing: -0.3px;">온다정의 정성을 담은 다양한 제품을 소개합니다.</p>
     </section>
 
     <!-- 카테고리 탭 버튼 -->
@@ -97,8 +107,8 @@
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/골든벨 냉면비빔장.jpg" alt="골든벨 냉면비빔장" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">골든벨 냉면비빔장</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">새콤달콤한 특제 양념으로 비빔냉면 및 다양한 면요리에 적합합니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">골든벨 냉면비빔장</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">새콤달콤한 특제 양념으로 비빔냉면 및 다양한 면요리에 적합합니다.</p>
                 </a>
             </div>
 
@@ -108,161 +118,159 @@
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/다용도_양념장_pe.png" alt="다용도양념장" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">다용도양념장</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">다양한 비빔, 무침류에 간편하게 사용할 수 있는 양념장입니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">다용도양념장</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">다양한 비빔, 무침류에 간편하게 사용할 수 있는 양념장입니다.</p>
                 </a>
             </div>
 
-            <!-- 3. 쫄면장 (소스류 - menu3.html 연결로 수정 완료!) -->
+            <!-- 3. 쫄면장 (소스류) -->
             <div class="menu-item category-source1">
                 <a href="menu3.html" style="text-decoration: none; color: inherit; display: block;">
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/쫄면장_pe.png" alt="쫄면장" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">쫄면장</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">입맛 돋우는 매콤함과 상큼함이 조화를 이루는 비법 쫄면 양념장입니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">쫄면장</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">입맛 돋우는 매콤함과 상큼함이 조화를 이루는 비법 쫄면 양념장입니다.</p>
                 </a>
             </div>
 
-             <!-- 4. 모밀소스S (소스류) -->
+            <!-- 4. 모밀소스S (소스류) -->
             <div class="menu-item category-source1">
                 <a href="menu4.html" style="text-decoration: none; color: inherit; display: block;">
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/모밀소스S.png" alt="모밀소스S" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">모밀소스S</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">오랜 연구 끝에 완성된 깊고 진한 감칠맛으로, 메밀면의 풍미를 온전히 살려주는 프리미엄 소스입니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">모밀소스S</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">오랜 연구 끝에 완성된 깊고 진한 감칠맛으로, 메밀면의 풍미를 온전히 살려주는 프리미엄 소스입니다.</p>
                 </a>
             </div>
 
-               <!-- 5. 비빔장 (소스류) -->
+            <!-- 5. 비빔장 (소스류) -->
             <div class="menu-item category-source1">
                 <a href="menu5.html" style="text-decoration: none; color: inherit; display: block;">
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/비빔장60G.png" alt="비빔장" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">비빔장</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">달콤매콤한 특제 비법 양념으로 비빔면, 비빔밥, 무침 등 어떤 요리든 감칠맛을 살려주는 만능 비빔장입니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">비빔장</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">달콤매콤한 특제 비법 양념으로 비빔면, 비빔밥, 무침 등 어떤 요리든 감칠맛을 살려주는 만능 비빔장입니다.</p>
                 </a>
             </div>
 
-                           <!-- 6. 엠제이 조미간장 (소스류) -->
+            <!-- 6. 엠제이 조미간장 (소스류) -->
             <div class="menu-item category-source1">
                 <a href="menu6.html" style="text-decoration: none; color: inherit; display: block;">
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/간장큰봉투.png" alt="엠제이 조미간장" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">엠제이 조미간장</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">짜지 않고 깔끔한 맛으로 찍어 먹는 요리의 풍미를 살려주는 감칠맛 간장입니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">엠제이 조미간장</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">짜지 않고 깔끔한 맛으로 찍어 먹는 요리의 풍미를 살려주는 감칠맛 간장입니다.</p>
                 </a>
             </div>
 
-           <!-- 7. 골든벨 겨자소스 (소스류) -->
+            <!-- 7. 골든벨 겨자소스 (소스류) -->
             <div class="menu-item category-source1">
                 <a href="menu7.html" style="text-decoration: none; color: inherit; display: block;">
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/겨자큰봉투.png" alt="골든벨 겨자소스" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">골든벨 겨자소스</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">코끝까지 감도는 알싸하고 상큼한 풍미로 느끼함을 싹 잡아주는 만능 겨자소스입니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">골든벨 겨자소스</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">코끝까지 감도는 알싸하고 상큼한 풍미로 느끼함을 싹 잡아주는 만능 겨자소스입니다.</p>
                 </a>
             </div>
 
-               <!-- 8. 골든벨 초데리 (소스류) -->
+            <!-- 8. 골든벨 초데리 (소스류) -->
             <div class="menu-item category-source1">
                 <a href="menu8.html" style="text-decoration: none; color: inherit; display: block;">
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/초데리큰봉투.png" alt="골든벨 초데리" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">골든벨 초데리</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">새콤달콤한 풍미로 재료 본연의 신선함을 한층 더 살려주는 비법 배합초입니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">골든벨 초데리</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">새콤달콤한 풍미로 재료 본연의 신선함을 한층 더 살려주는 비법 배합초입니다.</p>
                 </a>
             </div>
 
-                           <!-- 9. 떡볶이양념 (소스류) -->
+            <!-- 9. 떡볶이양념 (소스류) -->
             <div class="menu-item category-source1">
                 <a href="menu9.html" style="text-decoration: none; color: inherit; display: block;">
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/떡볶이_food.jpg" alt="떡볶이양념" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">떡볶이양념</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">물과 떡만 넣으면 완성! 분식집 맛 그대로 집에서 즐기는 만능 떡볶이 양념입니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">떡볶이양념</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">물과 떡만 넣으면 완성! 분식집 맛 그대로 집에서 즐기는 만능 떡볶이 양념입니다.</p>
                 </a>
             </div>
 
-                                       <!-- 10. 바베큐소스(매운맛) (소스류) -->
+            <!-- 10. 바베큐소스(매운맛) (소스류) -->
             <div class="menu-item category-source1">
                 <a href="menu10.html" style="text-decoration: none; color: inherit; display: block;">
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/.jpg" alt="바베큐소스(매운맛)" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">바베큐소스(매운맛)</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">화끈하게 당기는 매운맛과 딥한 감칠맛으로 훈제·구이 요리의 풍미를 극대화하는 비법 소스입니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">바베큐소스(매운맛)</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">화끈하게 당기는 매운맛과 딥한 감칠맛으로 훈제·구이 요리의 풍미를 극대화하는 비법 소스입니다.</p>
                 </a>
             </div>
 
-                                                   <!-- 11. 양념치킨소스 (소스류) -->
+            <!-- 11. 양념치킨소스 (소스류) -->
             <div class="menu-item category-source1">
                 <a href="menu11.html" style="text-decoration: none; color: inherit; display: block;">
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/.jpg" alt="양념치킨소스" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">양념치킨소스</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">첫맛은 달콤하고 끝맛은 깔끔하게 매콤해 계속 손이 가는 중독성 강한 양념소스입니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">양념치킨소스</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">첫맛은 달콤하고 끝맛은 깔끔하게 매콤해 계속 손이 가는 중독성 강한 양념소스입니다.</p>
                 </a>
             </div>
             
-            <!-- 1. 은이네 콩가루 -->
+            <!-- 1. 은이네 콩가루 (복합조미식품 및 두류가공품) -->
             <div class="menu-item category-source2">
-                   <a href="menu2_1.html" style="text-decoration: none; color: inherit; display: block;">
+                <a href="menu2_1.html" style="text-decoration: none; color: inherit; display: block;">
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/kong_600g.png" alt="은이네 콩가루" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">은이네 콩가루</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">디저트부터 다양한 요리 토핑까지 다채롭게 활용할 수 있는 고소한 콩가루입니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">은이네 콩가루</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">디저트부터 다양한 요리 토핑까지 다채롭게 활용할 수 있는 고소한 콩가루입니다.</p>
                 </a>
             </div>
 
-                        <!-- 2. 담백해물스프 -->
+            <!-- 2. 담백해물스프 (복합조미식품 및 두류가공품) -->
             <div class="menu-item category-source2">
-                   <a href="menu2_2.html" style="text-decoration: none; color: inherit; display: block;">
+                <a href="menu2_2.html" style="text-decoration: none; color: inherit; display: block;">
                     <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.06); background: #fff;">
                         <img src="images/.png" alt="담백해물스프" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">담백해물스프</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">각종 국물 요리와 파스타, 리조또의 맛을 완성해 주는 만능 해물 베이스 스프입니다.</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">담백해물스프</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">각종 국물 요리와 파스타, 리조또의 맛을 완성해 주는 만능 해물 베이스 스프입니다.</p>
                 </a>
             </div>
 
             <!-- 1. 기타가공품 샘플 -->
             <div class="menu-item category-source3">
-                   <a href="menu3_1.html" style="text-decoration: none; color: inherit; display: block;">
-                <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; background: #eee; display: flex; align-items: center; justify-content: center; color: #aaa;">
- <img src="images/.png" alt="00" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                <a href="menu3_1.html" style="text-decoration: none; color: inherit; display: block;">
+                    <div style="width: 100%; height: 280px; overflow: hidden; border-radius: 15px; margin-bottom: 15px; background: #eee; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                        <img src="images/.png" alt="00" style="width: 100%; height: 100%; object-fit: cover; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
                     </div>
-                    <h3 style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; margin: 10px 0; color: #222;">00</h3>
-                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0;">00</p>
+                    <h3 class="font-title" style="font-size: 20px; margin: 10px 0; color: #222; font-weight: 700;">00</h3>
+                    <p style="color: #777; font-size: 14px; line-height: 1.6; margin: 0; letter-spacing: -0.3px;">00</p>
                 </a>
             </div> 
 
+        </div>
     </main>
 
     <!-- 스크립트: 카테고리 필터링 기능 -->
     <script>
         function filterMenu(categoryKey) {
-            // 1. 모든 상품 숨기기
             const allItems = document.querySelectorAll('.menu-item');
             allItems.forEach(item => {
                 item.style.display = 'none';
             });
 
-            // 2. 선택한 카테고리 상품만 보이기
             const selectedItems = document.querySelectorAll('.category-' + categoryKey);
             selectedItems.forEach(item => {
                 item.style.display = 'block';
             });
 
-            // 3. 탭 버튼 스타일 변경 (선택된 버튼에 active 클래스 부여)
             const allBtns = document.querySelectorAll('.tab-btn');
             allBtns.forEach(btn => btn.classList.remove('active'));
 
@@ -272,16 +280,14 @@
             }
         }
 
-        // 페이지가 열릴 때 실행
         window.addEventListener('DOMContentLoaded', () => {
-            // URL 주소의 ?tab=... 읽어오기
             const urlParams = new URLSearchParams(window.location.search);
             const tab = urlParams.get('tab');
 
             if (tab) {
-                filterMenu(tab); // 클릭하고 넘어온 카테고리 보여주기
+                filterMenu(tab);
             } else {
-                filterMenu('source1'); // 기본값: 소스류 출력
+                filterMenu('source1');
             }
         });
     </script>
