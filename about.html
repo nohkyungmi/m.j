@@ -2,196 +2,161 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>엠.제이인터내셔날 - 온다정</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회사 소개 | 엠.제이인터내셔날 - 온다정</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif; background-color: #f9f9f9;">
+<body>
 
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
-    
-    <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
-        <img src="mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
-    </a>
+    <header class="site-header">
+        <a href="index.html" class="logo">
+            <img src="mylogo.jpg" alt="엠.제이인터내셔날 온다정" onerror="this.onerror=null; this.src='main_logo.png';">
+        </a>
 
-<nav>
-    <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
-        
-        <li onmouseover="this.style.transform='scale(1.1)';" 
-    	onmouseout="this.style.transform='scale(1)';" 
-    	style="transition: all 0.3s ease;">
-    	<a href="about.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">회사 소개</a>
-        </li>
+        <nav>
+            <ul class="main-nav">
+                <li class="nav-item"><a href="about.html" style="color: var(--primary-gold);">회사 소개</a></li>
+                <li class="nav-item"><a href="menu.html">메뉴 소개</a></li>
+                <li class="nav-item"><a href="index.html#company-map">매장 안내</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <li onmouseover="this.style.transform='scale(1.1)';" 
-            onmouseout="this.style.transform='scale(1)';" 
-            style="transition: all 0.3s ease;">
-            <a href="menu.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">메뉴 소개</a>
-        </li>
+    <section class="hero" style="height: 420px; background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('index_pic.png');">
+        <span class="hero-slogan">SINCE 2002</span>
+        <h1 class="hero-title" style="font-size: 52px;">회사 소개</h1>
+        <p class="hero-sub" style="font-size: 18px; margin-top: 15px;">정직한 마음과 정성을 담는 식품 전문 기업</p>
+    </section>
 
-        <li onmouseover="this.style.transform='scale(1.1)';" 
-            onmouseout="this.style.transform='scale(1)';" 
-            style="transition: all 0.3s ease;">
-            <a href="#mapinfo.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">매장 안내</a>
-        </li>
+    <section class="categories" style="max-width: 1100px;">
+        <div style="display: inline-block; padding: 6px 16px; background: rgba(197, 160, 89, 0.1); color: var(--primary-gold); border-radius: 20px; font-weight: 700; font-size: 14px; margin-bottom: 15px;">
+            🌿 BRAND IDENTITY
+        </div>
+        <h2>온다정<span style="font-size: 20px; color: #999; margin-left: 10px; font-weight: 400;">(溫多情)의 의미</span></h2>
+        <p class="categories-desc">식탁 위에 온기를 더하는 엠.제이인터내셔날의 3가지 핵심 철학입니다.</p>
 
-    </ul>
-</nav>
-</header>
+        <div class="category-grid" style="gap: 28px;">
+            
+            <div class="category-card" style="position: relative; overflow: hidden; padding: 40px 25px;">
+                <div style="position: absolute; top: -10px; right: -10px; width: 70px; height: 70px; background: rgba(197, 160, 89, 0.08); border-radius: 50%;"></div>
+                <div style="font-family: 'Noto Serif KR', serif; font-size: 52px; color: var(--primary-gold); font-weight: 900; margin-bottom: 10px;">溫</div>
+                <span class="cat-meta" style="color: var(--primary-gold); font-size: 14px;">따뜻할 온</span>
+                <h3 class="cat-title" style="font-size: 18px; margin: 15px 0 10px 0;">온기를 담은 마음</h3>
+                <p style="font-size: 14px; color: var(--text-sub); line-height: 1.6; margin: 0;">
+                    갓 지은 밥처럼 따스한 정성과<br>온기를 요리에 정직하게 담습니다.
+                </p>
+            </div>
 
-<section style="
-    width: 100%; 
-    height: 450px; 
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('index_pic.png'); 
-    background-size: cover; 
-    background-position: 30% 10%; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    color: white; 
-    text-align: center;
-">
-    <span style="letter-spacing: 5px; font-size: 16px; margin-bottom: 15px; color: #C5A059; font-weight: bold;">SINCE 2002</span>
-    
-    <h1 style="font-family: 'Nanum Gothic', serif; font-size: 60px; margin: 0; font-weight: 800; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">회사 소개</h1>
-    
-</section>
-<section style="max-width: 1000px; margin: 80px auto; padding: 60px 40px; background-color: #fdfdfd; border: 1px solid #eee; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); text-align: center;">
-    
-    <div style="color: #C5A059; font-size: 24px; margin-bottom: 20px;">🌿</div>
-    
-    <h2 style="font-family: 'Nanum Myeongjo', serif; font-size: 32px; color: #333; margin-bottom: 40px; letter-spacing: 2px;">
-        온다정<span style="font-size: 20px; color: #999; margin-left: 10px; font-weight: normal;">(溫多情)</span>의 의미
-    </h2>
+            <div class="category-card" style="position: relative; overflow: hidden; padding: 40px 25px;">
+                <div style="position: absolute; top: -10px; right: -10px; width: 70px; height: 70px; background: rgba(197, 160, 89, 0.08); border-radius: 50%;"></div>
+                <div style="font-family: 'Noto Serif KR', serif; font-size: 52px; color: var(--primary-gold); font-weight: 900; margin-bottom: 10px;">多</div>
+                <span class="cat-meta" style="color: var(--primary-gold); font-size: 14px;">많을 다</span>
+                <h3 class="cat-title" style="font-size: 18px; margin: 15px 0 10px 0;">넉넉한 인심</h3>
+                <p style="font-size: 14px; color: var(--text-sub); line-height: 1.6; margin: 0;">
+                    부족함 없는 마음으로 풍성하고<br>넉넉한 맛과 즐거움을 나눕니다.
+                </p>
+            </div>
 
-    <div style="display: flex; justify-content: center; gap: 50px; margin-bottom: 50px; flex-wrap: wrap;">
-        
-        <div style="flex: 1; min-width: 150px;">
-            <div style="font-size: 40px; color: #C5A059; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif;">溫</div>
-            <div style="font-weight: bold; font-size: 18px; color: #333;">따뜻할 온</div>
-            <p style="font-size: 14px; color: #777; margin-top: 10px; line-height: 1.6;">갓 지은 밥처럼<br>따스한 정성을 담습니다.</p>
+            <div class="category-card" style="position: relative; overflow: hidden; padding: 40px 25px;">
+                <div style="position: absolute; top: -10px; right: -10px; width: 70px; height: 70px; background: rgba(197, 160, 89, 0.08); border-radius: 50%;"></div>
+                <div style="font-family: 'Noto Serif KR', serif; font-size: 52px; color: var(--primary-gold); font-weight: 900; margin-bottom: 10px;">情</div>
+                <span class="cat-meta" style="color: var(--primary-gold); font-size: 14px;">뜻 정</span>
+                <h3 class="cat-title" style="font-size: 18px; margin: 15px 0 10px 0;">진심 어린 인연</h3>
+                <p style="font-size: 14px; color: var(--text-sub); line-height: 1.6; margin: 0;">
+                    사람과 사람 사이의 신뢰와<br>진심 어린 마음을 소중히 전합니다.
+                </p>
+            </div>
+
         </div>
 
-        <div style="flex: 1; min-width: 150px; border-left: 1px solid #eee; border-right: 1px solid #eee;">
-            <div style="font-size: 40px; color: #C5A059; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif;">多</div>
-            <div style="font-weight: bold; font-size: 18px; color: #333;">많을 다</div>
-            <p style="font-size: 14px; color: #777; margin-top: 10px; line-height: 1.6;">부족함 없는 마음으로<br>넉넉한 인심을 나눕니다.</p>
+        <div style="margin-top: 50px; padding: 35px 25px; background: #FFFFFF; border-radius: 16px; border: 1px solid var(--border-light); box-shadow: var(--shadow-soft);">
+            <p style="font-family: 'Noto Serif KR', serif; font-size: 20px; color: var(--text-dark); margin: 0 0 12px 0; font-weight: 700;">
+                "따뜻한 진심과 넉넉한 정이 머무는 곳, 온다정입니다."
+            </p>
+            <p style="font-size: 14px; color: var(--text-sub); margin: 0; line-height: 1.7;">
+                엠.제이인터내셔날은 고객님의 식탁에 단순한 음식을 넘어 기분 좋은 온기를 채워드리기 위해 오늘도 정직하게 요리합니다.
+            </p>
+        </div>
+    </section>
+
+    <section style="max-width: 1000px; margin: 100px auto; padding: 0 20px;">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-family: 'Noto Serif KR', serif; font-size: 32px; color: var(--text-dark); margin-bottom: 10px;">COMPANY HISTORY</h2>
+            <div style="width: 50px; height: 3px; background: var(--primary-gold); margin: 0 auto 15px auto; border-radius: 2px;"></div>
+            <p style="color: var(--text-sub); font-size: 15px;">엠.제이인터내셔날이 걸어온 정직한 발자취입니다.</p>
         </div>
 
-        <div style="flex: 1; min-width: 150px;">
-            <div style="font-size: 40px; color: #C5A059; margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif;">情</div>
-            <div style="font-weight: bold; font-size: 18px; color: #333;">뜻 정</div>
-            <p style="font-size: 14px; color: #777; margin-top: 10px; line-height: 1.6;">사람과 사람 사이의<br>진심 어린 마음을 전합니다.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+            
+            <div style="background: #FFFFFF; padding: 30px; border-radius: 16px; border-left: 5px solid var(--primary-gold); box-shadow: var(--shadow-soft); transition: transform 0.3s ease;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <span style="font-family: 'Noto Serif KR', serif; font-size: 28px; font-weight: 900; color: var(--primary-gold);">2025</span>
+                    <span style="background: rgba(197, 160, 89, 0.15); color: var(--primary-gold); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">RECENT</span>
+                </div>
+                <ul style="margin: 0; padding-left: 18px; color: var(--text-dark); font-weight: 600; line-height: 1.8; font-size: 15px;">
+                    <li>여성기업 선정</li>
+                    <li>'온다정' 상표 등록 완료</li>
+                </ul>
+            </div>
+
+            <div style="background: #FFFFFF; padding: 30px; border-radius: 16px; border-left: 5px solid #D1D1D1; box-shadow: var(--shadow-soft); transition: transform 0.3s ease;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <span style="font-family: 'Noto Serif KR', serif; font-size: 28px; font-weight: 900; color: #555;">2019</span>
+                    <span style="background: #F0F0F0; color: #777; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">EXPANSION</span>
+                </div>
+                <ul style="margin: 0; padding-left: 18px; color: var(--text-dark); font-weight: 600; line-height: 1.8; font-size: 15px;">
+                    <li>사옥 확장 이전 (용인 처인구)</li>
+                    <li>제조 생산 설비 대폭 확충</li>
+                </ul>
+            </div>
+
+            <div style="background: #FFFFFF; padding: 30px; border-radius: 16px; border-left: 5px solid #D1D1D1; box-shadow: var(--shadow-soft); transition: transform 0.3s ease;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <span style="font-family: 'Noto Serif KR', serif; font-size: 28px; font-weight: 900; color: #555;">2002</span>
+                    <span style="background: #F0F0F0; color: #777; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700;">FOUNDATION</span>
+                </div>
+                <ul style="margin: 0; padding-left: 18px; color: var(--text-dark); font-weight: 600; line-height: 1.8; font-size: 15px;">
+                    <li>엠.제이인터내셔날 설립</li>
+                    <li>식품 유통 및 개발 사업 개시</li>
+                </ul>
+            </div>
+
         </div>
+    </section>
 
-    </div>
-
-    <div style="border-top: 1px solid #eee; padding-top: 30px;">
-        <p style="font-family: 'Nanum Myeongjo', serif; font-size: 20px; color: #555; line-height: 1.8; font-style: italic;">
-            "따뜻한 진심과 넉넉한 정이 머무는 곳, 온다정입니다."
-        </p>
-        <p style="font-size: 15px; color: #888; margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
-            엠.제이인터내셔날은 고객님의 식탁에 단순한 음식을 넘어<br>기분 좋은 온기를 채워드리기 위해 오늘도 정직하게 요리합니다.
-        </p>
-    </div>
-
-</section>
-<section style="max-width: 900px; margin: 80px auto; padding: 0 20px; font-family: 'Pretendard', sans-serif;">
-    
-    <div style="text-align: center; margin-bottom: 60px;">
-        <h2 style="font-family: 'Nanum Gothic', serif; font-size: 36px; color: #333; margin-bottom: 10px;">COMPANY HISTORY</h2>
-        <div style="width: 40px; height: 2px; background: #C5A059; margin: 0 auto;"></div>
-        <p style="color: #888; margin-top: 15px;">엠.제이인터내셔날이 걸어온 정직한 발자취입니다.</p>
-    </div>
-
-    <div style="border-left: 2px solid #eee; padding-left: 30px; margin-left: 20px;">
-        
-        <div style="position: relative; margin-bottom: 50px;">
-            <div style="position: absolute; left: -36px; top: 0; width: 10px; height: 10px; background: #C5A059; border: 4px solid #fff; border-radius: 50%; box-shadow: 0 0 0 2px #C5A059;"></div>
-            <h3 style="font-size: 22px; color: #C5A059; margin: 0 0 10px 0;">2025</h3>
-            <p style="margin: 5px 0; color: #333; font-weight: bold;">여성기업선정</p>
-            <p style="margin: 5px 0; color: #333; font-weight: bold;">온다정 상표등록</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="brand">엠.제이인터내셔날</span>
+            <span class="sep">|</span>
+            <span>대표자: 노경미</span>
+            <span>사업자등록번호: 123-23-79551</span>
+            <span>주소: 경기도 용인시 처인구 모현읍 이일로 7-9</span>
+            <span>대표전화: 031-333-2303</span>
+            <span class="sep">|</span>
+            <span class="copyright">Copyright ⓒ 2026. All Rights Reserved.</span>
         </div>
+    </footer>
 
-        <div style="position: relative; margin-bottom: 50px;">
-            <div style="position: absolute; left: -36px; top: 0; width: 10px; height: 10px; background: #ccc; border: 4px solid #fff; border-radius: 50%;"></div>
-            <h3 style="font-size: 22px; color: #333; margin: 0 0 10px 0;">2019</h3>
-            <p style="margin: 5px 0; color: #333; font-weight: bold;">확장 이전</p>
-        </div>
+    <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">↑</button>
 
-        <div style="position: relative; margin-bottom: 50px;">
-            <div style="position: absolute; left: -36px; top: 0; width: 10px; height: 10px; background: #ccc; border: 4px solid #fff; border-radius: 50%;"></div>
-            <h3 style="font-size: 22px; color: #333; margin: 0 0 10px 0;">2002</h3>
-            <p style="margin: 5px 0; color: #333; font-weight: bold;">엠.제이인터내셔날 설립</p>
-        </div>
+    <script>
+        window.onscroll = function() { scrollFunction(); };
 
-    </div>
-</section>
-<footer style="background-color: #f8f8f8; color: #666; padding: 30px 50px; border-top: 1px solid #eee; font-family: sans-serif;">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: center; gap: 30px; font-size: 15px; flex-wrap: wrap;">
-        
-        <span style="font-weight: bold; color: #333; font-family: 'Nanum Myeongjo', serif;">엠.제이인터내셔날</span>
-        
-        <span style="color: #ddd;">|</span>
-        
-        <span>대표자: 노경미</span>
-        <span>사업자등록번호: 123-23-79551</span>
-        <span>주소: 경기도 용인시 처인구 모현읍 이일로 7-9</span>
-        <span>대표전화: 031-333-2303</span>
-        
-        <span style="color: #ddd;">|</span>
-        
-        <span style="color: #999; margin-left: auto;">Copyright ⓒ 2026. All Rights Reserved.</span>
-        
-    </div>
-</footer>
-
-<!-- 1. TOP 버튼 HTML -->
-<button id="scrollTopBtn" onclick="scrollToTop()" style="
-    display: none; /* 처음에는 숨겨둠 */
-    position: fixed; 
-    bottom: 40px; 
-    right: 40px; 
-    z-index: 99; 
-    border: none; 
-    outline: none; 
-    background-color: #C5A059; /* 온다정 브랜드 금색 */
-    color: white; 
-    cursor: pointer; 
-    padding: 15px 20px; 
-    border-radius: 50%; /* 동그란 모양 */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    font-size: 18px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-" onmouseover="this.style.backgroundColor='#a38243'; this.style.transform='scale(1.1)';" 
-  onmouseout="this.style.backgroundColor='#C5A059'; this.style.transform='scale(1)';">
-    ↑
-</button>
-
-<!-- 2. 버튼 작동을 위한 스크립트 (JavaScript) -->
-<script>
-    // 화면을 스크롤할 때마다 주시함
-    window.onscroll = function() { scrollFunction() };
-
-    function scrollFunction() {
-        var btn = document.getElementById("scrollTopBtn");
-        // 스크롤이 위에서부터 300px 이상 내려오면 버튼을 보여주고, 아니면 숨김
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            btn.style.display = "block";
-        } else {
-            btn.style.display = "none";
+        function scrollFunction() {
+            var btn = document.getElementById("scrollTopBtn");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
         }
-    }
 
-    // 버튼을 클릭했을 때 맨 위로 부드럽게 올라가는 함수
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth' /* 부드럽게 스크롤링되는 효과 */
-        });
-    }
-</script>
-
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
