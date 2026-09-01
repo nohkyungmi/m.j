@@ -26,7 +26,7 @@
 </head>
 <body style="margin: 0; padding: 0; background-color: #f9f9f9;">
 
-    <!-- 1. Header (index.html과 동일한 100px 높이 및 인라인 스타일 적용) -->
+    <!-- 1. Header (index.html 동기화) -->
     <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
         
         <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
@@ -125,21 +125,25 @@
     <!-- 3. Brand Identity & Emblem Section -->
     <section style="max-width: 1050px; margin: 80px auto; padding: 0 20px; text-align: center;">
         
-        <!-- 본문 엠블럼 로고 프레임 -->
+        <!-- [수정 완료] 이미지 잘림 현상을 해결한 프리미엄 로고 배지 -->
         <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 30px;">
             <div style="
-                width: 130px; 
-                height: 130px; 
+                width: 140px; 
+                height: 140px; 
                 border-radius: 50%; 
                 border: 2px dashed #C5A059; 
-                padding: 6px; 
-                background: rgba(197, 160, 89, 0.06);
-                box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+                padding: 12px; 
+                background: #FFFFFF;
+                box-shadow: 0 10px 25px rgba(197, 160, 89, 0.15);
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             ">
                 <img src="images/mylogo.jpg" alt="온다정 로고" style="
-                    width: 100%; 
-                    height: 100%; 
-                    object-fit: cover; 
+                    max-width: 100%; 
+                    max-height: 100%; 
+                    object-fit: contain; 
                     border-radius: 50%;
                 ">
             </div>
@@ -249,7 +253,7 @@
         </div>
     </section>
 
-    <!-- 5. Footer (index.html 동기화) -->
+    <!-- 5. Footer -->
     <footer style="background-color: #ffffff; color: #666; padding: 35px 50px; border-top: 1px solid #eee;">
         <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: center; gap: 30px; font-size: 14px; flex-wrap: wrap;">
             
@@ -269,7 +273,7 @@
         </div>
     </footer>
 
-    <!-- 6. TOP 버튼 (index.html 동기화) -->
+    <!-- 6. TOP 버튼 -->
     <button id="scrollTopBtn" onclick="scrollToTop()" style="
         display: none;
         position: fixed; 
