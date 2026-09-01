@@ -26,6 +26,15 @@
         .font-eng {
             font-family: 'Montserrat', sans-serif !important;
         }
+
+        /* 약도 핀 깜빡이는 애니메이션 효과 */
+        @keyframes bouncePin {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .map-pin-icon {
+            animation: bouncePin 1.8s infinite ease-in-out;
+        }
     </style>
 </head>
 <body style="margin: 0; padding: 0; background-color: #f9f9f9;">
@@ -188,7 +197,7 @@
             <a href="menu.html?tab=source3" style="
                 flex: 1; 
                 min-width: 250px; 
-                max-width: 310px; 
+                max-width: 310px;
                 padding: 32px 24px; 
                 background-color: #ffffff; 
                 border: 1px solid #eaeaea; 
@@ -206,7 +215,7 @@
         </div>
     </section>
 
-    <!-- 회사 위치 섹션 (일러스트 지도 그림 박스 + 버튼형 카드 조합) -->
+    <!-- 회사 위치 섹션 (약도 그림 일러스트 + 위치 핀 + 버튼형 카드 조합) -->
     <section id="location" style="padding: 60px 20px 100px 20px; text-align: center;">  
         <h2 class="font-title" style="font-size: 38px; margin-bottom: 10px; font-weight: 700; color: #111; letter-spacing: -0.5px;">우리 회사 위치</h2>
         <p style="font-size: 16px; color: #666; margin-bottom: 50px;">따뜻한 정이 있는 온다정을 찾아주세요</p>
@@ -226,25 +235,33 @@
             </div>
         </div>
 
-        <!-- 1. 세련된 느낌의 일러스트 지도 그림 박스 (배경 패턴 + 도로 라인 + 핀 일러스트) -->
-        <div style="max-width: 900px; height: 320px; margin: 0 auto 30px auto; border-radius: 20px; background: #f0ede6; position: relative; overflow: hidden; border: 1px solid #e2ddd5; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <!-- 가상의 도로 및 약도 배경 그래픽 요소 -->
-            <div style="position: absolute; width: 150%; height: 40px; background: #e8e3d8; transform: rotate(-15deg); top: 30%;"></div>
-            <div style="position: absolute; width: 40px; height: 120%; background: #e8e3d8; transform: rotate(-15deg); left: 45%;"></div>
+        <!-- 1. 약도 일러스트 그림 박스 (도로망 디자인 + 움직이는 위치 핀) -->
+        <div style="max-width: 900px; height: 340px; margin: 0 auto 30px auto; border-radius: 20px; background: #eef2f5; position: relative; overflow: hidden; border: 1px solid #d8e0e8; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; justify-content: center; align-items: center;">
             
-            <!-- 중심 핀과 위치 표시 카드 -->
-            <div style="position: relative; z-index: 2; background: rgba(255, 255, 255, 0.92); padding: 22px 35px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center; backdrop-filter: blur(5px);">
-                <div style="font-size: 32px; margin-bottom: 6px;">📍</div>
-                <h3 class="font-title" style="font-size: 20px; color: #222; margin: 0 0 4px 0; font-weight: 700;">온다정 오시는 길</h3>
-                <p style="font-size: 13px; color: #777; margin: 0; font-weight: 500;">경기도 용인시 처인구 모현읍 이일로 7-9</p>
+            <!-- 가상의 도로망 선 (그림 약도 효과) -->
+            <div style="position: absolute; width: 120%; height: 24px; background: #ffffff; top: 35%; transform: rotate(-10deg); box-shadow: 0 2px 5px rgba(0,0,0,0.04);"></div>
+            <div style="position: absolute; width: 24px; height: 120%; background: #ffffff; left: 55%; transform: rotate(-10deg); box-shadow: 0 2px 5px rgba(0,0,0,0.04);"></div>
+            <div style="position: absolute; width: 80%; height: 16px; background: #e2e8f0; bottom: 25%; left: 10%; transform: rotate(15deg);"></div>
+
+            <!-- 주변 참고 지점 표시 (약도 느낌 살리기) -->
+            <div style="position: absolute; top: 18%; left: 15%; background: rgba(255,255,255,0.8); padding: 6px 12px; border-radius: 8px; font-size: 12px; color: #666; font-weight: 600;">모현읍 인근</div>
+            <div style="position: absolute; bottom: 20%; right: 18%; background: rgba(255,255,255,0.8); padding: 6px 12px; border-radius: 8px; font-size: 12px; color: #666; font-weight: 600;">이일로 방면</div>
+
+            <!-- 정중앙 위치 핀과 말풍선 카드 -->
+            <div style="position: relative; z-index: 2; text-align: center;">
+                <div class="map-pin-icon" style="font-size: 42px; filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15)); margin-bottom: 4px;">📍</div>
+                <div style="background: #ffffff; padding: 12px 22px; border-radius: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border: 1px solid #eee;">
+                    <strong class="font-title" style="font-size: 15px; color: #111; display: block; margin-bottom: 2px;">엠.제이인터내셔날 (온다정)</strong>
+                    <span style="font-size: 12px; color: #666;">경기도 용인시 처인구 모현읍 이일로 7-9</span>
+                </div>
             </div>
         </div>
 
-        <!-- 2. 기존 버튼형 지도 카드 박스 (네이버/카카오 그대로 유지) -->
+        <!-- 2. 버튼형 지도 카드 박스 (네이버/카카오 바로가기) -->
         <div style="max-width: 900px; margin: 0 auto; padding: 40px 30px; background: #ffffff; border-radius: 20px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
             <div style="font-size: 38px; margin-bottom: 10px;">🗺️</div>
-            <h3 class="font-title" style="font-size: 24px; color: #111; margin: 0 0 8px 0; font-weight: 700;">엠.제이인터내셔날 (온다정)</h3>
-            <p style="font-size: 15px; color: #666; margin: 0 0 25px 0;">경기도 용인시 처인구 모현읍 이일로 7-9</p>
+            <h3 class="font-title" style="font-size: 24px; color: #111; margin: 0 0 8px 0; font-weight: 700;">상세 길찾기 서비스 이용하기</h3>
+            <p style="font-size: 15px; color: #666; margin: 0 0 25px 0;">버튼을 누르시면 네이버 지도와 카카오맵에서 실시간 길안내를 받으실 수 있습니다.</p>
             
             <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
                 <a href="https://map.kakao.com/link/search/경기도 용인시 처인구 모현읍 이일로 7-9" target="_blank" style="padding: 14px 28px; background-color: #FEE500; color: #191919; text-decoration: none; font-weight: 700; font-size: 14px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
