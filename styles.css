@@ -408,3 +408,19 @@ html, body {
     padding: 30px 20px;
   }
 }
+
+/* Leaflet 이미지 조각 깨짐 방지 픽스 */
+.leaflet-container img.leaflet-tile {
+    max-width: none !important;
+    max-height: none !important;
+    width: 256px !important;
+    height: 256px !important;
+}
+
+/* 지도 영역 고정 설정 */
+#company-map {
+    width: 100% !important;
+    height: 480px !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
