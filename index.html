@@ -215,7 +215,7 @@
         </div>
     </section>
 
-    <!-- 회사 위치 섹션 (캡처 구도 100% 일치형 일러스트 약도) -->
+    <!-- 회사 위치 섹션 (실제 지도 캡처 이미지 배경 적용) -->
     <section id="location" style="padding: 60px 20px 100px 20px; text-align: center;">  
         <h2 class="font-title" style="font-size: 38px; margin-bottom: 10px; font-weight: 700; color: #111; letter-spacing: -0.5px;">우리 회사 위치</h2>
         <p style="font-size: 16px; color: #666; margin-bottom: 50px;">따뜻한 정이 있는 온다정을 찾아주세요</p>
@@ -235,61 +235,34 @@
             </div>
         </div>
 
-        <!-- 1. 캡처 화면 100% 동일 레이아웃 일러스트 약도 박스 -->
-        <div style="max-width: 900px; height: 460px; margin: 0 auto 30px auto; border-radius: 20px; background: #eef3f8; position: relative; overflow: hidden; border: 1px solid #d4de8; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+        <!-- 1. 실제 지도 캡처 이미지를 배경으로 사용하는 지도 박스 -->
+        <div style="max-width: 900px; height: 480px; margin: 0 auto 30px auto; border-radius: 20px; position: relative; overflow: hidden; border: 1px solid #d4ded8; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
             
-            <!-- 우측 나란히 내려오는 메인 대로 (오렌지빛 고속/큰도로) -->
-            <div style="position: absolute; right: 28%; top: 0; width: 40px; height: 100%; background: #ffaa33; transform: skewX(-15deg); opacity: 0.85;"></div>
-            <div style="position: absolute; right: 22%; top: 0; width: 45px; height: 100%; background: #ffcc66; transform: skewX(-15deg); opacity: 0.85;"></div>
-            
-            <!-- 좌측 이일로 골목 진입로 -->
-            <div style="position: absolute; left: 0; top: 50%; width: 68%; height: 28px; background: #ffffff; transform: rotate(-8deg); border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);"></div>
-            <div style="position: absolute; left: 14%; top: 53%; font-size: 11px; font-weight: 700; color: #555; transform: rotate(-8deg); z-index: 2;">🚗 이일로</div>
+            <!-- 업로드한 실제 지도 이미지 배경 -->
+            <img src="images/map_capture.png" alt="온다정 지도 위치" style="width: 100%; height: 100%; object-fit: cover; display: block;">
 
-            <!-- 주변 건물들 (캡처 화면의 위치와 동일하게 배치) -->
-            <!-- 상단 왼쪽: 서일창호 -->
-            <div style="position: absolute; left: 8%; top: 18%; background: #ffffff; padding: 6px 12px; border-radius: 6px; border: 1px solid #dcdcdc; font-size: 11px; font-weight: 600; color: #555; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
-                🏢 서일창호
-            </div>
-
-            <!-- 상단 중앙: 모터컨테이너 -->
-            <div style="position: absolute; left: 36%; top: 15%; background: #ffffff; padding: 6px 12px; border-radius: 6px; border: 1px solid #dcdcdc; font-size: 11px; font-weight: 600; color: #555; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
-                🏭 모터컨테이너
-            </div>
-
-            <!-- 하단 중앙: 다우세라믹 앤석재 -->
-            <div style="position: absolute; left: 44%; bottom: 20%; background: #ffffff; padding: 6px 12px; border-radius: 6px; border: 1px solid #dcdcdc; font-size: 11px; font-weight: 600; color: #555; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
-                🏛️ 다우세라믹 앤석재
-            </div>
-
-            <!-- 하단 왼쪽: 해오름가구 -->
-            <div style="position: absolute; left: 18%; bottom: 22%; background: #ffffff; padding: 6px 12px; border-radius: 6px; border: 1px solid #dcdcdc; font-size: 11px; font-weight: 600; color: #555; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
-                🪑 해오름가구
-            </div>
-
-            <!-- 핵심 위치: 엠.제이인터내셔날 (온다정) - 캡처 화면 팝업 & 핑크 블록 위치 -->
-            <div style="position: absolute; left: 55%; top: 44%; transform: translate(-50%, -50%); text-align: center; z-index: 5;">
+            <!-- 지도 중앙 위치를 강조해주는 감성적인 핀 & 말풍선 오버레이 -->
+            <div style="position: absolute; left: 53%; top: 46%; transform: translate(-50%, -50%); text-align: center; z-index: 5;">
                 
-                <!-- 캡처 화면과 동일한 스타일의 정보 말풍선 -->
-                <div style="background: #ffffff; padding: 14px 18px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 1px solid #e0e0e0; margin-bottom: 8px; width: 250px; text-align: left; position: relative;">
-                    <div style="font-size: 12px; font-weight: 800; color: #111; margin-bottom: 2px;">경기 용인시 처인구 모현읍 이일로 7-9</div>
+                <!-- 정보 말풍선 박스 -->
+                <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(4px); padding: 14px 18px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border: 1px solid #d5d5d5; margin-bottom: 8px; width: 250px; text-align: left;">
+                    <div style="font-size: 12px; font-weight: 800; color: #111; margin-bottom: 2px;">경기도 용인시 처인구 모현읍 이일로 7-9</div>
                     <div style="font-size: 10px; color: #666; margin-bottom: 8px;">(지번) 경기 용인시 처인구 매산리 542-2</div>
                     <div style="display: flex; gap: 6px;">
-                        <span style="background: #007aff; color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 4px;">길찾기</span>
+                        <span style="background: #007aff; color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 4px;">엠.제이인터내셔날 본사</span>
                     </div>
                 </div>
 
-                <!-- 파란색 위치 핀 + 핑크색 건물 블록 -->
+                <!-- 통통 튀는 파란색 핀 -->
                 <div class="illustration-pin" style="position: relative; display: inline-block;">
-                    <div style="font-size: 36px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); margin-bottom: -6px;">📍</div>
-                    <div style="width: 36px; height: 22px; border: 3px solid #ff4081; background: rgba(255, 64, 129, 0.15); border-radius: 4px; margin: 0 auto; transform: skewX(-15deg);"></div>
+                    <div style="font-size: 38px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">📍</div>
                 </div>
 
             </div>
 
         </div>
 
-        <!-- 2. 기존 버튼형 지도 카드 박스 (네이버/카카오 바로가기) -->
+        <!-- 2. 네이버/카카오 지도 바로가기 버튼 카드 박스 -->
         <div style="max-width: 900px; margin: 0 auto; padding: 40px 30px; background: #ffffff; border-radius: 20px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
             <div style="font-size: 38px; margin-bottom: 10px;">🗺️</div>
             <h3 class="font-title" style="font-size: 24px; color: #111; margin: 0 0 8px 0; font-weight: 700;">엠.제이인터내셔날 (온다정)</h3>
