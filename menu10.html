@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바베큐소스(매운맛) - 온다정</title>
+    <meta name="description" content="온다정 바베큐소스(매운맛) - 화끈하게 당기는 매운맛과 딥한 감칠맛으로 훈제·구이 요리의 풍미를 극대화하는 비법 소스">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            header {
+                padding: 0 20px !important;
+                height: auto !important;
+                flex-direction: column !important;
+                gap: 15px;
+                padding-top: 15px !important;
+                padding-bottom: 15px !important;
+            }
+            nav ul {
+                gap: 20px !important;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            main {
+                flex-direction: column !important;
+                gap: 40px !important;
+                margin: 30px auto !important;
+            }
+        }
+
+        /* 썸네일 테두리 및 효과 전용 CSS */
+        .thumb-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+        .thumb-img.active, .thumb-img:hover {
+            border-color: #C5A059;
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body style="margin: 0; font-family: sans-serif; background-color: #fcfaf7;">
+
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
+        <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+            <img src="images/mylogo.jpg" alt="온다정 로고" style="height: 90px; cursor: pointer;">
+        </a>
+
+        <nav>
+            <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
+                <li><a href="about.html" style="text-decoration: none; color: #333; font-weight: bold;">회사 소개</a></li>
+                <li><a href="menu.html" style="text-decoration: none; color: #C5A059; font-weight: bold;">메뉴 소개</a></li>
+                <li><a href="mapinfo.html" style="text-decoration: none; color: #333; font-weight: bold;">매장 안내</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 1100px; margin: 60px auto; padding: 0 20px; display: flex; gap: 60px; align-items: flex-start;">
+        
+        <!-- [좌측] 이미지 갤러리 영역 -->
+        <div style="flex: 1; width: 100%;">
+            <!-- 메인 고해상도 이미지 (기본: 제품 사진) -->
+            <div style="width: 100%; height: 480px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.08); background: #fff;">
+                <img id="mainImage" 
+                     src="images/.png" 
+                     alt="바베큐소스(매운맛) 메인"
+                     style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease;">
+            </div>
+
+            <!-- 하단 썸네일 선택 바 (제품 사진 & 완성 음식 사진) -->
+            <div style="display: flex; gap: 15px; margin-top: 20px; justify-content: flex-start;">
+                <!-- 1. 제품 사진 썸네일 -->
+                <img src="images/.jpg" 
+                     alt="제품 사진" 
+                     class="thumb-img active" 
+                     onclick="changeImage(this, 'images/.jpg')">
+                
+                <!-- 2. 완성된 음식 사진 썸네일 (파일명만 가지고 계신 이미지로 바꿔주세요) -->
+                <img src="images/.png" 
+                     alt="음식 연출 사진" 
+                     class="thumb-img" 
+                     onclick="changeImage(this, 'images/.png')">
+            </div>
+        </div>
+
+        <!-- [우측] 제품 상세 설명 영역 -->
+        <div style="flex: 1; padding-top: 10px;">
+            <span style="color: #C5A059; font-weight: bold; letter-spacing: 1.5px; font-size: 14px;">ONDAJEONG MENU</span>
+            <h1 style="font-family: 'Nanum Myeongjo', serif; font-size: 40px; margin: 12px 0 20px 0; color: #222;">바베큐소스(매운맛)</h1>
+            
+            <div style="line-height: 1.8; color: #555; font-size: 15px;">
+                <p style="font-size: 17px; color: #333; margin-bottom: 25px; word-break: keep-all;">
+                    자극적이지 않은 맛있게 매운 풍미로 닭꼬치, 립, 딥핑에 다채롭게 어울리는 특제 바베큐소스입니다.
+                </p>
+                
+                <div style="background: #fff; padding: 25px; border-radius: 15px; border: 1px solid #f0f0f0; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+                    <ul style="padding-left: 18px; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+                        <li><strong>중량 :</strong> 9kg</li>
+                        <li><strong>보관방법 :</strong> 실온보관</li>
+                        <li><strong>소비기한 :</strong> 제조일로부터 12개월</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <a href="menu.html" style="
+                    display: block; 
+                    width: 100%; 
+                    padding: 16px 0; 
+                    background: #fff; 
+                    color: #444; 
+                    border: 1px solid #e0e0e0; 
+                    border-radius: 12px; 
+                    font-weight: bold; 
+                    text-decoration: none; 
+                    text-align: center; 
+                    box-sizing: border-box;
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.backgroundColor='#f7f7f7'; this.style.borderColor='#ccc';" 
+                   onmouseout="this.style.backgroundColor='#fff'; this.style.borderColor='#e0e0e0';">
+                    목록으로 돌아가기
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 이미지 전환 자바스크립트 -->
+    <script>
+        function changeImage(element, src) {
+            const mainImg = document.getElementById('mainImage');
+            
+            // 이미지 부드럽게 전환 효과
+            mainImg.style.opacity = '0.3';
+            setTimeout(() => {
+                mainImg.src = src;
+                mainImg.style.opacity = '1';
+            }, 150);
+
+            // 썸네일 활성화(테두리) 표시
+            const thumbs = document.querySelectorAll('.thumb-img');
+            thumbs.forEach(thumb => thumb.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
