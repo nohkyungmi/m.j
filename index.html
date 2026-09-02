@@ -7,25 +7,30 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="styles.css">
-
     <style>
-        /* 글로벌 폰트 적용 (기본 본문: Pretendard) */
+        /* 글로벌 폰트 및 리셋 */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
         body {
-            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif !important;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #222;
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+            word-break: keep-all;
+            overflow-x: hidden;
         }
 
-        /* 명조/포인트 타이틀 전용 클래스 */
+        /* 폰트 클래스 */
         .font-title {
             font-family: 'Noto Serif KR', serif !important;
         }
-
-        /* 영문 포인트 전용 클래스 */
         .font-eng {
             font-family: 'Montserrat', sans-serif !important;
         }
 
-        /* 핀 통통 튀는 애니메이션 */
+        /* 애니메이션 */
         @keyframes customBounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-6px); }
@@ -33,346 +38,502 @@
         .illustration-pin {
             animation: customBounce 2s infinite ease-in-out;
         }
+
+        /* 헤더 스타일 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            height: 90px;
+            background: #fff;
+            border-bottom: 1px solid #f2f2f2;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header .logo img {
+            height: 75px;
+            cursor: pointer;
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: -0.3px;
+            transition: color 0.3s ease;
+        }
+        header nav ul li a:hover {
+            color: #C5A059;
+        }
+
+        /* 드롭다운 메뉴 */
+        .dropdown-container {
+            position: relative;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffffff;
+            min-width: 210px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            padding: 10px 0;
+            border: 1px solid #f0f0f0;
+            z-index: 1000;
+        }
+        .dropdown-container:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #444;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        .dropdown-menu a:hover {
+            background-color: #fdfbf7;
+            color: #C5A059;
+        }
+
+        /* 히어로 섹션 */
+        .hero-section {
+            width: 100%;
+            height: 85vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-slideshow {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .hero-slide.active {
+            opacity: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        /* 버튼 공통 */
+        .btn-custom {
+            text-decoration: none;
+            padding: 15px 35px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+        .btn-outline {
+            color: white;
+            border: 2px solid rgba(255,255,255,0.8);
+            background: rgba(0,0,0,0.2);
+        }
+        .btn-outline:hover {
+            background-color: #C5A059;
+            border-color: #C5A059;
+            transform: translateY(-3px);
+        }
+        .btn-green {
+            color: white;
+            border: 2px solid #03C75A;
+            background: #03C75A;
+            box-shadow: 0 4px 15px rgba(3,199,90,0.3);
+        }
+        .btn-green:hover {
+            background-color: #02b351;
+            border-color: #02b351;
+            transform: translateY(-3px);
+        }
+
+        /* 상품 카테고리 섹션 */
+        .category-section {
+            max-width: 1100px;
+            margin: 90px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .category-grid {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .category-card {
+            flex: 1;
+            min-width: 260px;
+            max-width: 340px;
+            padding: 35px 24px;
+            background-color: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #222;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+        }
+        .category-card:hover {
+            background-color: #C5A059;
+            color: white;
+            border-color: #C5A059;
+            transform: translateY(-6px);
+        }
+        .category-card:hover .cat-sub {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .cat-sub {
+            display: block;
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        /* 위치 및 지도 섹션 */
+        .location-section {
+            padding: 70px 20px 100px 20px;
+            text-align: center;
+            background: #f4f4f5;
+        }
+        .info-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            color: #444;
+            font-size: 15px;
+            margin: 40px 0;
+        }
+        .info-item p:first-child {
+            font-weight: 700;
+            color: #C5A059;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+        .map-container {
+            max-width: 950px;
+            height: 480px;
+            margin: 0 auto 30px auto;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #d4ded8;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .map-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .map-card-box {
+            position: absolute;
+            left: 50%;
+            top: 32%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 5;
+        }
+        .map-address-tooltip {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+            padding: 14px 18px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border: 1px solid #d5d5d5;
+            margin-bottom: 8px;
+            width: 260px;
+            text-align: left;
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: #ffffff;
+            color: #666;
+            padding: 35px 50px;
+            border-top: 1px solid #eee;
+        }
+        footer .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 13.5px;
+            flex-wrap: wrap;
+        }
+
+        /* 상단 이동 버튼 */
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #C5A059;
+            color: white;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        #scrollTopBtn:hover {
+            background-color: #a38243;
+            transform: scale(1.1);
+        }
+
+        /* 반응형 미디어쿼리 */
+        @media(max-width: 768px) {
+            header { padding: 0 20px; height: 75px; }
+            header .logo img { height: 60px; }
+            header nav ul { gap: 15px; }
+            header nav ul li a { font-size: 14px; }
+            .hero-section h1 { font-size: 42px !important; }
+            .hero-section p { font-size: 18px !important; }
+            .map-container { height: 350px; }
+            footer { padding: 25px 20px; }
+        }
     </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f9f9f9;">
+<body>
 
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
-    
-        <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
-            <img src="images/mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
+    <!-- 헤더 -->
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/mylogo.jpg" alt="엠.제이인터내셔날 로고">
         </a>
-
         <nav>
-            <ul style="list-style: none; display: flex; gap: 30px; margin: 0; padding: 0;">
-                
-                <li onmouseover="this.style.transform='scale(1.05)';" 
-                    onmouseout="this.style.transform='scale(1)';" 
-                    style="transition: all 0.3s ease;">
-                    <a href="about.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">회사 소개</a>
-                </li>
-
-                <li onmouseover="document.getElementById('menu-dropdown').style.display='block';" 
-                    onmouseout="document.getElementById('menu-dropdown').style.display='none';" 
-                    style="transition: all 0.2s ease; position: relative; list-style: none; display: inline-block; vertical-align: top; margin: 0 15px;">
-                    
-                    <a href="menu.html" style="
-                        text-decoration: none; 
-                        color: #222; 
-                        font-weight: 700; 
-                        font-size: 16px; 
-                        letter-spacing: -0.3px; 
-                        padding: 0px 0 10px 0;
-                        height: 22px;
-                        display: flex; 
-                        align-items: center; 
-                        gap: 6px; 
-                    ">
+            <ul>
+                <li><a href="about.html">회사 소개</a></li>
+                <li class="dropdown-container">
+                    <a href="menu.html">
                         메뉴 소개 
                         <span style="font-size: 9px; color: #b5b5b5; transform: scaleY(0.8); display: inline-block;">▼</span>
                     </a>
-
-                    <div id="menu-dropdown" style="
-                        display: none; 
-                        position: absolute; 
-                        top: 30px;
-                        left: 50%; 
-                        transform: translateX(-50%); 
-                        background-color: #ffffff; 
-                        min-width: 170px; 
-                        box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-                        border-radius: 12px; 
-                        padding: 10px 0; 
-                        border: 1px solid #f0f0f0;
-                        z-index: 1000;
-                    ">
-                        <a href="menu.html?tab=source1" style="display: block; padding: 12px 20px; text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-align: center; transition: 0.2s;"
-                           onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
-                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#444';">
-                            소스류
-                        </a>
-                        <a href="menu.html?tab=source2" style="display: block; padding: 12px 20px; text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-align: center; transition: 0.2s;"
-                           onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
-                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#444';">
-                            복합조미식품 및 두류가공품
-                        </a>
-                        <a href="menu.html?tab=source3" style="display: block; padding: 12px 20px; text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-align: center; transition: 0.2s;"
-                           onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
-                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#444';">
-                            기타가공품
-                        </a>
+                    <div class="dropdown-menu">
+                        <a href="menu.html?tab=source1">소스류</a>
+                        <a href="menu.html?tab=source2">복합조미식품 및 두류가공품</a>
+                        <a href="menu.html?tab=source3">기타가공품</a>
                     </div>
                 </li>
-
-                <!-- 대소문자 고려하여 OEM.html로 반영 -->
-                <li onmouseover="this.style.transform='scale(1.05)';" 
-                    onmouseout="this.style.transform='scale(1)';" 
-                    style="transition: all 0.3s ease;">
-                    <a href="OEM.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">OEM 안내</a>
-                </li>
-
+                <li><a href="OEM.html">OEM 안내</a></li>
             </ul>
         </nav>
     </header>
 
-    <section style="width: 100%; height: 90vh; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
-
-      <div id="hero-slideshow" style="position:absolute; inset:0; z-index:0;">
-        <img src="images/main_pic.png" alt="메인1" class="hero-slide" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:1; transition:opacity 1s ease;">
-        <img src="images/index_pic.png" alt="메인2" class="hero-slide" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 1s ease;">
-        <div style="position:absolute; inset:0; background: rgba(0,0,0,0.35); z-index:1;"></div>
-      </div>
-
-      <div style="position:relative; z-index:2; max-width:1200px; padding: 0 20px;">
-        <p class="font-eng" style="font-size:15px; letter-spacing:4px; color:#EBD095; margin-bottom:18px; font-weight:700; text-transform:uppercase;">
-          Premium Food Culture Company
-        </p>
-
-        <h1 class="font-title" style="font-size:68px; margin:0; font-weight:900; letter-spacing:-1px; text-shadow:0 10px 25px rgba(0,0,0,0.5); word-break: keep-all;">
-          엠.제이인터내셔날
-        </h1>
-
-        <p class="font-title" style="font-size:24px; margin:22px 0 45px 0; letter-spacing:1px; color:#ffffff; font-weight:600; text-shadow:0 4px 10px rgba(0,0,0,0.4);">
-          따뜻한 진심과 넉넉한 정이 머무는 곳, <span style="color: #EBD095;">온다정</span>
-        </p>
-
-        <!-- 메인 배너 버튼 영역 (회사 위치 지도 보기 + 네이버 공식 블로그 바로가기 추가) -->
-        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
-            <a href="#location" class="font-eng" style="text-decoration:none; color:white; border:2px solid rgba(255,255,255,0.8); padding:16px 38px; font-size:13px; font-weight:700; letter-spacing:2px; border-radius:30px; background:rgba(0,0,0,0.2); backdrop-filter: blur(5px); transition:all 0.3s ease; display:inline-block; cursor:pointer;"
-                onmouseover="this.style.backgroundColor='#C5A059'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-3px)';"
-                onmouseout="this.style.backgroundColor='rgba(0,0,0,0.2)'; this.style.borderColor='rgba(255,255,255,0.8)'; this.style.transform='translateY(0)';">
-              OUR COMPANY MAP
-            </a>
-
-            <a href="https://blog.naver.com/rhok13" target="_blank" class="font-eng" style="text-decoration:none; color:white; border:2px solid #03C75A; padding:16px 38px; font-size:13px; font-weight:700; letter-spacing:1px; border-radius:30px; background:#03C75A; backdrop-filter: blur(5px); transition:all 0.3s ease; display:inline-block; cursor:pointer; box-shadow: 0 4px 15px rgba(3,199,90,0.3);"
-                onmouseover="this.style.backgroundColor='#02b351'; this.style.borderColor='#02b351'; this.style.transform='translateY(-3px)';"
-                onmouseout="this.style.backgroundColor='#03C75A'; this.style.borderColor='#03C75A'; this.style.transform='translateY(0)';">
-              🟢 공식 블로그 방문하기
-            </a>
+    <!-- 히어로 섹션 -->
+    <section class="hero-section">
+        <div class="hero-slideshow" id="hero-slideshow">
+            <img src="images/main_pic.png" alt="메인 배너 이미지 1" class="hero-slide active">
+            <img src="images/index_pic.png" alt="메인 배너 이미지 2" class="hero-slide">
+            <div class="hero-overlay"></div>
         </div>
 
-      </div>
+        <div class="hero-content">
+            <p class="font-eng" style="font-size:15px; letter-spacing:4px; color:#EBD095; margin-bottom:18px; font-weight:700; text-transform:uppercase;">
+                Premium Food Culture Company
+            </p>
+            <h1 class="font-title" style="font-size:64px; margin:0; font-weight:900; letter-spacing:-1px; text-shadow:0 10px 25px rgba(0,0,0,0.5);">
+                엠.제이인터내셔날
+            </h1>
+            <p class="font-title" style="font-size:22px; margin:20px 0 40px 0; letter-spacing:1px; color:#ffffff; font-weight:600; text-shadow:0 4px 10px rgba(0,0,0,0.4);">
+                따뜻한 진심과 넉넉한 정이 머무는 곳, <span style="color: #EBD095;">온다정</span>
+            </p>
 
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="#location" class="font-eng btn-custom btn-outline">OUR COMPANY MAP</a>
+                <a href="https://blog.naver.com/rhok13" target="_blank" class="font-eng btn-custom btn-green">🟢 공식 블로그 방문하기</a>
+            </div>
+        </div>
     </section>
 
-    <section style="max-width: 1050px; margin: 80px auto; padding: 0 20px; text-align: center;">
-        
+    <!-- 제품 카테고리 -->
+    <section class="category-section">
         <h2 class="font-eng" style="font-size: 32px; color: #111; margin-bottom: 8px; font-weight: 800; letter-spacing: 1px;">PRODUCT CATEGORY</h2>
-        <p style="font-size: 15px; color: #666; margin-bottom: 45px; letter-spacing: -0.3px;">온다정의 정성을 담은 메뉴를 카테고리별로 만나보세요.</p>
+        <p style="font-size: 15px; color: #666; margin-bottom: 15px; letter-spacing: -0.3px;">온다정의 정성을 담은 메뉴를 카테고리별로 만나보세요.</p>
 
-        <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
-            
-            <a href="menu.html?tab=source1" style="
-                flex: 1; 
-                min-width: 250px; 
-                max-width: 310px;
-                padding: 32px 24px; 
-                background-color: #ffffff; 
-                border: 1px solid #eaeaea; 
-                border-radius: 16px; 
-                text-decoration: none; 
-                color: #222; 
-                transition: all 0.3s ease;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.03);
-            " onmouseover="this.style.backgroundColor='#C5A059'; this.style.color='white'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-6px)';" 
-              onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#222'; this.style.borderColor='#eaeaea'; this.style.transform='translateY(0)';">
-                <span class="font-eng" style="display: block; font-size: 12px; color: #999; margin-bottom: 8px; font-weight: 700; letter-spacing: 1px;">CATEGORY 01</span>
+        <div class="category-grid">
+            <a href="menu.html?tab=source1" class="category-card">
+                <span class="font-eng cat-sub">CATEGORY 01</span>
                 <strong class="font-title" style="font-size: 22px; display: block; font-weight: 700;">소스류</strong>
             </a>
-
-            <a href="menu.html?tab=source2" style="
-                flex: 1; 
-                min-width: 250px; 
-                max-width: 310px;
-                padding: 32px 24px; 
-                background-color: #ffffff; 
-                border: 1px solid #eaeaea; 
-                border-radius: 16px; 
-                text-decoration: none; 
-                color: #222; 
-                transition: all 0.3s ease;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.03);
-            " onmouseover="this.style.backgroundColor='#C5A059'; this.style.color='white'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-6px)';" 
-              onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#222'; this.style.borderColor='#eaeaea'; this.style.transform='translateY(0)';">
-                <span class="font-eng" style="display: block; font-size: 12px; color: #999; margin-bottom: 8px; font-weight: 700; letter-spacing: 1px;">CATEGORY 02</span>
-                <strong class="font-title" style="font-size: 20px; display: block; font-weight: 700; word-break: keep-all;">복합조미식품 및 두류가공품</strong>
+            <a href="menu.html?tab=source2" class="category-card">
+                <span class="font-eng cat-sub">CATEGORY 02</span>
+                <strong class="font-title" style="font-size: 20px; display: block; font-weight: 700;">복합조미식품 및 두류가공품</strong>
             </a>
-
-            <a href="menu.html?tab=source3" style="
-                flex: 1; 
-                min-width: 250px; 
-                max-width: 310px;
-                padding: 32px 24px; 
-                background-color: #ffffff; 
-                border: 1px solid #eaeaea; 
-                border-radius: 16px; 
-                text-decoration: none; 
-                color: #222; 
-                transition: all 0.3s ease;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.03);
-            " onmouseover="this.style.backgroundColor='#C5A059'; this.style.color='white'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-6px)';" 
-              onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#222'; this.style.borderColor='#eaeaea'; this.style.transform='translateY(0)';">
-                <span class="font-eng" style="display: block; font-size: 12px; color: #999; margin-bottom: 8px; font-weight: 700; letter-spacing: 1px;">CATEGORY 03</span>
+            <a href="menu.html?tab=source3" class="category-card">
+                <span class="font-eng cat-sub">CATEGORY 03</span>
                 <strong class="font-title" style="font-size: 22px; display: block; font-weight: 700;">기타가공품</strong>
             </a>
-
         </div>
     </section>
 
-    <section id="location" style="padding: 60px 20px 100px 20px; text-align: center;">  
-        <h2 class="font-title" style="font-size: 38px; margin-bottom: 10px; font-weight: 700; color: #111; letter-spacing: -0.5px;">우리 회사 위치</h2>
-        <p style="font-size: 16px; color: #666; margin-bottom: 50px;">따뜻한 정이 있는 온다정을 찾아주세요</p>
+    <!-- 오시는 길 (Location) -->
+    <section id="location" class="location-section">
+        <h2 class="font-title" style="font-size: 36px; margin-bottom: 10px; font-weight: 700; color: #111; letter-spacing: -0.5px;">우리 회사 위치</h2>
+        <p style="font-size: 16px; color: #666; margin-bottom: 20px;">따뜻한 정이 있는 온다정을 찾아주세요</p>
 
-        <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; color: #444; font-size: 15px; margin-bottom: 40px;">
-            <div>
-                <p style="font-weight: 700; color: #C5A059; margin-bottom: 12px; letter-spacing: 1px;">LOCATION</p>
+        <div class="info-grid">
+            <div class="info-item">
+                <p class="font-eng">LOCATION</p>
                 <p style="margin: 0;">경기도 용인시 처인구 모현읍 이일로 7-9</p>
             </div>
-            <div>
-                <p style="font-weight: 700; color: #C5A059; margin-bottom: 12px; letter-spacing: 1px;">OPENING HOURS</p>
+            <div class="info-item">
+                <p class="font-eng">OPENING HOURS</p>
                 <p style="margin: 0;">AM 9:00 - PM 18:00</p>
             </div>
-            <div>
-                <p style="font-weight: 700; color: #C5A059; margin-bottom: 12px; letter-spacing: 1px;">RESERVATION</p>
+            <div class="info-item">
+                <p class="font-eng">RESERVATION</p>
                 <p style="margin: 0;">031-333-2303</p>
             </div>
-            <div>
-                <p style="font-weight: 700; color: #C5A059; margin-bottom: 12px; letter-spacing: 1px;">FAX</p>
+            <div class="info-item">
+                <p class="font-eng">FAX</p>
                 <p style="margin: 0;">031-333-2376</p>
             </div>
         </div>
 
-        <div style="max-width: 900px; height: 480px; margin: 0 auto 30px auto; border-radius: 20px; position: relative; overflow: hidden; border: 1px solid #d4ded8; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-            
-            <img src="images/map_capture.png" alt="온다정 지도 위치" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-
-            <div style="position: absolute; left: 45.5%; top: 30%; transform: translate(-50%, -50%); text-align: center; z-index: 5;">
-                <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(4px); padding: 14px 18px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border: 1px solid #d5d5d5; margin-bottom: 8px; width: 250px; text-align: left;">
+        <div class="map-container">
+            <img src="images/map_capture.png" alt="온다정 지도 위치">
+            <div class="map-card-box">
+                <div class="map-address-tooltip">
                     <div style="font-size: 12px; font-weight: 800; color: #111; margin-bottom: 2px;">경기도 용인시 처인구 모현읍 이일로 7-9</div>
                     <div style="font-size: 10px; color: #666; margin-bottom: 8px;">(지번) 경기 용인시 처인구 매산리 542-2</div>
-                    <div style="display: flex; gap: 6px;">
-                        <span style="background: #007aff; color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 4px;">엠.제이인터내셔날 본사</span>
-                    </div>
+                    <span style="background: #007aff; color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 4px;">엠.제이인터내셔날 본사</span>
                 </div>
-
-                <div class="illustration-pin" style="position: relative; display: inline-block;">
+                <div class="illustration-pin" style="display: inline-block;">
                     <div style="font-size: 38px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">📍</div>
                 </div>
             </div>
         </div>
 
-        <div style="max-width: 900px; margin: 0 auto; padding: 40px 30px; background: #ffffff; border-radius: 20px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
-            <div style="font-size: 38px; margin-bottom: 10px;">🗺️</div>
-            <h3 class="font-title" style="font-size: 24px; color: #111; margin: 0 0 8px 0; font-weight: 700;">엠.제이인터내셔날 (온다정)</h3>
-            <p style="font-size: 15px; color: #666; margin: 0 0 25px 0;">경기도 용인시 처인구 모현읍 이일로 7-9</p>
+        <div style="max-width: 950px; margin: 0 auto; padding: 35px 30px; background: #ffffff; border-radius: 20px; border: 1px solid #eaeaea; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
+            <div style="font-size: 32px; margin-bottom: 8px;">🗺️</div>
+            <h3 class="font-title" style="font-size: 22px; color: #111; margin: 0 0 6px 0; font-weight: 700;">엠.제이인터내셔날 (온다정)</h3>
+            <p style="font-size: 14.5px; color: #666; margin: 0 0 20px 0;">경기도 용인시 처인구 모현읍 이일로 7-9</p>
             
             <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-                <a href="https://map.kakao.com/link/search/경기도 용인시 처인구 모현읍 이일로 7-9" target="_blank" style="padding: 14px 28px; background-color: #FEE500; color: #191919; text-decoration: none; font-weight: 700; font-size: 14px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                <a href="https://map.kakao.com/link/search/경기도 용인시 처인구 모현읍 이일로 7-9" target="_blank" style="padding: 12px 26px; background-color: #FEE500; color: #191919; text-decoration: none; font-weight: 700; font-size: 14px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
                     🟡 카카오맵에서 크게 보기
                 </a>
-                <a href="https://map.naver.com/v5/search/경기도 용인시 처인구 모현읍 이일로 7-9" target="_blank" style="padding: 14px 28px; background-color: #03CF5D; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 14px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                <a href="https://map.naver.com/v5/search/경기도 용인시 처인구 모현읍 이일로 7-9" target="_blank" style="padding: 12px 26px; background-color: #03CF5D; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 14px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
                     🟢 네이버 지도에서 크게 보기
                 </a>
             </div>
         </div>
     </section>
 
-    <footer style="background-color: #ffffff; color: #666; padding: 35px 50px; border-top: 1px solid #eee;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-            
-            <div style="display: flex; align-items: center; gap: 25px; font-size: 14px; flex-wrap: wrap;">
-                <span class="font-title" style="font-weight: 700; color: #111; font-size: 16px;">엠.제이인터내셔날</span>
-                <span style="color: #eee;">|</span>
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-info">
+                <span class="font-title" style="font-weight: 700; color: #111; font-size: 15px;">엠.제이인터내셔날</span>
+                <span style="color: #ddd;">|</span>
                 <span>대표자: 노경미</span>
                 <span>사업자등록번호: 123-23-79551</span>
                 <span>주소: 경기도 용인시 처인구 모현읍 이일로 7-9</span>
                 <span>대표전화: 031-333-2303</span>
                 <span>팩스: 031-333-2376</span>
             </div>
-
-            <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-                <a href="https://blog.naver.com/rhok13" target="_blank" style="
-                    display: inline-flex; 
-                    align-items: center; 
-                    gap: 6px; 
-                    background: #03C75A; 
-                    color: white; 
-                    text-decoration: none; 
-                    font-size: 13px; 
-                    font-weight: 700; 
-                    padding: 6px 14px; 
-                    border-radius: 20px; 
-                    transition: opacity 0.2s;
-                " onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                <a href="https://blog.naver.com/rhok13" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #03C75A; color: white; text-decoration: none; font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 20px;">
                     <span>N 공식 블로그</span>
                 </a>
-                <span class="font-eng" style="color: #999; font-size: 13px;">Copyright ⓒ 2026. All Rights Reserved.</span>
+                <span class="font-eng" style="color: #999; font-size: 12.5px;">Copyright ⓒ 2026. All Rights Reserved.</span>
             </div>
-
         </div>
     </footer>
 
-    <button id="scrollTopBtn" onclick="scrollToTop()" style="
-        display: none;
-        position: fixed; 
-        bottom: 40px; 
-        right: 40px; 
-        z-index: 99; 
-        border: none; 
-        outline: none; 
-        background-color: #C5A059;
-        color: white; 
-        cursor: pointer; 
-        padding: 15px 20px; 
-        border-radius: 50%;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        font-size: 18px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-    " onmouseover="this.style.backgroundColor='#a38243'; this.style.transform='scale(1.1)';" 
-      onmouseout="this.style.backgroundColor='#C5A059'; this.style.transform='scale(1)';">
-        ↑
-    </button>
+    <!-- 상단 이동 버튼 -->
+    <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
 
     <script>
-        window.onscroll = function() { scrollFunction() };
-
-        function scrollFunction() {
+        // 스크롤 탑 버튼 토글
+        window.onscroll = function() {
             var btn = document.getElementById("scrollTopBtn");
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 btn.style.display = "block";
             } else {
                 btn.style.display = "none";
             }
-        }
+        };
 
         function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // 히어로 슬라이드쇼 자동 전환
+        (function() {
+            const slides = document.querySelectorAll('#hero-slideshow .hero-slide');
+            if (!slides || slides.length < 2) return;
+            let idx = 0;
+            const interval = 5000;
+
+            setInterval(() => {
+                slides[idx].classList.remove('active');
+                idx = (idx + 1) % slides.length;
+                slides[idx].classList.add('active');
+            }, interval);
+        })();
     </script>
-
-    <script>
-      (function() {
-        const slides = document.querySelectorAll('#hero-slideshow .hero-slide');
-        if (!slides || slides.length < 2) return;
-        let idx = 0;
-        const interval = 5000;
-
-        slides.forEach((s, i) => {
-          s.style.opacity = (i === 0) ? '1' : '0';
-        });
-
-        setInterval(() => {
-          const prev = idx;
-          idx = (idx + 1) % slides.length;
-          slides[prev].style.opacity = 0;
-          slides[idx].style.opacity = 1;
-        }, interval);
-      })();
-    </script>
-
 </body>
 </html>
