@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>회사 소개 | 엠.제이인터내셔날 - 온다정</title>
     
-    <!-- 1. index.html과 동일한 웹폰트 로드 -->
+    <!-- 웹폰트 로드 -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
     
@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* index.html 동일 폰트 적용 */
         body {
             font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif !important;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
         }
         .font-title {
             font-family: 'Noto Serif KR', serif !important;
@@ -24,18 +26,16 @@
         }
     </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f9f9f9;">
+<body>
 
-    <!-- 1. Header (index.html 동기화) -->
+    <!-- 1. Header -->
     <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
-        
         <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
             <img src="images/mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
         </a>
 
         <nav>
             <ul style="list-style: none; display: flex; gap: 30px; margin: 0; padding: 0;">
-                
                 <li onmouseover="this.style.transform='scale(1.05)';" 
                     onmouseout="this.style.transform='scale(1)';" 
                     style="transition: all 0.3s ease;">
@@ -99,12 +99,11 @@
                     style="transition: all 0.3s ease;">
                     <a href="index.html#location" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">OEM 안내</a>
                 </li>
-
             </ul>
         </nav>
     </header>
 
-    <!-- 2. Sub Hero Section (신선한 야채 컨셉 배경 적용) -->
+    <!-- 2. Sub Hero Section -->
     <section style="
         height: 400px; 
         background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?q=80&w=1600&auto=format&fit=crop');
@@ -125,7 +124,7 @@
     <!-- 3. Brand Identity Section -->
     <section style="max-width: 1050px; margin: 80px auto; padding: 0 20px; text-align: center;">
         
-        <!-- [수정 완료] 이미지 잘림이 전혀 없는 시그니처 로고 프레임 -->
+        <!-- 로고 프레임 -->
         <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 40px;">
             <div style="
                 background: #ffffff; 
@@ -175,11 +174,11 @@
                 </p>
             </div>
 
-            <!-- 情 Card -->
+            <!-- 情 Card (오타 수정 완료) -->
             <div style="flex: 1; min-width: 250px; max-width: 310px; padding: 35px 24px; background-color: #ffffff; border: 1px solid #eaeaea; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.03); position: relative; overflow: hidden;">
                 <div style="position: absolute; top: -10px; right: -10px; width: 70px; height: 70px; background: rgba(197, 160, 89, 0.08); border-radius: 50%;"></div>
                 <div class="font-title" style="font-size: 52px; color: #C5A059; font-weight: 900; margin-bottom: 10px;">情</div>
-                <span style="color: #C5A059; font-size: 14px; font-weight: 700; display block; margin-bottom: 12px;">뜻 정</span>
+                <span style="color: #C5A059; font-size: 14px; font-weight: 700; display: block; margin-bottom: 12px;">뜻 정</span>
                 <h3 class="font-title" style="font-size: 18px; margin: 0 0 10px 0; color: #222;">진심 어린 인연</h3>
                 <p style="font-size: 14px; color: #666; line-height: 1.6; margin: 0; word-break: keep-all;">
                     사람과 사람 사이의 신뢰와<br>진심 어린 마음을 소중히 전합니다.
