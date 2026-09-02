@@ -12,11 +12,16 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
+        /* 🟢 텍스트 드래그 및 선택 방지 */
         body {
             font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif !important;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         .font-title {
             font-family: 'Noto Serif KR', serif !important;
@@ -290,8 +295,33 @@
         ↑
     </button>
 
-    <!-- 스크립트 -->
+    <!-- 스크립트 (우클릭/복사 방지 포함) -->
     <script>
+        // 1. 우클릭 메뉴 차단
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // 2. 이미지 드래그 차단
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.nodeName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+
+        // 3. 복사(Ctrl+C), 소스보기(Ctrl+U), 개발자도구(F12 등) 단축키 차단
+        document.addEventListener('keydown', function(e) {
+            if (
+                (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U')) ||
+                (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J' || e.key === 'c' || e.key === 'C')) ||
+                e.key === 'F12'
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 스크롤 및 TOP 버튼 기능
         window.onscroll = function() { scrollFunction() };
 
         function scrollFunction() {
