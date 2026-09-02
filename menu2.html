@@ -108,4 +108,80 @@
                 </p>
                 
                 <div style="background: #fff; padding: 25px; border-radius: 15px; border: 1px solid #f0f0f0; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
-                    <ul style="padding-left: 18px; margin:
+                    <ul style="padding-left: 18px; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+                        <li><strong>중량 :</strong> 2kg, 10kg</li>
+                        <li><strong>보관방법 :</strong> 실온보관</li>
+                        <li><strong>소비기한 :</strong> 제조일로부터 12개월</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <a href="menu.html" style="
+                    display: block; 
+                    width: 100%; 
+                    padding: 16px 0; 
+                    background: #fff; 
+                    color: #444; 
+                    border: 1px solid #e0e0e0; 
+                    border-radius: 12px; 
+                    font-weight: bold; 
+                    text-decoration: none; 
+                    text-align: center; 
+                    box-sizing: border-box;
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.backgroundColor='#f7f7f7'; this.style.borderColor='#ccc';" 
+                   onmouseout="this.style.backgroundColor='#fff'; this.style.borderColor='#e0e0e0';">
+                    목록으로 돌아가기
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 🟢 우클릭 및 복사 방지 자바스크립트 -->
+    <script>
+        // 1. 우클릭 메뉴 차단
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // 2. 이미지 드래그 차단
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.nodeName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+
+        // 3. 복사(Ctrl+C), 소스보기(Ctrl+U), 개발자도구(F12 등) 단축키 차단
+        document.addEventListener('keydown', function(e) {
+            if (
+                (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U')) ||
+                (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J' || e.key === 'c' || e.key === 'C')) ||
+                e.key === 'F12'
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 이미지 전환 자바스크립트
+        function changeImage(element, src) {
+            const mainImg = document.getElementById('mainImage');
+            
+            // 이미지 부드럽게 전환 효과
+            mainImg.style.opacity = '0.3';
+            setTimeout(() => {
+                mainImg.src = src;
+                mainImg.style.opacity = '1';
+            }, 150);
+
+            // 썸네일 활성화(테두리) 표시
+            const thumbs = document.querySelectorAll('.thumb-img');
+            thumbs.forEach(thumb => thumb.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
