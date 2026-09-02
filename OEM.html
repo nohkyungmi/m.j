@@ -1,4 +1,122 @@
-<section style="background: #f0f0f0; padding: 80px 20px; text-align: center;">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>엠.제이인터내셔날 - OEM 안내</title>
+    
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* 글로벌 폰트 적용 (기본 본문: Pretendard) */
+        body {
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif !important;
+        }
+
+        /* 명조/포인트 타이틀 전용 클래스 */
+        .font-title {
+            font-family: 'Noto Serif KR', serif !important;
+        }
+
+        /* 영문 포인트 전용 클래스 */
+        .font-eng {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f9f9f9;">
+
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
+    
+        <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+            <img src="images/mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
+        </a>
+
+        <nav>
+            <ul style="list-style: none; display: flex; gap: 30px; margin: 0; padding: 0;">
+                
+                <li onmouseover="this.style.transform='scale(1.05)';" 
+                    onmouseout="this.style.transform='scale(1)';" 
+                    style="transition: all 0.3s ease;">
+                    <a href="about.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">회사 소개</a>
+                </li>
+
+                <li onmouseover="document.getElementById('menu-dropdown').style.display='block';" 
+                    onmouseout="document.getElementById('menu-dropdown').style.display='none';" 
+                    style="transition: all 0.2s ease; position: relative; list-style: none; display: inline-block; vertical-align: top; margin: 0 15px;">
+                    
+                    <a href="menu.html" style="
+                        text-decoration: none; 
+                        color: #222; 
+                        font-weight: 700; 
+                        font-size: 16px; 
+                        letter-spacing: -0.3px; 
+                        padding: 0px 0 10px 0;
+                        height: 22px;
+                        display: flex; 
+                        align-items: center; 
+                        gap: 6px; 
+                    ">
+                        메뉴 소개 
+                        <span style="font-size: 9px; color: #b5b5b5; transform: scaleY(0.8); display: inline-block;">▼</span>
+                    </a>
+
+                    <div id="menu-dropdown" style="
+                        display: none; 
+                        position: absolute; 
+                        top: 30px;
+                        left: 50%; 
+                        transform: translateX(-50%); 
+                        background-color: #ffffff; 
+                        min-width: 170px; 
+                        box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+                        border-radius: 12px; 
+                        padding: 10px 0; 
+                        border: 1px solid #f0f0f0;
+                        z-index: 1000;
+                    ">
+                        <a href="menu.html?tab=source1" style="display: block; padding: 12px 20px; text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-align: center; transition: 0.2s;"
+                           onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
+                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#444';">
+                            소스류
+                        </a>
+                        <a href="menu.html?tab=source2" style="display: block; padding: 12px 20px; text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-align: center; transition: 0.2s;"
+                           onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
+                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#444';">
+                            복합조미식품 및 두류가공품
+                        </a>
+                        <a href="menu.html?tab=source3" style="display: block; padding: 12px 20px; text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-align: center; transition: 0.2s;"
+                           onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
+                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#444';">
+                            기타가공품
+                        </a>
+                    </div>
+                </li>
+
+                <li onmouseover="this.style.transform='scale(1.05)';" 
+                    onmouseout="this.style.transform='scale(1)';" 
+                    style="transition: all 0.3s ease;">
+                    <a href="oem.html" style="text-decoration: none; color: #C5A059; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">OEM 안내</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/main_pic.png') center/cover no-repeat; padding: 90px 20px; text-align: center; color: white;">
+        <p class="font-eng" style="font-size: 14px; letter-spacing: 3px; color: #EBD095; margin-bottom: 10px; font-weight: 700; text-transform: uppercase;">OEM & ODM Service</p>
+        <h1 class="font-title" style="font-size: 42px; margin: 0; font-weight: 900; letter-spacing: -1px;">OEM 안내</h1>
+    </section>
+
+    <section style="max-width: 1000px; margin: 80px auto; padding: 0 20px; text-align: center;">
+        <h2 class="font-title" style="font-size: 32px; color: #111; margin-bottom: 20px; font-weight: 700;">최고의 품질과 신뢰로 함께하는 파트너</h2>
+        <p style="font-size: 16px; color: #666; line-height: 1.8; margin-bottom: 50px; word-break: keep-all;">
+            엠.제이인터내셔날(온다정)은 철저한 위생 관리와 풍부한 제조 노하우를 바탕으로<br>
+            고객사가 원하는 최적의 맞춤형 식품 생산 및 소스 개발 서비스를 제공합니다.
+        </p>
+    </section>
+
+    <section style="background: #f0f0f0; padding: 80px 20px; text-align: center;">
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="font-eng" style="font-size: 28px; color: #111; margin-bottom: 10px; font-weight: 800;">OEM PROCESS</h2>
             <p style="font-size: 15px; color: #666; margin-bottom: 50px;">체계적이고 안전한 5단계 맞춤형 생산 프로세스</p>
@@ -46,3 +164,30 @@
             </div>
         </div>
     </section>
+
+    <footer style="background-color: #ffffff; color: #666; padding: 35px 50px; border-top: 1px solid #eee;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: center; gap: 25px; font-size: 14px; flex-wrap: wrap;">
+            <span class="font-title" style="font-weight: 700; color: #111; font-size: 16px;">엠.제이인터내셔날</span>
+            <span style="color: #eee;">|</span>
+            <span>대표자: 노경미</span>
+            <span>사업자등록번호: 123-23-79551</span>
+            <span>주소: 경기도 용인시 처인구 모현읍 이일로 7-9</span>
+            <span>대표전화: 031-333-2303</span>
+            <span>팩스: 031-333-2376</span>
+            <span style="color: #eee;">|</span>
+            <span class="font-eng" style="color: #999; margin-left: auto; font-size: 13px;">Copyright ⓒ 2026. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" onclick="scrollToTop()" style="
+        display: none;
+        position: fixed; 
+        bottom: 40px; 
+        right: 40px; 
+        z-index: 99; 
+        border: none; 
+        outline: none; 
+        background-color: #C5A059;
+        color: white; 
+        cursor: pointer; 
+        padding: 15px 2
