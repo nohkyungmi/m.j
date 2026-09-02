@@ -215,12 +215,13 @@
         </div>
     </section>
 
-    <!-- 회사 위치 섹션 (실제 지도 캡처 이미지 배경 + 정확한 핀 위치 적용) -->
+    <!-- 회사 위치 섹션 -->
     <section id="location" style="padding: 60px 20px 100px 20px; text-align: center;">  
         <h2 class="font-title" style="font-size: 38px; margin-bottom: 10px; font-weight: 700; color: #111; letter-spacing: -0.5px;">우리 회사 위치</h2>
         <p style="font-size: 16px; color: #666; margin-bottom: 50px;">따뜻한 정이 있는 온다정을 찾아주세요</p>
 
-        <div style="display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; color: #444; font-size: 15px; margin-bottom: 40px;">
+        <!-- 4개 항목으로 확장된 연락처 정보 영역 -->
+        <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; color: #444; font-size: 15px; margin-bottom: 40px;">
             <div>
                 <p style="font-weight: 700; color: #C5A059; margin-bottom: 12px; letter-spacing: 1px;">LOCATION</p>
                 <p style="margin: 0;">경기도 용인시 처인구 모현읍 이일로 7-9</p>
@@ -233,6 +234,10 @@
                 <p style="font-weight: 700; color: #C5A059; margin-bottom: 12px; letter-spacing: 1px;">RESERVATION</p>
                 <p style="margin: 0;">031-333-2303</p>
             </div>
+            <div>
+                <p style="font-weight: 700; color: #C5A059; margin-bottom: 12px; letter-spacing: 1px;">FAX</p>
+                <p style="margin: 0;">031-333-2376</p>
+            </div>
         </div>
 
         <!-- 1. 실제 지도 캡처 이미지 배경 + 핀 위치 수정 박스 -->
@@ -241,7 +246,7 @@
             <!-- 업로드한 실제 지도 이미지 배경 -->
             <img src="images/map_capture.png" alt="온다정 지도 위치" style="width: 100%; height: 100%; object-fit: cover; display: block;">
 
-            <!-- ★ [더 위로 수정됨] 핀과 말풍선 위치를 상단으로 더 끌어올림 (left: 45.5%, top: 30%) -->
+            <!-- 핀과 말풍선 위치 -->
             <div style="position: absolute; left: 45.5%; top: 30%; transform: translate(-50%, -50%); text-align: center; z-index: 5;">
                 
                 <!-- 정보 말풍선 박스 -->
@@ -279,8 +284,9 @@
         </div>
     </section>
 
+    <!-- 팩스 번호가 추가된 푸터 -->
     <footer style="background-color: #ffffff; color: #666; padding: 35px 50px; border-top: 1px solid #eee;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: center; gap: 30px; font-size: 14px; flex-wrap: wrap;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: center; gap: 25px; font-size: 14px; flex-wrap: wrap;">
             
             <span class="font-title" style="font-weight: 700; color: #111; font-size: 16px;">엠.제이인터내셔날</span>
             
@@ -290,6 +296,7 @@
             <span>사업자등록번호: 123-23-79551</span>
             <span>주소: 경기도 용인시 처인구 모현읍 이일로 7-9</span>
             <span>대표전화: 031-333-2303</span>
+            <span>팩스: 031-333-2376</span>
             
             <span style="color: #eee;">|</span>
             
