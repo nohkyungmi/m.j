@@ -104,6 +104,7 @@
                     </div>
                 </li>
 
+                <!-- 대소문자 고려하여 OEM.html로 반영 -->
                 <li onmouseover="this.style.transform='scale(1.05)';" 
                     onmouseout="this.style.transform='scale(1)';" 
                     style="transition: all 0.3s ease;">
@@ -135,11 +136,20 @@
           따뜻한 진심과 넉넉한 정이 머무는 곳, <span style="color: #EBD095;">온다정</span>
         </p>
 
-        <a href="#location" class="font-eng" style="text-decoration:none; color:white; border:2px solid rgba(255,255,255,0.8); padding:16px 38px; font-size:13px; font-weight:700; letter-spacing:2px; border-radius:30px; background:rgba(0,0,0,0.2); backdrop-filter: blur(5px); transition:all 0.3s ease; display:inline-block; cursor:pointer;"
-            onmouseover="this.style.backgroundColor='#C5A059'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-3px)';"
-            onmouseout="this.style.backgroundColor='rgba(0,0,0,0.2)'; this.style.borderColor='rgba(255,255,255,0.8)'; this.style.transform='translateY(0)';">
-          OUR COMPANY MAP
-        </a>
+        <!-- 메인 배너 버튼 영역 (회사 위치 지도 보기 + 네이버 공식 블로그 바로가기 추가) -->
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
+            <a href="#location" class="font-eng" style="text-decoration:none; color:white; border:2px solid rgba(255,255,255,0.8); padding:16px 38px; font-size:13px; font-weight:700; letter-spacing:2px; border-radius:30px; background:rgba(0,0,0,0.2); backdrop-filter: blur(5px); transition:all 0.3s ease; display:inline-block; cursor:pointer;"
+                onmouseover="this.style.backgroundColor='#C5A059'; this.style.borderColor='#C5A059'; this.style.transform='translateY(-3px)';"
+                onmouseout="this.style.backgroundColor='rgba(0,0,0,0.2)'; this.style.borderColor='rgba(255,255,255,0.8)'; this.style.transform='translateY(0)';">
+              OUR COMPANY MAP
+            </a>
+
+            <a href="https://blog.naver.com/rhok13" target="_blank" class="font-eng" style="text-decoration:none; color:white; border:2px solid #03C75A; padding:16px 38px; font-size:13px; font-weight:700; letter-spacing:1px; border-radius:30px; background:#03C75A; backdrop-filter: blur(5px); transition:all 0.3s ease; display:inline-block; cursor:pointer; box-shadow: 0 4px 15px rgba(3,199,90,0.3);"
+                onmouseover="this.style.backgroundColor='#02b351'; this.style.borderColor='#02b351'; this.style.transform='translateY(-3px)';"
+                onmouseout="this.style.backgroundColor='#03C75A'; this.style.borderColor='#03C75A'; this.style.transform='translateY(0)';">
+              🟢 공식 블로그 방문하기
+            </a>
+        </div>
 
       </div>
 
