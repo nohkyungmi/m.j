@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메뉴 소개 - 온다정</title>
+    <title>메뉴 소개 - 엠.제이인터내셔날(온다정)</title>
     
-    <!-- 무료 & 상업적 이용 가능한 웹폰트 (Pretendard & Noto Serif KR) -->
+    <!-- 무료 & 상업적 이용 가능한 웹폰트 (Pretendard & Noto Serif KR & Montserrat) -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
     
     <style>
         /* 글로벌 폰트 설정 */
@@ -15,12 +15,17 @@
             margin: 0;
             padding: 0;
             font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif !important;
-            background-color: #fcfaf7;
+            background-color: #f9f9f9;
         }
 
-        /* 고급스러운 명조/포인트 타이틀 전용 클래스 */
+        /* 명조/포인트 타이틀 전용 클래스 */
         .font-title {
             font-family: 'Noto Serif KR', serif !important;
+        }
+
+        /* 영문 포인트 전용 클래스 */
+        .font-eng {
+            font-family: 'Montserrat', sans-serif !important;
         }
 
         /* 탭 버튼 스타일 */
@@ -68,24 +73,87 @@
 </head>
 <body>
 
-    <!-- 헤더 영역 -->
+    <!-- 헤더 영역 (다른 페이지와 동일한 드롭다운 및 OEM.html 대소문자 적용) -->
     <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
+        
         <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
-            <img src="images/mylogo.jpg" alt="온다정 로고" style="height: 90px; cursor: pointer;">
+            <img src="images/mylogo.jpg" alt="로고" style="height: 90px; cursor: pointer;">
         </a>
 
         <nav>
-            <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
-                <li><a href="about.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">회사 소개</a></li>
-                <li><a href="menu.html" style="text-decoration: none; color: #C5A059; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">메뉴 소개</a></li>
-                <li><a href="mapinfo.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">OEM 안내</a></li>
+            <ul style="list-style: none; display: flex; gap: 30px; margin: 0; padding: 0;">
+                
+                <li onmouseover="this.style.transform='scale(1.05)';" 
+                    onmouseout="this.style.transform='scale(1)';" 
+                    style="transition: all 0.3s ease;">
+                    <a href="about.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">회사 소개</a>
+                </li>
+
+                <li onmouseover="document.getElementById('menu-dropdown').style.display='block';" 
+                    onmouseout="document.getElementById('menu-dropdown').style.display='none';" 
+                    style="transition: all 0.2s ease; position: relative; list-style: none; display: inline-block; vertical-align: top; margin: 0 15px;">
+                    
+                    <a href="menu.html" style="
+                        text-decoration: none; 
+                        color: #C5A059; 
+                        font-weight: 700; 
+                        font-size: 16px; 
+                        letter-spacing: -0.3px; 
+                        padding: 0px 0 10px 0;
+                        height: 22px;
+                        display: flex; 
+                        align-items: center; 
+                        gap: 6px; 
+                    ">
+                        메뉴 소개 
+                        <span style="font-size: 9px; color: #C5A059; transform: scaleY(0.8); display: inline-block;">▼</span>
+                    </a>
+
+                    <div id="menu-dropdown" style="
+                        display: none; 
+                        position: absolute; 
+                        top: 30px;
+                        left: 50%; 
+                        transform: translateX(-50%); 
+                        background-color: #ffffff; 
+                        min-width: 170px; 
+                        box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+                        border-radius: 12px; 
+                        padding: 10px 0; 
+                        border: 1px solid #f0f0f0;
+                        z-index: 1000;
+                    ">
+                        <a href="menu.html?tab=source1" style="display: block; padding: 12px 20px; text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-align: center; transition: 0.2s;"
+                           onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
+                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#444';">
+                            소스류
+                        </a>
+                        <a href="menu.html?tab=source2" style="display: block; padding: 12px 20px; text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-align: center; transition: 0.2s;"
+                           onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
+                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#444';">
+                            복합조미식품 및 두류가공품
+                        </a>
+                        <a href="menu.html?tab=source3" style="display: block; padding: 12px 20px; text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-align: center; transition: 0.2s;"
+                           onmouseover="this.style.backgroundColor='#fdfbf7'; this.style.color='#C5A059';" 
+                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#444';">
+                            기타가공품
+                        </a>
+                    </div>
+                </li>
+
+                <li onmouseover="this.style.transform='scale(1.05)';" 
+                    onmouseout="this.style.transform='scale(1)';" 
+                    style="transition: all 0.3s ease;">
+                    <a href="OEM.html" style="text-decoration: none; color: #222; font-weight: 700; font-size: 16px; letter-spacing: -0.3px;">OEM 안내</a>
+                </li>
+
             </ul>
         </nav>
     </header>
 
     <!-- 메인 타이틀 -->
     <section style="text-align: center; padding: 60px 20px 20px 20px;">
-        <span style="color: #C5A059; font-weight: 700; letter-spacing: 2px; font-size: 14px;">ONDAJEONG MENU</span>
+        <span class="font-eng" style="color: #C5A059; font-weight: 700; letter-spacing: 2px; font-size: 14px;">ONDAJEONG MENU</span>
         <h1 class="font-title" style="font-size: 38px; color: #222; margin: 10px 0; font-weight: 800;">메뉴 소개</h1>
         <p style="color: #777; font-size: 15px; letter-spacing: -0.3px;">온다정의 정성을 담은 다양한 제품을 소개합니다.</p>
     </section>
@@ -258,7 +326,66 @@
         </div>
     </main>
 
-    <!-- 스크립트: 카테고리 필터링 기능 -->
+    <!-- 푸터 영역 -->
+    <footer style="background-color: #ffffff; color: #666; padding: 35px 50px; border-top: 1px solid #eee;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            
+            <div style="display: flex; align-items: center; gap: 25px; font-size: 14px; flex-wrap: wrap;">
+                <span class="font-title" style="font-weight: 700; color: #111; font-size: 16px;">엠.제이인터내셔날</span>
+                <span style="color: #eee;">|</span>
+                <span>대표자: 노경미</span>
+                <span>사업자등록번호: 123-23-79551</span>
+                <span>주소: 경기도 용인시 처인구 모현읍 이일로 7-9</span>
+                <span>대표전화: 031-333-2303</span>
+                <span>팩스: 031-333-2376</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                <a href="https://blog.naver.com/rhok13" target="_blank" style="
+                    display: inline-flex; 
+                    align-items: center; 
+                    gap: 6px; 
+                    background: #03C75A; 
+                    color: white; 
+                    text-decoration: none; 
+                    font-size: 13px; 
+                    font-weight: 700; 
+                    padding: 6px 14px; 
+                    border-radius: 20px; 
+                    transition: opacity 0.2s;
+                " onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                    <span>N 공식 블로그</span>
+                </a>
+                <span class="font-eng" style="color: #999; font-size: 13px;">Copyright ⓒ 2026. All Rights Reserved.</span>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- 맨 위로 가기 버튼 -->
+    <button id="scrollTopBtn" onclick="scrollToTop()" style="
+        display: none;
+        position: fixed; 
+        bottom: 40px; 
+        right: 40px; 
+        z-index: 99; 
+        border: none; 
+        outline: none; 
+        background-color: #C5A059;
+        color: white; 
+        cursor: pointer; 
+        padding: 15px 20px; 
+        border-radius: 50%;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#a38243'; this.style.transform='scale(1.1)';" 
+      onmouseout="this.style.backgroundColor='#C5A059'; this.style.transform='scale(1)';">
+        ↑
+    </button>
+
+    <!-- 스크립트: 카테고리 필터링 및 스크롤 기능 -->
     <script>
         function filterMenu(categoryKey) {
             const allItems = document.querySelectorAll('.menu-item');
@@ -290,6 +417,24 @@
                 filterMenu('source1');
             }
         });
+
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            var btn = document.getElementById("scrollTopBtn");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     </script>
 
 </body>
