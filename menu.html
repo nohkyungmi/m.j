@@ -10,16 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
     
     <style>
-        /* 글로벌 폰트 설정 및 전체 드래그 방지 */
+        /* 글로벌 폰트 설정 및 전체 드래그/모바일 터치 방지 */
         body {
             margin: 0;
             padding: 0;
             font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif !important;
             background-color: #f9f9f9;
+            
+            /* 🟢 PC 및 모바일 드래그/복사 전면 차단 */
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            -webkit-touch-callout: none; /* iOS Safari 꾹 눌러서 복사/메뉴 뜨는 것 방지 */
         }
 
         /* 명조/포인트 타이틀 전용 클래스 */
@@ -389,11 +392,18 @@
         ↑
     </button>
 
-    <!-- 스크립트: 우클릭 방지, 카테고리 필터링 및 스크롤 기능 -->
+    <!-- 스크립트: 우클릭, 드래그, 복사 및 모바일 제어 방지 -->
     <script>
-        // 🟢 우클릭, 드래그, 복사 방지 스크립트
+        // 1. 우클릭 차단
         document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+        
+        // 2. 이미지 드래그 방지
         document.addEventListener('dragstart', function(e) { if (e.target.nodeName === 'IMG') { e.preventDefault(); } });
+        
+        // 3. 모바일 텍스트 드래그/선택 시작 차단
+        document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+
+        // 4. PC 단축키(복사, 개발자도구 등) 차단
         document.addEventListener('keydown', function(e) {
             if ((e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U')) || (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) || e.key === 'F12') {
                 e.preventDefault();
