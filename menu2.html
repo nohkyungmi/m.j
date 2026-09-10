@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        /* 🟢 텍스트 드래그 및 선택 방지 */
+        /* 🟢 PC 및 모바일 텍스트 드래그, 선택 및 꾹 누름 방지 */
         body {
             margin: 0;
             font-family: sans-serif;
@@ -18,6 +18,7 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            -webkit-touch-callout: none; /* iOS Safari 꾹 눌러서 뜨는 메뉴/복사 방지 */
         }
 
         @media (max-width: 768px) {
@@ -139,7 +140,7 @@
 
     </main>
 
-    <!-- 🟢 우클릭 및 복사 방지 자바스크립트 -->
+    <!-- 🟢 우클릭, 드래그 및 복사 방지 자바스크립트 -->
     <script>
         // 1. 우클릭 메뉴 차단
         document.addEventListener('contextmenu', function(e) {
@@ -153,7 +154,12 @@
             }
         });
 
-        // 3. 복사(Ctrl+C), 소스보기(Ctrl+U), 개발자도구(F12 등) 단축키 차단
+        // 3. 모바일 텍스트 드래그/선택 시작 차단
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
+
+        // 4. 복사(Ctrl+C), 소스보기(Ctrl+U), 개발자도구(F12 등) 단축키 차단
         document.addEventListener('keydown', function(e) {
             if (
                 (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U')) ||
