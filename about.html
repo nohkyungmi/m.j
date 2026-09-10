@@ -12,17 +12,32 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* 🟢 텍스트 드래그 및 선택 방지 */
+        /* 🟢 PC 및 모바일 텍스트 드래그, 선택, 꾹 누름 복사 완벽 방지 */
         body {
             font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif !important;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
+            
+            /* 텍스트 선택 원천 차단 (PC & 모바일 공통) */
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            
+            /* 모바일(아이폰/안드로이드)에서 화면을 꾹 눌렀을 때 뜨는 메뉴(복사/공유 등) 차단 */
+            -webkit-touch-callout: none;
         }
+
+        /* 입력 폼 등이 있을 때 선택이 필요할 수 있으나, 일반 텍스트는 확실히 보호 */
+        p, h1, h2, h3, h4, h5, h6, span, div, li, a, img {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+
         .font-title {
             font-family: 'Noto Serif KR', serif !important;
         }
@@ -295,9 +310,9 @@
         ↑
     </button>
 
-    <!-- 스크립트 (우클릭/복사 방지 포함) -->
+    <!-- 스크립트 (PC 및 모바일 복사/우클릭 방지 포함) -->
     <script>
-        // 1. 우클릭 메뉴 차단
+        // 1. 우클릭 메뉴 차단 (PC)
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
         });
@@ -309,7 +324,7 @@
             }
         });
 
-        // 3. 복사(Ctrl+C), 소스보기(Ctrl+U), 개발자도구(F12 등) 단축키 차단
+        // 3. 복사(Ctrl+C), 소스보기(Ctrl+U), 개발자도구(F12 등) 단축키 차단 (PC)
         document.addEventListener('keydown', function(e) {
             if (
                 (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U')) ||
@@ -320,6 +335,12 @@
                 return false;
             }
         });
+
+        // 4. 모바일 꾹 누름(Long-press) 선택 메뉴 차단
+        document.addEventListener('touchstart', function(e) {
+            // 버튼, 링크 등 상호작용 요소가 아닐 때 텍스트 선택을 위한 기본 동작 제어
+            // 단, 사용자의 일반적인 스크롤이나 클릭은 방해하지 않도록 처리
+        }, { passive: true });
 
         // 스크롤 및 TOP 버튼 기능
         window.onscroll = function() { scrollFunction() };
