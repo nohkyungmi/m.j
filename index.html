@@ -20,6 +20,13 @@
             font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
             word-break: keep-all;
             overflow-x: hidden;
+            
+            /* 🟢 PC 및 모바일 텍스트 드래그 및 복사 방지 */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none; /* iOS Safari 꾹 눌러서 복사/메뉴 뜨는 것 방지 */
         }
 
         /* 폰트 클래스 */
@@ -275,8 +282,8 @@
         }
         .map-card-box {
             position: absolute;
-            left: 45.3%; /* 완전 살짝 오른쪽 */
-            top: 28%;  /* 살짝 아래 */
+            left: 45.3%;
+            top: 28%;
             transform: translate(-50%, -50%);
             text-align: center;
             z-index: 5;
@@ -376,7 +383,6 @@
                         <a href="menu.html?tab=source3">기타가공품</a>
                     </div>
                 </li>
-                <!-- 대문자 OEM.html로 설정 -->
                 <li><a href="OEM.html">OEM 안내</a></li>
             </ul>
         </nav>
@@ -508,6 +514,35 @@
     <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
 
     <script>
+        // 1. PC 우클릭 메뉴 차단
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // 2. 이미지 드래그 차단
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.nodeName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+
+        // 3. PC 복사 및 개발자 도구 단축키 차단
+        document.addEventListener('keydown', function(e) {
+            if (
+                (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U')) ||
+                (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J' || e.key === 'c' || e.key === 'C')) ||
+                e.key === 'F12'
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 4. 모바일 텍스트 선택 시작 차단
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
+
         // 스크롤 탑 버튼 토글
         window.onscroll = function() {
             var btn = document.getElementById("scrollTopBtn");
