@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>양념치킨</title> - 온다정</title>
-    <meta name="description" content="온다정 양념치킨 - 입안에 착 감기는 입맛 돋우는 매콤달콤함, 남녀노소 사랑받는 비법 양념치킨소스">
+    <title>양념치킨소스 - 온다정</title>
+    <meta name="description" content="온다정 양념치킨소스 - 입안에 착 감기는 입맛 돋우는 매콤달콤함, 남녀노소 사랑받는 비법 양념치킨소스">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
     <style>
+        /* 🟢 PC 및 모바일 텍스트 드래그, 선택 및 꾹 누름 방지 */
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #fcfaf7;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none; /* iOS Safari 꾹 눌러서 뜨는 메뉴/복사 방지 */
+        }
+
         @media (max-width: 768px) {
             header {
                 padding: 0 20px !important;
@@ -48,7 +60,7 @@
         }
     </style>
 </head>
-<body style="margin: 0; font-family: sans-serif; background-color: #fcfaf7;">
+<body>
 
     <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 100px; height: 100px; background: #fff; border-bottom: 1px solid #f2f2f2; position: sticky; top: 0; z-index: 1000;">
         <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
@@ -84,7 +96,7 @@
                      class="thumb-img active" 
                      onclick="changeImage(this, 'images/.jpg')">
                 
-                <!-- 2. 완성된 음식 사진 썸네일 (파일명만 가지고 계신 이미지로 바꿔주세요) -->
+                <!-- 2. 완성된 음식 사진 썸네일 -->
                 <img src="images/.png" 
                      alt="음식 연출 사진" 
                      class="thumb-img" 
@@ -134,8 +146,38 @@
 
     </main>
 
-    <!-- 이미지 전환 자바스크립트 -->
+    <!-- 이미지 전환 및 보안 스크립트 -->
     <script>
+        // 1. 우클릭 메뉴 차단
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // 2. 이미지 드래그 차단
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.nodeName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+
+        // 3. 모바일 텍스트 드래그/선택 시작 차단
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
+
+        // 4. 복사(Ctrl+C), 소스보기(Ctrl+U), 개발자도구(F12 등) 단축키 차단
+        document.addEventListener('keydown', function(e) {
+            if (
+                (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U')) ||
+                (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J' || e.key === 'c' || e.key === 'C')) ||
+                e.key === 'F12'
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 이미지 전환 함수
         function changeImage(element, src) {
             const mainImg = document.getElementById('mainImage');
             
