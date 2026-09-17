@@ -2,19 +2,47 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>엠.제이인터내셔날 - 온다정</title>
-    
-    <!-- 🟢 네이버 서치어드바이저 소유권 확인 태그 (여기에 본인 코드를 넣어주세요) -->
-    <meta name="naver-site-verification" content="d01619831809a33043bfeb3231ce0557a115ed32" />
 
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- 기본 검색 최적화 -->
+    <title>엠.제이인터내셔날 | 소스 제조·식품 OEM 전문기업</title>
+
+    <meta name="description" content="엠.제이인터내셔날은 경기도 용인시 처인구에 위치한 식품 제조기업입니다. 소스류, 복합조미식품, 두류가공품 및 기타가공품 생산과 OEM·ODM 제조 상담을 제공합니다.">
+
+    <meta name="keywords" content="엠제이인터내셔날, 엠.제이인터내셔날, 온다정, 소스 제조업체, 소스 제조, 소스 OEM, 소스 ODM, 식품 OEM, 식품 제조공장, 식품 생산, 복합조미식품, 두류가공품, 용인 식품공장, 용인 소스 제조">
+
+    <meta name="author" content="엠.제이인터내셔날">
+
+    <!-- 검색엔진 크롤링 허용 -->
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- 대표 URL -->
+    <link rel="canonical" href="https://mjondajung.co.kr/">
+
+    <!-- 네이버 서치어드바이저 소유권 확인 -->
+    <meta name="naver-site-verification" content="d01619831809a33043bfeb3231ce0557a115ed32">
+
+    <!-- 모바일 최적화 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 검색 결과 및 SNS 공유용 정보 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="엠.제이인터내셔날 | 소스 제조·식품 OEM 전문기업">
+    <meta property="og:description" content="소스류 및 식품 제조·OEM 전문기업 엠.제이인터내셔날 공식 홈페이지">
+    <meta property="og:url" content="https://mjondajung.co.kr/">
+    <meta property="og:site_name" content="엠.제이인터내셔날">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:image" content="https://mjondajung.co.kr/images/main_pic.png">
+
+    <!-- 폰트 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
-    
+
     <style>
         /* 글로벌 폰트 및 리셋 */
         *, *::before, *::after {
             box-sizing: border-box;
         }
+
         body {
             margin: 0;
             padding: 0;
@@ -23,28 +51,35 @@
             font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
             word-break: keep-all;
             overflow-x: hidden;
-            
-            /* 🟢 PC 및 모바일 텍스트 드래그 및 복사 방지 */
+
+            /* PC 및 모바일 텍스트 드래그 및 복사 방지 */
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            -webkit-touch-callout: none; /* iOS Safari 꾹 눌러서 복사/메뉴 뜨는 것 방지 */
+            -webkit-touch-callout: none;
         }
 
         /* 폰트 클래스 */
         .font-title {
             font-family: 'Noto Serif KR', serif !important;
         }
+
         .font-eng {
             font-family: 'Montserrat', sans-serif !important;
         }
 
         /* 애니메이션 */
         @keyframes customBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
         }
+
         .illustration-pin {
             animation: customBounce 2s infinite ease-in-out;
         }
@@ -62,10 +97,12 @@
             top: 0;
             z-index: 1000;
         }
+
         header .logo img {
             height: 75px;
             cursor: pointer;
         }
+
         header nav ul {
             list-style: none;
             display: flex;
@@ -74,6 +111,7 @@
             padding: 0;
             align-items: center;
         }
+
         header nav ul li a {
             text-decoration: none;
             color: #222;
@@ -82,6 +120,7 @@
             letter-spacing: -0.3px;
             transition: color 0.3s ease;
         }
+
         header nav ul li a:hover {
             color: #C5A059;
         }
@@ -90,6 +129,7 @@
         .dropdown-container {
             position: relative;
         }
+
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -104,9 +144,11 @@
             border: 1px solid #f0f0f0;
             z-index: 1000;
         }
+
         .dropdown-container:hover .dropdown-menu {
             display: block;
         }
+
         .dropdown-menu a {
             display: block;
             padding: 12px 20px;
@@ -117,6 +159,7 @@
             text-align: center;
             transition: all 0.2s ease;
         }
+
         .dropdown-menu a:hover {
             background-color: #fdfbf7;
             color: #C5A059;
@@ -135,11 +178,13 @@
             color: white;
             text-align: center;
         }
+
         .hero-slideshow {
             position: absolute;
             inset: 0;
             z-index: 0;
         }
+
         .hero-slide {
             position: absolute;
             inset: 0;
@@ -149,15 +194,18 @@
             opacity: 0;
             transition: opacity 1s ease;
         }
+
         .hero-slide.active {
             opacity: 1;
         }
+
         .hero-overlay {
             position: absolute;
             inset: 0;
             background: rgba(0,0,0,0.4);
             z-index: 1;
         }
+
         .hero-content {
             position: relative;
             z-index: 2;
@@ -177,26 +225,54 @@
             cursor: pointer;
             backdrop-filter: blur(5px);
         }
+
         .btn-outline {
             color: white;
             border: 2px solid rgba(255,255,255,0.8);
             background: rgba(0,0,0,0.2);
         }
+
         .btn-outline:hover {
             background-color: #C5A059;
             border-color: #C5A059;
             transform: translateY(-3px);
         }
+
         .btn-green {
             color: white;
             border: 2px solid #03C75A;
             background: #03C75A;
             box-shadow: 0 4px 15px rgba(3,199,90,0.3);
         }
+
         .btn-green:hover {
             background-color: #02b351;
             border-color: #02b351;
             transform: translateY(-3px);
+        }
+
+        /* 회사 소개 SEO 섹션 */
+        .about-seo-section {
+            max-width: 1000px;
+            margin: 80px auto 20px;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        .about-seo-section h2 {
+            font-size: 32px;
+            color: #111;
+            margin: 0 0 22px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .about-seo-section p {
+            font-size: 16px;
+            line-height: 2;
+            color: #555;
+            margin: 0 auto;
+            word-break: keep-all;
         }
 
         /* 상품 카테고리 섹션 */
@@ -206,6 +282,7 @@
             padding: 0 20px;
             text-align: center;
         }
+
         .category-grid {
             display: flex;
             justify-content: center;
@@ -213,6 +290,7 @@
             flex-wrap: wrap;
             margin-top: 40px;
         }
+
         .category-card {
             flex: 1;
             min-width: 260px;
@@ -226,15 +304,18 @@
             transition: all 0.3s ease;
             box-shadow: 0 8px 20px rgba(0,0,0,0.03);
         }
+
         .category-card:hover {
             background-color: #C5A059;
             color: white;
             border-color: #C5A059;
             transform: translateY(-6px);
         }
+
         .category-card:hover .cat-sub {
             color: rgba(255, 255, 255, 0.8);
         }
+
         .cat-sub {
             display: block;
             font-size: 12px;
@@ -251,6 +332,7 @@
             text-align: center;
             background: #f4f4f5;
         }
+
         .info-grid {
             display: flex;
             justify-content: center;
@@ -260,6 +342,7 @@
             font-size: 15px;
             margin: 40px 0;
         }
+
         .info-item p:first-child {
             font-weight: 700;
             color: #C5A059;
@@ -267,6 +350,7 @@
             letter-spacing: 1px;
             font-size: 13px;
         }
+
         .map-container {
             max-width: 950px;
             height: 480px;
@@ -277,12 +361,14 @@
             border: 1px solid #d4ded8;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
+
         .map-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
+
         .map-card-box {
             position: absolute;
             left: 45.3%;
@@ -291,6 +377,7 @@
             text-align: center;
             z-index: 5;
         }
+
         .map-address-tooltip {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(4px);
@@ -310,6 +397,7 @@
             padding: 35px 50px;
             border-top: 1px solid #eee;
         }
+
         footer .footer-inner {
             max-width: 1200px;
             margin: 0 auto;
@@ -319,6 +407,7 @@
             flex-wrap: wrap;
             gap: 20px;
         }
+
         .footer-info {
             display: flex;
             align-items: center;
@@ -347,6 +436,7 @@
             font-weight: bold;
             transition: all 0.3s ease;
         }
+
         #scrollTopBtn:hover {
             background-color: #a38243;
             transform: scale(1.1);
@@ -354,167 +444,412 @@
 
         /* 반응형 미디어쿼리 */
         @media(max-width: 768px) {
-            header { padding: 0 20px; height: 75px; }
-            header .logo img { height: 60px; }
-            header nav ul { gap: 15px; }
-            header nav ul li a { font-size: 14px; }
-            .hero-section h1 { font-size: 42px !important; }
-            .hero-section p { font-size: 18px !important; }
-            .map-container { height: 350px; }
-            footer { padding: 25px 20px; }
+            header {
+                padding: 0 20px;
+                height: 75px;
+            }
+
+            header .logo img {
+                height: 60px;
+            }
+
+            header nav ul {
+                gap: 15px;
+            }
+
+            header nav ul li a {
+                font-size: 14px;
+            }
+
+            .hero-section h1 {
+                font-size: 42px !important;
+            }
+
+            .hero-section p {
+                font-size: 18px !important;
+            }
+
+            .map-container {
+                height: 350px;
+            }
+
+            footer {
+                padding: 25px 20px;
+            }
+
+            .about-seo-section {
+                margin-top: 60px;
+            }
+
+            .about-seo-section h2 {
+                font-size: 26px;
+            }
+
+            .about-seo-section p {
+                font-size: 15px;
+                line-height: 1.9;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- 헤더 -->
     <header>
-        <a href="index.html" class="logo">
+        <a href="index.html" class="logo" aria-label="엠.제이인터내셔날 홈페이지">
             <img src="images/mylogo.jpg" alt="엠.제이인터내셔날 로고">
         </a>
-        <nav>
+
+        <nav aria-label="주요 메뉴">
             <ul>
-                <li><a href="about.html">회사 소개</a></li>
+                <li>
+                    <a href="about.html">회사 소개</a>
+                </li>
+
                 <li class="dropdown-container">
                     <a href="menu.html">
-                        메뉴 소개 
+                        메뉴 소개
                         <span style="font-size: 9px; color: #b5b5b5; transform: scaleY(0.8); display: inline-block;">▼</span>
                     </a>
+
                     <div class="dropdown-menu">
                         <a href="menu.html?tab=source1">소스류</a>
                         <a href="menu.html?tab=source2">복합조미식품 및 두류가공품</a>
                         <a href="menu.html?tab=source3">기타가공품</a>
                     </div>
                 </li>
-                <li><a href="OEM.html">OEM 안내</a></li>
+
+                <li>
+                    <a href="OEM.html">OEM 안내</a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <!-- 히어로 섹션 -->
-    <section class="hero-section">
-        <div class="hero-slideshow" id="hero-slideshow">
-            <img src="images/main_pic.png" alt="메인 배너 이미지 1" class="hero-slide active">
-            <img src="images/index_pic.png" alt="메인 배너 이미지 2" class="hero-slide">
-            <div class="hero-overlay"></div>
-        </div>
 
-        <div class="hero-content">
-            <p class="font-eng" style="font-size:15px; letter-spacing:4px; color:#EBD095; margin-bottom:18px; font-weight:700; text-transform:uppercase;">
-                Premium Food Culture Company
-            </p>
-            <h1 class="font-title" style="font-size:64px; margin:0; font-weight:900; letter-spacing:-1px; text-shadow:0 10px 25px rgba(0,0,0,0.5);">
-                엠.제이인터내셔날
-            </h1>
-            <p class="font-title" style="font-size:22px; margin:20px 0 40px 0; letter-spacing:1px; color:#ffffff; font-weight:600; text-shadow:0 4px 10px rgba(0,0,0,0.4);">
-                따뜻한 진심과 넉넉한 정이 머무는 곳, <span style="color: #EBD095;">온다정</span>
-            </p>
+    <!-- 메인 히어로 섹션 -->
+    <main>
 
-            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <a href="#location" class="font-eng btn-custom btn-outline">OUR COMPANY MAP</a>
-                <a href="https://blog.naver.com/rhok13" target="_blank" class="font-eng btn-custom btn-green">🟢 공식 블로그 방문하기</a>
+        <section class="hero-section" aria-label="엠.제이인터내셔날 회사 소개">
+
+            <div class="hero-slideshow" id="hero-slideshow">
+                <img src="images/main_pic.png"
+                     alt="엠.제이인터내셔날 식품 제조기업 메인 이미지"
+                     class="hero-slide active">
+
+                <img src="images/index_pic.png"
+                     alt="엠.제이인터내셔날 식품 및 소스 제조 관련 이미지"
+                     class="hero-slide">
+
+                <div class="hero-overlay"></div>
             </div>
-        </div>
-    </section>
 
-    <!-- 제품 카테고리 -->
-    <section class="category-section">
-        <h2 class="font-eng" style="font-size: 32px; color: #111; margin-bottom: 8px; font-weight: 800; letter-spacing: 1px;">PRODUCT CATEGORY</h2>
-        <p style="font-size: 15px; color: #666; margin-bottom: 15px; letter-spacing: -0.3px;">온다정의 정성을 담은 메뉴를 카테고리별로 만나보세요.</p>
+            <div class="hero-content">
 
-        <div class="category-grid">
-            <a href="menu.html?tab=source1" class="category-card">
-                <span class="font-eng cat-sub">CATEGORY 01</span>
-                <strong class="font-title" style="font-size: 22px; display: block; font-weight: 700;">소스류</strong>
-            </a>
-            <a href="menu.html?tab=source2" class="category-card">
-                <span class="font-eng cat-sub">CATEGORY 02</span>
-                <strong class="font-title" style="font-size: 20px; display: block; font-weight: 700;">복합조미식품 및 두류가공품</strong>
-            </a>
-            <a href="menu.html?tab=source3" class="category-card">
-                <span class="font-eng cat-sub">CATEGORY 03</span>
-                <strong class="font-title" style="font-size: 22px; display: block; font-weight: 700;">기타가공품</strong>
-            </a>
-        </div>
-    </section>
+                <p class="font-eng"
+                   style="font-size:15px; letter-spacing:4px; color:#EBD095; margin-bottom:18px; font-weight:700; text-transform:uppercase;">
+                    FOOD MANUFACTURING · OEM · ODM
+                </p>
 
-    <!-- 오시는 길 (Location) -->
-    <section id="location" class="location-section">
-        <h2 class="font-title" style="font-size: 36px; margin-bottom: 10px; font-weight: 700; color: #111; letter-spacing: -0.5px;">우리 회사 위치</h2>
-        <p style="font-size: 16px; color: #666; margin-bottom: 20px;">따뜻한 정이 있는 온다정을 찾아주세요</p>
+                <h1 class="font-title"
+                    style="font-size:64px; margin:0; font-weight:900; letter-spacing:-1px; text-shadow:0 10px 25px rgba(0,0,0,0.5);">
+                    엠.제이인터내셔날
+                </h1>
 
-        <div class="info-grid">
-            <div class="info-item">
-                <p class="font-eng">LOCATION</p>
-                <p style="margin: 0;">경기도 용인시 처인구 모현읍 이일로 7-9</p>
-            </div>
-            <div class="info-item">
-                <p class="font-eng">OPENING HOURS</p>
-                <p style="margin: 0;">AM 9:00 - PM 18:00</p>
-            </div>
-            <div class="info-item">
-                <p class="font-eng">RESERVATION</p>
-                <p style="margin: 0;">031-333-2303</p>
-            </div>
-            <div class="info-item">
-                <p class="font-eng">FAX</p>
-                <p style="margin: 0;">031-333-2376</p>
-            </div>
-        </div>
+                <p class="font-title"
+                   style="font-size:22px; margin:20px 0 18px 0; letter-spacing:1px; color:#ffffff; font-weight:600; text-shadow:0 4px 10px rgba(0,0,0,0.4);">
+                    소스 제조 · 식품 OEM · ODM 전문기업
+                </p>
 
-        <div class="map-container">
-            <img src="images/map_capture.png" alt="온다정 지도 위치">
-            <div class="map-card-box">
-                <div class="map-address-tooltip">
-                    <div style="font-size: 12px; font-weight: 800; color: #111; margin-bottom: 2px;">경기도 용인시 처인구 모현읍 이일로 7-9</div>
-                    <div style="font-size: 10px; color: #666; margin-bottom: 8px;">(지번) 경기 용인시 처인구 매산리 542-2</div>
-                    <span style="background: #007aff; color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 4px;">엠.제이인터내셔날 본사</span>
+                <p style="font-size:16px; line-height:1.8; color:#ffffff; margin:0 0 40px 0; text-shadow:0 3px 8px rgba(0,0,0,0.5);">
+                    다양한 소스류와 식품을 연구·개발하고 생산하는<br>
+                    엠.제이인터내셔날의 공식 홈페이지입니다.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="#location" class="font-eng btn-custom btn-outline">
+                        OUR COMPANY MAP
+                    </a>
+
+                    <a href="https://blog.naver.com/rhok13"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="font-eng btn-custom btn-green">
+                        🟢 공식 블로그 방문하기
+                    </a>
                 </div>
-                <div class="illustration-pin" style="display: inline-block;">
-                    <div style="font-size: 38px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">📍</div>
+
+            </div>
+        </section>
+
+
+        <!-- 회사 핵심 소개 / SEO 콘텐츠 -->
+        <section class="about-seo-section" aria-labelledby="about-seo-title">
+
+            <p class="font-eng"
+               style="font-size:13px; letter-spacing:2px; color:#C5A059; font-weight:700; margin-bottom:15px;">
+                ABOUT M.J INTERNATIONAL
+            </p>
+
+            <h2 id="about-seo-title" class="font-title">
+                소스와 식품의 가치를 만드는 제조 파트너
+            </h2>
+
+            <p>
+                엠.제이인터내셔날은 경기도 용인시 처인구 모현읍에 위치한
+                식품 제조기업입니다.<br>
+                소스류, 복합조미식품, 두류가공품 및 기타가공품을 중심으로
+                다양한 식품 생산과 제조 상담을 진행하고 있습니다.<br>
+                고객의 요구에 맞는 제품 개발과 안정적인 생산을 위해
+                정성을 다하고 있습니다.
+            </p>
+
+        </section>
+
+
+        <!-- 제품 카테고리 -->
+        <section class="category-section" aria-labelledby="product-title">
+
+            <h2 id="product-title"
+                class="font-title"
+                style="font-size:32px; color:#111; margin-bottom:8px; font-weight:800; letter-spacing:-1px;">
+                소스 및 식품 제품소개
+            </h2>
+
+            <p style="font-size:15px; color:#666; margin-bottom:15px; letter-spacing:-0.3px;">
+                엠.제이인터내셔날에서 생산하는 소스류 및 식품 제품을 소개합니다.
+            </p>
+
+            <div class="category-grid">
+
+                <a href="menu.html?tab=source1" class="category-card">
+                    <span class="font-eng cat-sub">CATEGORY 01</span>
+                    <strong class="font-title"
+                            style="font-size:22px; display:block; font-weight:700;">
+                        소스류
+                    </strong>
+                </a>
+
+                <a href="menu.html?tab=source2" class="category-card">
+                    <span class="font-eng cat-sub">CATEGORY 02</span>
+                    <strong class="font-title"
+                            style="font-size:20px; display:block; font-weight:700;">
+                        복합조미식품 및 두류가공품
+                    </strong>
+                </a>
+
+                <a href="menu.html?tab=source3" class="category-card">
+                    <span class="font-eng cat-sub">CATEGORY 03</span>
+                    <strong class="font-title"
+                            style="font-size:22px; display:block; font-weight:700;">
+                        기타가공품
+                    </strong>
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- 오시는 길 -->
+        <section id="location"
+                 class="location-section"
+                 aria-labelledby="location-title">
+
+            <h2 id="location-title"
+                class="font-title"
+                style="font-size:36px; margin-bottom:10px; font-weight:700; color:#111; letter-spacing:-0.5px;">
+                우리 회사 위치
+            </h2>
+
+            <p style="font-size:16px; color:#666; margin-bottom:20px;">
+                따뜻한 정이 있는 온다정을 찾아주세요
+            </p>
+
+            <div class="info-grid">
+
+                <div class="info-item">
+                    <p class="font-eng">LOCATION</p>
+                    <p style="margin:0;">
+                        경기도 용인시 처인구 모현읍 이일로 7-9
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <p class="font-eng">OPENING HOURS</p>
+                    <p style="margin:0;">
+                        AM 9:00 - PM 18:00
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <p class="font-eng">RESERVATION</p>
+                    <p style="margin:0;">
+                        031-333-2303
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <p class="font-eng">FAX</p>
+                    <p style="margin:0;">
+                        031-333-2376
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="map-container">
+                <img src="images/map_capture.png"
+                     alt="엠.제이인터내셔날 본사 위치 지도">
+
+                <div class="map-card-box">
+
+                    <div class="map-address-tooltip">
+                        <div style="font-size:12px; font-weight:800; color:#111; margin-bottom:2px;">
+                            경기도 용인시 처인구 모현읍 이일로 7-9
+                        </div>
+
+                        <div style="font-size:10px; color:#666; margin-bottom:8px;">
+                            (지번) 경기 용인시 처인구 매산리 542-2
+                        </div>
+
+                        <span style="background:#007aff; color:white; font-size:10px; font-weight:700; padding:3px 10px; border-radius:4px;">
+                            엠.제이인터내셔날 본사
+                        </span>
+                    </div>
+
+                    <div class="illustration-pin" style="display:inline-block;">
+                        <div style="font-size:38px; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.3));">
+                            📍
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div>
 
-        <div style="max-width: 950px; margin: 0 auto; padding: 35px 30px; background: #ffffff; border-radius: 20px; border: 1px solid #eaeaea; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
-            <div style="font-size: 32px; margin-bottom: 8px;">🗺️</div>
-            <h3 class="font-title" style="font-size: 22px; color: #111; margin: 0 0 6px 0; font-weight: 700;">엠.제이인터내셔날 (온다정)</h3>
-            <p style="font-size: 14.5px; color: #666; margin: 0 0 20px 0;">경기도 용인시 처인구 모현읍 이일로 7-9</p>
-            
-            <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-                <a href="https://map.kakao.com/link/search/경기도 용인시 처인구 모현읍 이일로 7-9" target="_blank" style="padding: 12px 26px; background-color: #FEE500; color: #191919; text-decoration: none; font-weight: 700; font-size: 14px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                    🟡 카카오맵에서 크게 보기
-                </a>
-                <a href="https://map.naver.com/v5/search/경기도 용인시 처인구 모현읍 이일로 7-9" target="_blank" style="padding: 12px 26px; background-color: #03CF5D; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 14px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                    🟢 네이버 지도에서 크게 보기
-                </a>
+
+            <div style="max-width:950px; margin:0 auto; padding:35px 30px; background:#ffffff; border-radius:20px; border:1px solid #eaeaea; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-align:center;">
+
+                <div style="font-size:32px; margin-bottom:8px;">
+                    🗺️
+                </div>
+
+                <h3 class="font-title"
+                    style="font-size:22px; color:#111; margin:0 0 6px 0; font-weight:700;">
+                    엠.제이인터내셔날 (온다정)
+                </h3>
+
+                <p style="font-size:14.5px; color:#666; margin:0 0 20px 0;">
+                    경기도 용인시 처인구 모현읍 이일로 7-9
+                </p>
+
+                <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+
+                    <a href="https://map.kakao.com/link/search/경기도 용인시 처인구 이일로 7-9"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       style="padding:12px 26px; background-color:#FEE500; color:#191919; text-decoration:none; font-weight:700; font-size:14px; border-radius:30px; box-shadow:0 4px 12px rgba(0,0,0,0.06); transition:transform 0.2s;"
+                       onmouseover="this.style.transform='translateY(-2px)'"
+                       onmouseout="this.style.transform='translateY(0)'">
+                        🟡 카카오맵에서 크게 보기
+                    </a>
+
+                    <a href="https://map.naver.com/v5/search/경기도 용인시 처인구 모현읍 이일로 7-9"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       style="padding:12px 26px; background-color:#03CF5D; color:#FFFFFF; text-decoration:none; font-weight:700; font-size:14px; border-radius:30px; box-shadow:0 4px 12px rgba(0,0,0,0.06); transition:transform 0.2s;"
+                       onmouseover="this.style.transform='translateY(-2px)'"
+                       onmouseout="this.style.transform='translateY(0)'">
+                        🟢 네이버 지도에서 크게 보기
+                    </a>
+
+                </div>
             </div>
-        </div>
-    </section>
+
+        </section>
+
+    </main>
+
 
     <!-- 푸터 -->
     <footer>
         <div class="footer-inner">
+
             <div class="footer-info">
-                <span class="font-title" style="font-weight: 700; color: #111; font-size: 15px;">엠.제이인터내셔날</span>
-                <span style="color: #ddd;">|</span>
+
+                <span class="font-title"
+                      style="font-weight:700; color:#111; font-size:15px;">
+                    엠.제이인터내셔날
+                </span>
+
+                <span style="color:#ddd;">|</span>
+
                 <span>대표자: 노경미</span>
+
                 <span>사업자등록번호: 123-23-79551</span>
+
                 <span>주소: 경기도 용인시 처인구 모현읍 이일로 7-9</span>
+
                 <span>대표전화: 031-333-2303</span>
+
                 <span>팩스: 031-333-2376</span>
+
             </div>
-            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-                <a href="https://blog.naver.com/rhok13" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #03C75A; color: white; text-decoration: none; font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 20px;">
+
+            <div style="display:flex; align-items:center; gap:15px; flex-wrap:wrap;">
+
+                <a href="https://blog.naver.com/rhok13"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   style="display:inline-flex; align-items:center; gap:6px; background:#03C75A; color:white; text-decoration:none; font-size:13px; font-weight:700; padding:6px 14px; border-radius:20px;">
                     <span>N 공식 블로그</span>
                 </a>
-                <span class="font-eng" style="color: #999; font-size: 12.5px;">Copyright ⓒ 2026. All Rights Reserved.</span>
+
+                <span class="font-eng"
+                      style="color:#999; font-size:12.5px;">
+                    Copyright ⓒ 2026. All Rights Reserved.
+                </span>
+
             </div>
         </div>
     </footer>
 
+
     <!-- 상단 이동 버튼 -->
-    <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+    <button id="scrollTopBtn"
+            onclick="scrollToTop()"
+            aria-label="맨 위로 이동">
+        ↑
+    </button>
+
+
+    <!-- 검색엔진용 업체 정보 구조화 데이터 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://mjondajung.co.kr/#organization",
+      "name": "엠.제이인터내셔날",
+      "alternateName": "온다정",
+      "url": "https://mjondajung.co.kr/",
+      "logo": "https://mjondajung.co.kr/images/mylogo.jpg",
+      "description": "소스류, 복합조미식품, 두류가공품 및 기타가공품을 생산하는 식품 제조기업",
+      "telephone": "+82-31-333-2303",
+      "faxNumber": "+82-31-333-2376",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "이일로 7-9",
+        "addressLocality": "모현읍, 처인구",
+        "addressRegion": "경기도",
+        "addressCountry": "KR"
+      },
+      "sameAs": [
+        "https://blog.naver.com/rhok13"
+      ]
+    }
+    </script>
+
 
     <script>
         // 1. PC 우클릭 메뉴 차단
@@ -522,12 +857,14 @@
             e.preventDefault();
         });
 
+
         // 2. 이미지 드래그 차단
         document.addEventListener('dragstart', function(e) {
             if (e.target.nodeName === 'IMG') {
                 e.preventDefault();
             }
         });
+
 
         // 3. PC 복사 및 개발자 도구 단축키 차단
         document.addEventListener('keydown', function(e) {
@@ -541,14 +878,17 @@
             }
         });
 
+
         // 4. 모바일 텍스트 선택 시작 차단
         document.addEventListener('selectstart', function(e) {
             e.preventDefault();
         });
 
+
         // 스크롤 탑 버튼 토글
         window.onscroll = function() {
             var btn = document.getElementById("scrollTopBtn");
+
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 btn.style.display = "block";
             } else {
@@ -556,14 +896,21 @@
             }
         };
 
+
         function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
+
 
         // 히어로 슬라이드쇼 자동 전환
         (function() {
             const slides = document.querySelectorAll('#hero-slideshow .hero-slide');
+
             if (!slides || slides.length < 2) return;
+
             let idx = 0;
             const interval = 5000;
 
@@ -574,5 +921,6 @@
             }, interval);
         })();
     </script>
+
 </body>
 </html>
